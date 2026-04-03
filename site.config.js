@@ -12,94 +12,84 @@ window.PORTFOLIO_CONFIG = {
   updatedAt: "April 2026",
   activities: [
     {
-      slug: "graduation-research-gan",
-      period: "2025 - 2026",
-      status: "completed",
-      title_ja: "ゲームレベル生成におけるGANの活用",
-      title_en: "GAN-based Game Level Generation Research",
+      slug: "humai-application-local-ai",
+      period: "2026.04 - Present",
+      status: "ongoing",
+      title_ja: "HUMAI応募準備 / AI×地方コミュニティ研究構想",
+      title_en: "HUMAI Application / AI × Local Community Research Direction",
       detail_ja:
-        "学部卒業研究として、GANを用いたゲームレベル生成に取り組んだ。特にMarioライクな2D横スクロールレベル生成を題材に、生成と構造制約の両立を意識した研究を進めた。",
+        "地方農業や地域コミュニティにおけるAIエージェント／自動化活用をテーマに、研究・実践構想を整理している。現地ヒアリング、試作、実証を見据えている。",
       detail_en:
-        "For my undergraduate thesis, I worked on GAN-based game level generation, focusing on Mario-like 2D side-scrolling levels and exploring how generative methods can incorporate structural constraints.",
+        "I am developing a research direction around AI agents and automation for local agriculture and communities, with plans for field interviews, prototyping, and practical validation.",
       records_ja: [
-        "学部卒業研究として実施",
-        "Marioライクな2Dゲームレベル生成を題材に研究",
-        "GANを活用した生成手法を検討",
-        "最終発表・審査に対応"
+        "応募テーマを策定中",
+        "農業・地方・AIを接続する研究構想を整理",
+        "現地ヒアリングと試作を見据えている"
       ],
       records_en: [
-        "Conducted as my undergraduate thesis project",
-        "Focused on Mario-like 2D game level generation",
-        "Explored GAN-based generative methods",
-        "Completed final presentation and evaluation"
+        "Preparing an application theme",
+        "Shaping a research idea connecting agriculture, rural communities, and AI",
+        "Planning field interviews and prototyping"
       ],
-      url: "",
-      coverImage: "/images/activities/graduation-research-gan/cover.png",
-      gallery: [
-        "/images/activities/graduation-research-gan/gallery-1.png",
-        "/images/activities/graduation-research-gan/gallery-2.png"
-      ]
+      url: "https://zen.ac.jp/humai",
+      coverImage: "/images/activities/humai-application-local-ai/cover.png",
+      gallery: ["/images/activities/humai-application-local-ai/gallery-1.png"]
     },
     {
-      slug: "australia-student-leader",
-      period: "2024",
-      status: "completed",
-      title_ja: "オーストラリア交換留学・学生リーダー",
-      title_en: "Exchange Study in Australia / Student Leader",
+      slug: "gdg-on-campus-tsukuba",
+      period: "2026.03 - Present",
+      status: "ongoing",
+      title_ja: "GDG on Campus at University of Tsukuba 準備",
+      title_en: "Preparing GDG on Campus at the University of Tsukuba",
       detail_ja:
-        "オーストラリアへの交換留学中、学生リーダーとして活動した。異文化環境の中で人をまとめ、プロジェクトやイベントを進める経験を積んだ。",
+        "筑波大学でGDG on Campusを立ち上げるための申請と準備を進めている。学生がGoogle技術を学び合い、実践できる場を作ることを目指している。",
       detail_en:
-        "During my exchange study in Australia, I served as a student leader and gained experience in coordinating people and supporting activities in a multicultural environment.",
+        "I am preparing to launch GDG on Campus at the University of Tsukuba, aiming to build a community where students can learn, share, and build with Google technologies.",
       records_ja: [
-        "交換留学を実施",
-        "学生リーダーとして活動",
-        "多様な背景の人との協働を経験",
-        "日本文化発信やスピーチにも取り組んだ"
+        "申請準備を進行中",
+        "コミュニティの方向性やイベント案を整理中",
+        "学生向け技術コミュニティの立ち上げを企画"
       ],
       records_en: [
-        "Participated in an exchange study program",
-        "Served as a student leader",
-        "Collaborated with people from diverse backgrounds",
-        "Took part in cultural promotion and speaking activities"
+        "Preparing the application process",
+        "Organizing the vision and event ideas for the community",
+        "Planning a student-focused developer community"
       ],
       url: "",
-      coverImage: "/images/activities/australia-student-leader/cover.png",
-      gallery: [
-        "/images/activities/australia-student-leader/gallery-1.png",
-        "/images/activities/australia-student-leader/gallery-2.png"
-      ]
+      coverImage: "/images/activities/gdg-on-campus-tsukuba/cover.png",
+      gallery: ["/images/activities/gdg-on-campus-tsukuba/gallery-1.png"]
     },
     {
-      slug: "university-festival-project",
-      period: "2024",
-      status: "completed",
-      title_ja: "文化祭企画・実行",
-      title_en: "University Festival Project Planning and Execution",
+      slug: "agent-matching-prototype",
+      period: "2025 - Present",
+      status: "ongoing",
+      title_ja: "エージェント型マッチング／自動化サイト試作",
+      title_en: "Agent-based Matching and Automation Prototype",
       detail_ja:
-        "大学の文化祭において、企画立案と実行に関わった。チームでアイデアを形にし、イベントを成立させる経験を積んだ。",
+        "AIエージェントや自動化の考え方を取り入れた、マッチングや業務支援の仕組みを個人開発として試作している。地域やコミュニティへの応用も視野に入れている。",
       detail_en:
-        "I was involved in planning and executing a university festival project, gaining experience in turning ideas into reality as part of a team.",
+        "I have been prototyping agent-based systems for matching and workflow automation, exploring how AI-driven coordination can support communities and practical use cases.",
       records_ja: [
-        "文化祭企画に参加",
-        "企画立案と実行に関与",
-        "チームでの運営経験を積んだ"
+        "エージェント型の発想を用いた試作を実施",
+        "マッチングや自動化の仕組みを検討",
+        "地域やコミュニティへの応用も構想中"
       ],
       records_en: [
-        "Joined a university festival project",
-        "Contributed to planning and execution",
-        "Gained experience in team-based event operations"
+        "Built prototypes based on agent-oriented ideas",
+        "Explored matching and automation workflows",
+        "Considered applications for local communities and social systems"
       ],
-      url: "",
-      coverImage: "/images/activities/university-festival-project/cover.png",
+      url: "https://github.com/Powmel",
+      coverImage: "/images/activities/agent-matching-prototype/cover.png",
       gallery: [
-        "/images/activities/university-festival-project/gallery-1.png",
-        "/images/activities/university-festival-project/gallery-2.png"
+        "/images/activities/agent-matching-prototype/gallery-1.png",
+        "/images/activities/agent-matching-prototype/gallery-2.png"
       ]
     },
     {
       slug: "rural-activities-minamiizu",
-      period: "2025 - Present",
-      status: "ongoing",
+      period: "2025.09, 2026.02 - 2026.03",
+      status: "completed",
       title_ja: "南伊豆を中心とした農業・地域活動",
       title_en: "Rural and Community Activities in Minami-Izu",
       detail_ja:
@@ -127,8 +117,37 @@ window.PORTFOLIO_CONFIG = {
       ]
     },
     {
+      slug: "graduation-research-gan",
+      period: "2025.04 - 2026.02",
+      status: "completed",
+      title_ja: "ゲームレベル生成におけるGANの活用",
+      title_en: "GAN-based Game Level Generation Research",
+      detail_ja:
+        "学部卒業研究として、GANを用いたゲームレベル生成に取り組んだ。特にMarioライクな2D横スクロールレベル生成を題材に、生成と構造制約の両立を意識した研究を進めた。",
+      detail_en:
+        "For my undergraduate thesis, I worked on GAN-based game level generation, focusing on Mario-like 2D side-scrolling levels and exploring how generative methods can incorporate structural constraints.",
+      records_ja: [
+        "学部卒業研究として実施",
+        "Marioライクな2Dゲームレベル生成を題材に研究",
+        "GANを活用した生成手法を検討",
+        "最終発表・審査に対応"
+      ],
+      records_en: [
+        "Conducted as my undergraduate thesis project",
+        "Focused on Mario-like 2D game level generation",
+        "Explored GAN-based generative methods",
+        "Completed final presentation and evaluation"
+      ],
+      url: "",
+      coverImage: "/images/activities/graduation-research-gan/cover.png",
+      gallery: [
+        "/images/activities/graduation-research-gan/gallery-1.png",
+        "/images/activities/graduation-research-gan/gallery-2.png"
+      ]
+    },
+    {
       slug: "family-website-development",
-      period: "TBD",
+      period: "2025.12",
       status: "completed",
       title_ja: "親のサイト制作",
       title_en: "Website Development for My Parents",
@@ -151,79 +170,84 @@ window.PORTFOLIO_CONFIG = {
       gallery: ["/images/activities/family-website-development/gallery-1.png"]
     },
     {
-      slug: "agent-matching-prototype",
-      period: "2025 - Present",
-      status: "ongoing",
-      title_ja: "エージェント型マッチング／自動化サイト試作",
-      title_en: "Agent-based Matching and Automation Prototype",
+      slug: "university-festival-project",
+      period: "2025.11",
+      status: "completed",
+      title_ja: "文化祭企画・実行",
+      title_en: "University Festival Project Planning and Execution",
       detail_ja:
-        "AIエージェントや自動化の考え方を取り入れた、マッチングや業務支援の仕組みを個人開発として試作している。地域やコミュニティへの応用も視野に入れている。",
+        "大学の文化祭において、企画立案と実行に関わった。チームでアイデアを形にし、イベントを成立させる経験を積んだ。",
       detail_en:
-        "I have been prototyping agent-based systems for matching and workflow automation, exploring how AI-driven coordination can support communities and practical use cases.",
+        "I was involved in planning and executing a university festival project, gaining experience in turning ideas into reality as part of a team.",
       records_ja: [
-        "エージェント型の発想を用いた試作を実施",
-        "マッチングや自動化の仕組みを検討",
-        "地域やコミュニティへの応用も構想中"
+        "文化祭企画に参加",
+        "企画立案と実行に関与",
+        "チームでの運営経験を積んだ"
       ],
       records_en: [
-        "Built prototypes based on agent-oriented ideas",
-        "Explored matching and automation workflows",
-        "Considered applications for local communities and social systems"
+        "Joined a university festival project",
+        "Contributed to planning and execution",
+        "Gained experience in team-based event operations"
       ],
       url: "",
-      coverImage: "/images/activities/agent-matching-prototype/cover.png",
+      coverImage: "/images/activities/university-festival-project/cover.png",
       gallery: [
-        "/images/activities/agent-matching-prototype/gallery-1.png",
-        "/images/activities/agent-matching-prototype/gallery-2.png"
+        "/images/activities/university-festival-project/gallery-1.png",
+        "/images/activities/university-festival-project/gallery-2.png"
       ]
     },
     {
-      slug: "gdg-on-campus-tsukuba",
-      period: "2026 - Present",
-      status: "ongoing",
-      title_ja: "GDG on Campus at University of Tsukuba 準備",
-      title_en: "Preparing GDG on Campus at the University of Tsukuba",
+      slug: "hackathon-participation",
+      period: "2024.08",
+      status: "completed",
+      title_ja: "ハッカソン参加",
+      title_en: "Hackathon Participation",
       detail_ja:
-        "筑波大学でGDG on Campusを立ち上げるための申請と準備を進めている。学生がGoogle技術を学び合い、実践できる場を作ることを目指している。",
+        "ハッカソンに参加し、短期間でアイデアを形にする開発プロセスを経験した。",
       detail_en:
-        "I am preparing to launch GDG on Campus at the University of Tsukuba, aiming to build a community where students can learn, share, and build with Google technologies.",
+        "I participated in a hackathon and experienced the process of rapidly turning ideas into working prototypes within a limited time.",
       records_ja: [
-        "申請準備を進行中",
-        "コミュニティの方向性やイベント案を整理中",
-        "学生向け技術コミュニティの立ち上げを企画"
+        "ハッカソンに参加",
+        "短期間での試作開発を経験",
+        "チームまたは実践的な開発環境で活動"
       ],
       records_en: [
-        "Preparing the application process",
-        "Organizing the vision and event ideas for the community",
-        "Planning a student-focused developer community"
+        "Participated in a hackathon",
+        "Experienced rapid prototyping in a short timeframe",
+        "Worked in a practical development environment"
       ],
       url: "",
-      coverImage: "/images/activities/gdg-on-campus-tsukuba/cover.png",
-      gallery: ["/images/activities/gdg-on-campus-tsukuba/gallery-1.png"]
+      coverImage: "/images/activities/hackathon-participation/cover.png",
+      gallery: ["/images/activities/hackathon-participation/gallery-1.png"]
     },
     {
-      slug: "humai-application-local-ai",
-      period: "2026",
-      status: "ongoing",
-      title_ja: "HUMAI応募準備 / AI×地方コミュニティ研究構想",
-      title_en: "HUMAI Application / AI × Local Community Research Direction",
+      slug: "australia-student-leader",
+      period: "2023.08 - 2023.11",
+      status: "completed",
+      title_ja: "オーストラリア交換留学・学生リーダー",
+      title_en: "Exchange Study in Australia / Student Leader",
       detail_ja:
-        "地方農業や地域コミュニティにおけるAIエージェント／自動化活用をテーマに、研究・実践構想を整理している。現地ヒアリング、試作、実証を見据えている。",
+        "オーストラリアへの交換留学中、学生リーダーとして活動した。異文化環境の中で人をまとめ、プロジェクトやイベントを進める経験を積んだ。",
       detail_en:
-        "I am developing a research direction around AI agents and automation for local agriculture and communities, with plans for field interviews, prototyping, and practical validation.",
+        "During my exchange study in Australia, I served as a student leader and gained experience in coordinating people and supporting activities in a multicultural environment.",
       records_ja: [
-        "応募テーマを策定中",
-        "農業・地方・AIを接続する研究構想を整理",
-        "現地ヒアリングと試作を見据えている"
+        "交換留学を実施",
+        "学生リーダーとして活動",
+        "多様な背景の人との協働を経験",
+        "日本文化発信やスピーチにも取り組んだ"
       ],
       records_en: [
-        "Preparing an application theme",
-        "Shaping a research idea connecting agriculture, rural communities, and AI",
-        "Planning field interviews and prototyping"
+        "Participated in an exchange study program",
+        "Served as a student leader",
+        "Collaborated with people from diverse backgrounds",
+        "Took part in cultural promotion and speaking activities"
       ],
-      url: "https://zen.ac.jp/humai",
-      coverImage: "/images/activities/humai-application-local-ai/cover.png",
-      gallery: ["/images/activities/humai-application-local-ai/gallery-1.png"]
+      url: "",
+      coverImage: "/images/activities/australia-student-leader/cover.png",
+      gallery: [
+        "/images/activities/australia-student-leader/gallery-1.png",
+        "/images/activities/australia-student-leader/gallery-2.png"
+      ]
     }
   ],
   i18n: {
@@ -673,9 +697,9 @@ window.PORTFOLIO_CONFIG = {
     }
   },
   links: {
-    github: "https://github.com/your-github-username",
-    x: "#",
-    linkedin: "#",
-    email: "mailto:your-email@example.com"
+    github: "https://github.com/Powmel",
+    x: "",
+    linkedin: "https://www.linkedin.com/in/taiki-msw",
+    email: "mailto:taiki.msw@gmail.com"
   }
 };
