@@ -22,8 +22,8 @@ Then access `http://localhost:8080`.
 - Main text sections are in `index.html`
 - Language-specific text (Japanese/English), section lists, and contact labels are in `site.config.js > i18n`
 - Focus areas, current work items, vision, and contact links are in `site.config.js`
-- Activities / Experience timeline is in `site.config.js > i18n > (ja|en) > selectedExperience`
-  - Recommended fields per item: `period`, `status`, `statusLabel`, `title`, `detail`, `coverImage`, `gallery`, `records`
+- Activities / Experience master data is in `site.config.js > activities`
+  - Recommended fields per item: `slug`, `period`, `status`, `title_ja`, `title_en`, `detail_ja`, `detail_en`, `records_ja`, `records_en`, `coverImage`, `gallery`, `url`
 - Profile photo path is `site.config.js > profileImage`
   - Current photo file: `images/profile-main.png`
 - Hero background photo stream paths are in `site.config.js > heroStreamImages`
@@ -49,6 +49,7 @@ images/
 
 - `cover.png` is used in the small thumbnail shown inside the activity card.
 - `gallery` image paths are shown in the activity detail modal after click.
+- `status` supports `ongoing` and `completed`.
 
 ## Update social/contact links
 

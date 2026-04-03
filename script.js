@@ -46,6 +46,9 @@
   const activityModalRecords = document.getElementById("activity-modal-records");
   const activityModalGalleryHeading = document.getElementById("activity-modal-gallery-heading");
   const activityModalGallery = document.getElementById("activity-modal-gallery");
+  const activityModalLinkSection = document.getElementById("activity-modal-link-section");
+  const activityModalLinkHeading = document.getElementById("activity-modal-link-heading");
+  const activityModalLink = document.getElementById("activity-modal-link");
   const year = document.getElementById("year");
   const updatedAt = document.getElementById("updated-at");
   let activeCopy = null;
@@ -121,11 +124,51 @@
     });
   }
 
+  function normalizeStatus(status) {
+    return status === "ongoing" ? "ongoing" : "completed";
+  }
+
+  function localizePeriod(period, lang) {
+    if (typeof period !== "string") return "YYYY.MM";
+    if (lang === "ja") {
+      return period.replace("Present", "現在");
+    }
+    return period.replace("現在", "Present");
+  }
+
+  function getLocalizedActivities(lang, copy) {
+    if (!Array.isArray(config.activities) || !config.activities.length) {
+      return copy.selectedExperience || [];
+    }
+
+    return config.activities.map((activity) => ({
+      id: activity.slug,
+      period: localizePeriod(activity.period || "YYYY.MM", lang),
+      status: normalizeStatus(activity.status),
+      statusLabel:
+        lang === "ja"
+          ? normalizeStatus(activity.status) === "ongoing"
+            ? "進行中"
+            : "完了"
+          : normalizeStatus(activity.status) === "ongoing"
+            ? "ONGOING"
+            : "COMPLETED",
+      title: lang === "ja" ? activity.title_ja : activity.title_en,
+      detail: lang === "ja" ? activity.detail_ja : activity.detail_en,
+      records: lang === "ja" ? activity.records_ja : activity.records_en,
+      coverImage: (activity.coverImage || "").replace(/^\//, ""),
+      gallery: Array.isArray(activity.gallery) ? activity.gallery.map((src) => src.replace(/^\//, "")) : [],
+      url: activity.url || ""
+    }));
+  }
+
   function openActivityModal(item) {
     if (!activityModal || !item) return;
     const modalLabels = (activeCopy && activeCopy.modal) || {};
     const recordsTitle = modalLabels.recordsTitle || "Records";
     const galleryTitle = modalLabels.galleryTitle || "Photos";
+    const linkTitle = modalLabels.linkTitle || "Related Link";
+    const visitLabel = modalLabels.visitLabel || "Open link";
 
     setText(activityModalPeriod, item.period || "YYYY.MM");
     setText(activityModalTitle, item.title || "");
@@ -153,6 +196,16 @@
         img.loading = "lazy";
         activityModalGallery.appendChild(img);
       });
+    }
+
+    if (activityModalLinkSection && activityModalLink && activityModalLinkHeading) {
+      const hasUrl = typeof item.url === "string" && item.url.trim() !== "";
+      activityModalLinkSection.hidden = !hasUrl;
+      if (hasUrl) {
+        activityModalLinkHeading.textContent = linkTitle;
+        activityModalLink.href = item.url;
+        activityModalLink.textContent = visitLabel;
+      }
     }
 
     activityModal.hidden = false;
@@ -192,8 +245,9 @@
       period.textContent = item.period || "YYYY.MM";
 
       const status = document.createElement("span");
-      status.className = `timeline-status ${item.status === "ongoing" ? "ongoing" : ""}`.trim();
-      status.textContent = item.statusLabel || (item.status === "ongoing" ? "ONGOING" : "COMPLETED");
+      const normalizedStatus = normalizeStatus(item.status);
+      status.className = `timeline-status ${normalizedStatus === "ongoing" ? "ongoing" : ""}`.trim();
+      status.textContent = item.statusLabel || (normalizedStatus === "ongoing" ? "ONGOING" : "COMPLETED");
 
       header.appendChild(period);
       header.appendChild(status);
@@ -279,7 +333,7 @@
     setText(experienceNote, copy.experienceNote || "");
 
     setList(focusList, copy.focusAreas || []);
-    renderExperienceList(copy.selectedExperience || []);
+    renderExperienceList(getLocalizedActivities(safeLang, copy));
     setList(nowList, copy.now || []);
     setText(visionText, copy.vision || "");
     renderContactLinks(copy);
