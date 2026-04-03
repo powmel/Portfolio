@@ -1,2 +1,93 @@
-# Portfolio
-This is only my portfolio site.
+# Taiki Misawa Portfolio
+
+One-page personal portfolio website for GitHub Pages.
+
+## Stack
+
+- Plain HTML/CSS/JavaScript (no build step)
+- Designed for GitHub Pages project sites
+
+## Local preview
+
+Open `index.html` directly, or run a simple static server:
+
+```bash
+python -m http.server 8080
+```
+
+Then access `http://localhost:8080`.
+
+## Edit points
+
+- Main text sections are in `index.html`
+- Language-specific text (Japanese/English), section lists, and contact labels are in `site.config.js > i18n`
+- Focus areas, current work items, vision, and contact links are in `site.config.js`
+- Activities / Experience timeline is in `site.config.js > i18n > (ja|en) > selectedExperience`
+  - Recommended fields per item: `period`, `status`, `statusLabel`, `title`, `detail`, `coverImage`, `gallery`, `records`
+- Profile photo path is `site.config.js > profileImage`
+  - Current photo file: `images/profile-main.png`
+- Hero background photo stream paths are in `site.config.js > heroStreamImages`
+  - Current files: `images/moment-1.png` ... `images/moment-6.png`
+
+## Activity image structure (admin-friendly)
+
+Each activity can keep its own images in a dedicated folder:
+
+```text
+images/
+  activities/
+    gdg-launch/
+      cover.png
+      gallery-1.png
+      gallery-2.png
+    ai-local-research/
+      cover.png
+      gallery-1.png
+      gallery-2.png
+    ... (one folder per activity)
+```
+
+- `cover.png` is used in the small thumbnail shown inside the activity card.
+- `gallery` image paths are shown in the activity detail modal after click.
+
+## Update social/contact links
+
+Edit these fields in `site.config.js`:
+
+- `links.github`
+- `links.x`
+- `links.linkedin`
+- `links.email`
+
+If a value is `"#"`, the UI shows it as a placeholder.
+
+## Language switching
+
+- Header includes a Japanese / English language switch.
+- Default language: `site.config.js > defaultLanguage`
+- The selected language is saved in browser local storage.
+
+## GitHub Pages notes
+
+- This repository now serves the site from the repository root (`/`).
+- In GitHub settings, set Pages source to:
+  - Branch: `main`
+  - Folder: `/ (root)`
+
+No Flutter build is required for deployment.
+
+## Git dubious ownership fix (Windows/shared drive)
+
+If `git add` fails with `detected dubious ownership`, run:
+
+```bash
+git config --global --add safe.directory S:/Cursor/Portfolio/Portfolio
+```
+
+Then run normal git commands again:
+
+```bash
+git add .
+git commit -m "Update portfolio content and activity media"
+git push origin main
+```
