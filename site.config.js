@@ -10,6 +10,305 @@ window.PORTFOLIO_CONFIG = {
   ],
   defaultLanguage: "ja",
   updatedAt: "April 2026",
+  lpCopy: {
+    ja: {
+      pageTitle: "Taiki Misawa | Portfolio",
+      metaDescription: "Taiki Misawaのポートフォリオ。AI・研究・開発・地域活動を日々つなげながら動いています。",
+      nav: {
+        timeline: "Timeline",
+        daily: "Daily Log",
+        projects: "Projects",
+        vision: "Vision",
+        about: "About"
+      },
+      menu: {
+        open: "メニューを開く",
+        close: "メニューを閉じる"
+      },
+      hero: {
+        affiliation: "筑波大学大学院",
+        identity: "研究・開発・地域をつなぐ、学生ビルダー／リサーチャー",
+        lead: "筑波大学大学院で、視覚情報・センサー・AIを活用し、人の判断や行動を支援するシステムを探究しています。",
+        timelineButton: "View Timeline",
+        dailyButton: "View Daily Log",
+        caption: "オーストラリアでの学生発表（2023）"
+      },
+      sections: {
+        aboutKicker: "About / Identity",
+        aboutTitle: "About / Identity",
+        aboutLead:
+          "情報科学を学びながら、AI・自動化・プロダクト開発・コミュニティ形成、そして技術と社会の関係に関心を持っています。研究だけでなく、技術を地域や日常の仕組みにどう実装できるかを重視しています。",
+        focusKicker: "Focus Areas",
+        focusTitle: "Focus Areas",
+        timelineKicker: "Timeline",
+        timelineTitle: "Timeline（主要な歩み）",
+        timelineLink: "Timelineをもっと見る →",
+        dailyKicker: "Latest Daily Log",
+        dailyTitle: "Latest Daily Log",
+        dailySubtext: "毎日更新される、生きているポートフォリオ",
+        dailyLink: "Daily Log 一覧へ →",
+        projectsKicker: "Projects / Activities",
+        projectsTitle: "Projects / Activities（最近の取り組み）",
+        projectsLink: "すべてのプロジェクトを見る →",
+        visionKicker: "Vision",
+        visionTitle: "Vision",
+        contactKicker: "Contact",
+        contactTitle: "Links / Contact",
+        contactIntro: "AIとコミュニティ実装、実用的な技術活用に関する対話・連携のご相談を歓迎します。"
+      },
+      modal: {
+        recordsTitle: "記録メモ",
+        galleryTitle: "関連写真",
+        linkTitle: "関連リンク",
+        visitLabel: "ページを開く"
+      },
+      contactLabels: {
+        github: "GitHub",
+        x: "X",
+        linkedin: "LinkedIn",
+        email: "Email"
+      },
+      contactFallbacks: {
+        github: "GitHub URLを設定してください",
+        x: "X URLを設定してください",
+        linkedin: "LinkedIn URLを設定してください",
+        email: "your-email@example.com"
+      },
+      footerUpdated: "Updated"
+    },
+    en: {
+      pageTitle: "Taiki Misawa | Portfolio",
+      metaDescription: "Taiki Misawa portfolio - research, development, AI, and regional activities in motion.",
+      nav: {
+        timeline: "Timeline",
+        daily: "Daily Log",
+        projects: "Projects",
+        vision: "Vision",
+        about: "About"
+      },
+      menu: {
+        open: "Open menu",
+        close: "Close menu"
+      },
+      hero: {
+        affiliation: "Graduate School, University of Tsukuba",
+        identity: "Student builder / researcher connecting research, development, and local communities",
+        lead: "At the University of Tsukuba, I explore systems that use visual information, sensors, and AI to support human judgment and action.",
+        timelineButton: "View Timeline",
+        dailyButton: "View Daily Log",
+        caption: "Student presentation in Australia (2023)"
+      },
+      sections: {
+        aboutKicker: "About / Identity",
+        aboutTitle: "About / Identity",
+        aboutLead:
+          "While studying information science, I am interested in AI, automation, product development, community building, and the relationship between technology and society. Beyond research, I care about how technology can be implemented in local communities and everyday systems.",
+        focusKicker: "Focus Areas",
+        focusTitle: "Focus Areas",
+        timelineKicker: "Timeline",
+        timelineTitle: "Timeline",
+        timelineLink: "See more timeline →",
+        dailyKicker: "Latest Daily Log",
+        dailyTitle: "Latest Daily Log",
+        dailySubtext: "A living portfolio updated through daily practice.",
+        dailyLink: "View Daily Log →",
+        projectsKicker: "Projects / Activities",
+        projectsTitle: "Projects / Activities",
+        projectsLink: "View all projects →",
+        visionKicker: "Vision",
+        visionTitle: "Vision",
+        contactKicker: "Contact",
+        contactTitle: "Links / Contact",
+        contactIntro: "I am always open to conversations about AI, community-oriented technology, and practical implementation."
+      },
+      modal: {
+        recordsTitle: "Records",
+        galleryTitle: "Photos",
+        linkTitle: "Related Link",
+        visitLabel: "Open page"
+      },
+      contactLabels: {
+        github: "GitHub",
+        x: "X",
+        linkedin: "LinkedIn",
+        email: "Email"
+      },
+      contactFallbacks: {
+        github: "Add your GitHub URL",
+        x: "Add your X URL",
+        linkedin: "Add your LinkedIn URL",
+        email: "your-email@example.com"
+      },
+      footerUpdated: "Updated"
+    }
+  },
+  identityCards: {
+    ja: [
+      {
+        title: "Builder",
+        text: "つくることで考え、プロダクトや仕組みを形にする。"
+      },
+      {
+        title: "Researcher",
+        text: "問いを立て、検証し、より良い課題とシステムを探究する。"
+      },
+      {
+        title: "Explorer",
+        text: "現場に入り、学び、必要とされる課題を見つけていく。"
+      },
+      {
+        title: "Connector",
+        text: "人やコミュニティをつなぎ、協働の場を生み出す。"
+      }
+    ],
+    en: [
+      {
+        title: "Builder",
+        text: "Thinking through making, shaping products and systems into something usable."
+      },
+      {
+        title: "Researcher",
+        text: "Framing questions, testing ideas, and exploring better problems and systems."
+      },
+      {
+        title: "Explorer",
+        text: "Entering real contexts, learning from the field, and finding needed problems."
+      },
+      {
+        title: "Connector",
+        text: "Connecting people and communities, and creating spaces for collaboration."
+      }
+    ]
+  },
+  focusAreas: [
+    "Computer Vision",
+    "AI Agents",
+    "Automation",
+    "Human-Centered AI",
+    "Regional Innovation",
+    "Agriculture × AI",
+    "Community Systems",
+    "Product Development"
+  ],
+  timeline: {
+    ja: [
+      {
+        year: "2023",
+        title: "Australia Exchange / Student Leader",
+        description: "オーストラリアでの学生交流・発表・リーダー経験。",
+        image: "images/activities/australia-student-leader/cover.png"
+      },
+      {
+        year: "2024",
+        title: "Hackathon / App Dev / Web Projects",
+        description: "ハッカソン、アプリ開発、Web制作への挑戦。",
+        image: "images/activities/hackathon-participation/cover.png"
+      },
+      {
+        year: "2025",
+        title: "GAN-based Game Level Generation",
+        description: "学部卒業研究として、GANを用いたゲームレベル生成に取り組む。",
+        image: "images/activities/graduation-research-gan/cover.png"
+      },
+      {
+        year: "2025",
+        title: "Regional Activities",
+        description: "南伊豆などでの地域活動・農業・フィールドワーク。",
+        image: "images/activities/rural-activities-minamiizu/cover.png"
+      },
+      {
+        year: "2026",
+        title: "Graduate School / University of Tsukuba",
+        description: "筑波大学大学院で、視覚情報・センサー・AIを用いた人間中心の支援システムを研究。",
+        image: "images/profile-main.png"
+      },
+      {
+        year: "2026",
+        title: "Daily AI-assisted Portfolio Log",
+        description: "AIと一緒に、日々の活動・研究・開発・思考を記録するポートフォリオ運用を開始。",
+        image: "images/moment-1.png"
+      }
+    ],
+    en: [
+      {
+        year: "2023",
+        title: "Australia Exchange / Student Leader",
+        description: "Student exchange, presentation, and leadership experience in Australia.",
+        image: "images/activities/australia-student-leader/cover.png"
+      },
+      {
+        year: "2024",
+        title: "Hackathon / App Dev / Web Projects",
+        description: "Took on hackathons, app development, and web projects.",
+        image: "images/activities/hackathon-participation/cover.png"
+      },
+      {
+        year: "2025",
+        title: "GAN-based Game Level Generation",
+        description: "Worked on GAN-based game level generation as undergraduate research.",
+        image: "images/activities/graduation-research-gan/cover.png"
+      },
+      {
+        year: "2025",
+        title: "Regional Activities",
+        description: "Joined regional activities, agriculture, and fieldwork around Minami-Izu.",
+        image: "images/activities/rural-activities-minamiizu/cover.png"
+      },
+      {
+        year: "2026",
+        title: "Graduate School / University of Tsukuba",
+        description: "Researching human-centered support systems using visual information, sensors, and AI.",
+        image: "images/profile-main.png"
+      },
+      {
+        year: "2026",
+        title: "Daily AI-assisted Portfolio Log",
+        description: "Started a portfolio operation that records daily activities, research, development, and thoughts with AI.",
+        image: "images/moment-1.png"
+      }
+    ]
+  },
+  projectHighlights: [
+    {
+      title: "GAN-based Game Level Generation",
+      slug: "graduation-research-gan",
+      tags: ["Research", "GAN", "Game AI"]
+    },
+    {
+      title: "Hackathon / App Development",
+      slug: "hackathon-participation",
+      tags: ["Hackathon", "Prototype", "App Dev"]
+    },
+    {
+      title: "Regional Activities",
+      slug: "rural-activities-minamiizu",
+      tags: ["Regional", "Agriculture", "Fieldwork"]
+    },
+    {
+      title: "Web Projects",
+      slug: "family-website-development",
+      tags: ["Web", "Product", "Frontend"]
+    },
+    {
+      title: "Agent Prototypes",
+      slug: "agent-matching-prototype",
+      tags: ["AI Agents", "Automation", "Prototype"]
+    },
+    {
+      title: "GDG on Campus",
+      slug: "gdg-on-campus-tsukuba",
+      tags: ["Community", "Google", "Campus"]
+    },
+    {
+      title: "HUMAI / AI × Local Community Research Direction",
+      slug: "humai-application-local-ai",
+      tags: ["Human-Centered AI", "Local Community", "Research"]
+    }
+  ],
+  vision: {
+    ja: "AIによって、人が本来向き合うべき活動に集中できる環境をつくる。自動化と知能化を通じて、情報の整理・判断・実行を支援し、一人ひとりが創造的で意味のある活動に時間を使える社会を目指します。",
+    en: "I want to create environments where people can focus on the work they should truly face. Through automation and intelligence, I aim to support organizing information, making decisions, and taking action so each person can spend more time on creative and meaningful activity."
+  },
   activities: [
     {
       slug: "humai-application-local-ai",

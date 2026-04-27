@@ -2,126 +2,39 @@
   "use strict";
 
   const config = window.PORTFOLIO_CONFIG || {};
-  const i18n = config.i18n || {};
-
-  const profileImage = document.getElementById("profile-image");
-  const metaDescription = document.getElementById("meta-description");
-  const navAbout = document.getElementById("nav-about");
-  const navFocus = document.getElementById("nav-focus");
-  const navExperience = document.getElementById("nav-experience");
-  const navNow = document.getElementById("nav-now");
-  const navVision = document.getElementById("nav-vision");
-  const navContact = document.getElementById("nav-contact");
-  const affiliation = document.getElementById("affiliation");
-  const identity = document.getElementById("identity");
-  const heroLead = document.getElementById("hero-lead");
-  const heroBtnContact = document.getElementById("hero-btn-contact");
-  const heroBtnExperience = document.getElementById("hero-btn-experience");
-  const headingAbout = document.getElementById("heading-about");
-  const headingFocus = document.getElementById("heading-focus");
-  const headingExperience = document.getElementById("heading-experience");
-  const experienceNote = document.getElementById("experience-note");
-  const headingNow = document.getElementById("heading-now");
-  const headingVision = document.getElementById("heading-vision");
-  const headingContact = document.getElementById("heading-contact");
-  const aboutP1 = document.getElementById("about-p1");
-  const aboutP2 = document.getElementById("about-p2");
-  const aboutP3 = document.getElementById("about-p3");
-  const contactIntro = document.getElementById("contact-intro");
-  const focusList = document.getElementById("focus-list");
-  const experienceList = document.getElementById("experience-list");
-  const nowList = document.getElementById("now-list");
-  const visionText = document.getElementById("vision-text");
-  const contactLinks = document.getElementById("contact-links");
-  const streamTrackA = document.getElementById("hero-stream-track-a");
-  const streamTrackB = document.getElementById("hero-stream-track-b");
+  const posts = Array.isArray(window.DAILY_POSTS) ? window.DAILY_POSTS : [];
+  const page = document.body ? document.body.dataset.page : "home";
+  const copySet = config.lpCopy || {};
   const langButtons = document.querySelectorAll(".lang-btn");
+  const menuToggle = document.getElementById("menu-toggle");
+  const headerPanel = document.getElementById("primary-nav");
+  const year = document.getElementById("year");
+  const updatedAt = document.getElementById("updated-at");
   const activityModal = document.getElementById("activity-modal");
   const activityModalBackdrop = document.getElementById("activity-modal-backdrop");
   const activityModalClose = document.getElementById("activity-modal-close");
-  const activityModalPeriod = document.getElementById("activity-modal-period");
-  const activityModalTitle = document.getElementById("activity-modal-title");
-  const activityModalDetail = document.getElementById("activity-modal-detail");
-  const activityModalRecordsHeading = document.getElementById("activity-modal-records-heading");
-  const activityModalRecords = document.getElementById("activity-modal-records");
-  const activityModalGalleryHeading = document.getElementById("activity-modal-gallery-heading");
-  const activityModalGallery = document.getElementById("activity-modal-gallery");
-  const activityModalLinkSection = document.getElementById("activity-modal-link-section");
-  const activityModalLinkHeading = document.getElementById("activity-modal-link-heading");
-  const activityModalLink = document.getElementById("activity-modal-link");
-  const year = document.getElementById("year");
-  const updatedAt = document.getElementById("updated-at");
-  let activeCopy = null;
+  let activeLang = config.defaultLanguage || "ja";
+  let activeCopy = copySet[activeLang] || copySet.ja || {};
 
-  if (profileImage) {
-    profileImage.src = config.profileImage || "images/profile-main.png";
+  function $(id) {
+    return document.getElementById(id);
   }
 
-  function setList(target, items) {
-    if (!target || !Array.isArray(items)) return;
-    target.innerHTML = "";
-    items.forEach((item) => {
-      const li = document.createElement("li");
-      li.textContent = item;
-      target.appendChild(li);
-    });
+  function setText(node, text) {
+    if (node && typeof text === "string") node.textContent = text;
   }
 
-  function buildHeroStream() {
-    const images = Array.isArray(config.heroStreamImages) ? config.heroStreamImages : [];
-    if (!images.length || !streamTrackA || !streamTrackB) return;
-    const extended = images.concat(images);
-    [streamTrackA, streamTrackB].forEach((track) => {
-      track.innerHTML = "";
-      extended.forEach((src) => {
-        const img = document.createElement("img");
-        img.src = src;
-        img.alt = "";
-        img.loading = "lazy";
-        track.appendChild(img);
-      });
-    });
+  function safePath(path) {
+    return typeof path === "string" ? path.replace(/^\//, "") : "";
   }
 
-  function renderContactLinks(copy) {
-    const links = config.links || {};
-    const labels = copy.contactLabels || {};
-    const fallbacks = copy.contactFallbacks || {};
-    const linkItems = [
-      { label: labels.github || "GitHub", key: "github", fallback: fallbacks.github || "Add your GitHub URL" },
-      { label: labels.x || "X", key: "x", fallback: fallbacks.x || "Add your X URL" },
-      { label: labels.linkedin || "LinkedIn", key: "linkedin", fallback: fallbacks.linkedin || "Add your LinkedIn URL" },
-      { label: labels.email || "Email", key: "email", fallback: fallbacks.email || "your-email@example.com" }
-    ];
-
-    if (!contactLinks) return;
-    contactLinks.innerHTML = "";
-    linkItems.forEach((item) => {
-      const value = links[item.key] || "#";
-      const a = document.createElement("a");
-      a.className = "contact-link";
-      a.href = value;
-      a.target = value.startsWith("mailto:") || value === "#" ? "_self" : "_blank";
-      a.rel = "noreferrer";
-
-      const isDisabled = value === "#";
-      if (isDisabled) {
-        a.dataset.disabled = "true";
-        a.addEventListener("click", (event) => event.preventDefault());
-      }
-
-      const label = document.createElement("span");
-      label.className = "label";
-      label.textContent = item.label;
-
-      const linkValue = document.createElement("span");
-      linkValue.className = "value";
-      linkValue.textContent = isDisabled ? item.fallback : value.replace("mailto:", "");
-
-      a.appendChild(label);
-      a.appendChild(linkValue);
-      contactLinks.appendChild(a);
-    });
+  function setMenu(open) {
+    if (!menuToggle || !headerPanel) return;
+    headerPanel.classList.toggle("is-open", open);
+    menuToggle.classList.toggle("is-open", open);
+    menuToggle.setAttribute("aria-expanded", String(open));
+    const label = activeCopy.menu || {};
+    menuToggle.setAttribute("aria-label", open ? label.close || "Close menu" : label.open || "Open menu");
   }
 
   function normalizeStatus(status) {
@@ -129,82 +42,208 @@
   }
 
   function localizePeriod(period, lang) {
-    if (typeof period !== "string") return "YYYY.MM";
-    if (lang === "ja") {
-      return period.replace("Present", "現在");
-    }
-    return period.replace("現在", "Present");
+    if (typeof period !== "string") return "";
+    return lang === "ja" ? period.replace("Present", "現在") : period.replace("現在", "Present");
   }
 
-  function getLocalizedActivities(lang, copy) {
-    if (!Array.isArray(config.activities) || !config.activities.length) {
-      return copy.selectedExperience || [];
-    }
+  function getActivityBySlug(slug) {
+    return (config.activities || []).find((activity) => activity.slug === slug) || null;
+  }
 
-    return config.activities.map((activity) => ({
+  function localizeActivity(activity) {
+    if (!activity) return null;
+    const status = normalizeStatus(activity.status);
+    return {
       id: activity.slug,
-      period: localizePeriod(activity.period || "YYYY.MM", lang),
-      status: normalizeStatus(activity.status),
+      period: localizePeriod(activity.period, activeLang),
+      status,
       statusLabel:
-        lang === "ja"
-          ? normalizeStatus(activity.status) === "ongoing"
+        activeLang === "ja"
+          ? status === "ongoing"
             ? "進行中"
             : "完了"
-          : normalizeStatus(activity.status) === "ongoing"
+          : status === "ongoing"
             ? "ONGOING"
             : "COMPLETED",
-      title: lang === "ja" ? activity.title_ja : activity.title_en,
-      detail: lang === "ja" ? activity.detail_ja : activity.detail_en,
-      records: lang === "ja" ? activity.records_ja : activity.records_en,
-      coverImage: (activity.coverImage || "").replace(/^\//, ""),
-      gallery: Array.isArray(activity.gallery) ? activity.gallery.map((src) => src.replace(/^\//, "")) : [],
+      title: activeLang === "ja" ? activity.title_ja : activity.title_en,
+      detail: activeLang === "ja" ? activity.detail_ja : activity.detail_en,
+      records: activeLang === "ja" ? activity.records_ja : activity.records_en,
+      coverImage: safePath(activity.coverImage),
+      gallery: Array.isArray(activity.gallery) ? activity.gallery.map(safePath) : [],
       url: activity.url || ""
-    }));
+    };
+  }
+
+  function buildHeroStream() {
+    const images = Array.isArray(config.heroStreamImages) ? config.heroStreamImages : [];
+    const tracks = [$("hero-stream-track-a"), $("hero-stream-track-b")].filter(Boolean);
+    if (!images.length || !tracks.length) return;
+    tracks.forEach((track) => {
+      track.innerHTML = "";
+      images.concat(images).forEach((src) => {
+        const img = document.createElement("img");
+        img.src = safePath(src);
+        img.alt = "";
+        img.loading = "lazy";
+        track.appendChild(img);
+      });
+    });
+  }
+
+  function renderIdentityCards() {
+    const grid = $("identity-grid");
+    const items = (config.identityCards && (config.identityCards[activeLang] || config.identityCards.ja)) || [];
+    if (!grid) return;
+    grid.innerHTML = "";
+    items.forEach((item) => {
+      const card = document.createElement("article");
+      card.className = "identity-card";
+      const icon = document.createElement("span");
+      icon.className = "identity-icon";
+      icon.textContent = item.title ? item.title.charAt(0) : "";
+      const title = document.createElement("h3");
+      title.textContent = item.title || "";
+      const text = document.createElement("p");
+      text.textContent = item.text || "";
+      card.append(icon, title, text);
+      grid.appendChild(card);
+    });
+  }
+
+  function renderFocusAreas() {
+    const list = $("focus-list");
+    if (!list) return;
+    list.innerHTML = "";
+    (config.focusAreas || []).forEach((item) => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      list.appendChild(li);
+    });
+  }
+
+  function renderTimeline() {
+    const list = $("timeline-list");
+    const items = (config.timeline && (config.timeline[activeLang] || config.timeline.ja)) || [];
+    if (!list) return;
+    list.innerHTML = "";
+    items.forEach((item) => {
+      const article = document.createElement("article");
+      article.className = "timeline-item";
+
+      const year = document.createElement("div");
+      year.className = "timeline-year";
+      year.textContent = item.year || "";
+
+      const body = document.createElement("div");
+      body.className = "timeline-body";
+      const title = document.createElement("h3");
+      title.textContent = item.title || "";
+      const description = document.createElement("p");
+      description.textContent = item.description || "";
+      body.append(title, description);
+
+      if (item.image) {
+        const img = document.createElement("img");
+        img.className = "timeline-thumb";
+        img.src = safePath(item.image);
+        img.alt = item.title || "Timeline photo";
+        img.loading = "lazy";
+        article.append(year, body, img);
+      } else {
+        article.append(year, body);
+      }
+
+      list.appendChild(article);
+    });
+  }
+
+  function sortedDailyPosts() {
+    return posts.slice().sort((a, b) => String(b.date).localeCompare(String(a.date)));
+  }
+
+  function createTag(text) {
+    const span = document.createElement("span");
+    span.className = "tag";
+    span.textContent = text;
+    return span;
+  }
+
+  function createDailyCard(post, compact) {
+    const article = document.createElement("article");
+    article.className = compact ? "daily-card compact-card" : "daily-card";
+    const date = document.createElement("p");
+    date.className = "daily-date";
+    date.textContent = post.date || "";
+    const title = document.createElement("h3");
+    const link = document.createElement("a");
+    link.href = post.url || "#";
+    link.textContent = post.title || "";
+    title.appendChild(link);
+    const summary = document.createElement("p");
+    summary.className = "daily-summary";
+    summary.textContent = post.summary || "";
+    const tags = document.createElement("div");
+    tags.className = "tag-list";
+    (post.tags || []).forEach((tag) => tags.appendChild(createTag(tag)));
+    article.append(date, title, summary, tags);
+    return article;
+  }
+
+  function renderLatestDaily() {
+    const list = $("latest-daily-list");
+    if (!list) return;
+    list.innerHTML = "";
+    sortedDailyPosts().slice(0, 3).forEach((post) => list.appendChild(createDailyCard(post, true)));
+  }
+
+  function renderDailyArchive() {
+    const list = $("daily-archive-list");
+    if (!list) return;
+    list.innerHTML = "";
+    sortedDailyPosts().forEach((post) => list.appendChild(createDailyCard(post, false)));
   }
 
   function openActivityModal(item) {
     if (!activityModal || !item) return;
-    const modalLabels = (activeCopy && activeCopy.modal) || {};
-    const recordsTitle = modalLabels.recordsTitle || "Records";
-    const galleryTitle = modalLabels.galleryTitle || "Photos";
-    const linkTitle = modalLabels.linkTitle || "Related Link";
-    const visitLabel = modalLabels.visitLabel || "Open link";
+    const labels = activeCopy.modal || {};
+    setText($("activity-modal-period"), item.period || "");
+    setText($("activity-modal-title"), item.title || "");
+    setText($("activity-modal-detail"), item.detail || "");
+    setText($("activity-modal-records-heading"), labels.recordsTitle || "Records");
+    setText($("activity-modal-gallery-heading"), labels.galleryTitle || "Photos");
 
-    setText(activityModalPeriod, item.period || "YYYY.MM");
-    setText(activityModalTitle, item.title || "");
-    setText(activityModalDetail, item.detail || "");
-    setText(activityModalRecordsHeading, recordsTitle);
-    setText(activityModalGalleryHeading, galleryTitle);
-
-    if (activityModalRecords) {
-      activityModalRecords.innerHTML = "";
-      const records = Array.isArray(item.records) ? item.records : [];
-      records.forEach((text) => {
+    const records = $("activity-modal-records");
+    if (records) {
+      records.innerHTML = "";
+      (item.records || []).forEach((text) => {
         const li = document.createElement("li");
         li.textContent = text;
-        activityModalRecords.appendChild(li);
+        records.appendChild(li);
       });
     }
 
-    if (activityModalGallery) {
-      activityModalGallery.innerHTML = "";
-      const gallery = Array.isArray(item.gallery) ? item.gallery : [];
-      gallery.forEach((src) => {
+    const gallery = $("activity-modal-gallery");
+    if (gallery) {
+      gallery.innerHTML = "";
+      (item.gallery || []).forEach((src) => {
         const img = document.createElement("img");
         img.src = src;
         img.alt = item.title || "Activity photo";
         img.loading = "lazy";
-        activityModalGallery.appendChild(img);
+        gallery.appendChild(img);
       });
     }
 
-    if (activityModalLinkSection && activityModalLink && activityModalLinkHeading) {
-      const hasUrl = typeof item.url === "string" && item.url.trim() !== "";
-      activityModalLinkSection.hidden = !hasUrl;
+    const linkSection = $("activity-modal-link-section");
+    const modalLink = $("activity-modal-link");
+    const linkHeading = $("activity-modal-link-heading");
+    const hasUrl = typeof item.url === "string" && item.url.trim() !== "";
+    if (linkSection && modalLink && linkHeading) {
+      linkSection.hidden = !hasUrl;
       if (hasUrl) {
-        activityModalLinkHeading.textContent = linkTitle;
-        activityModalLink.href = item.url;
-        activityModalLink.textContent = visitLabel;
+        linkHeading.textContent = labels.linkTitle || "Related Link";
+        modalLink.href = item.url;
+        modalLink.textContent = labels.visitLabel || "Open page";
       }
     }
 
@@ -218,191 +257,208 @@
     document.body.classList.remove("modal-open");
   }
 
-  function renderExperienceList(items) {
-    if (!experienceList || !Array.isArray(items)) return;
-    experienceList.innerHTML = "";
-    const cardLabels = (activeCopy && activeCopy.experienceCard) || {};
+  function renderProjects() {
+    const grid = $("project-grid");
+    if (!grid) return;
+    grid.innerHTML = "";
+    (config.projectHighlights || []).forEach((highlight) => {
+      const activity = localizeActivity(getActivityBySlug(highlight.slug));
+      const card = document.createElement("article");
+      card.className = "project-card";
 
-    items.forEach((item) => {
-      const li = document.createElement("li");
+      const img = document.createElement("img");
+      img.src = activity && activity.coverImage ? activity.coverImage : "images/profile-main.png";
+      img.alt = highlight.title || (activity && activity.title) || "Project image";
+      img.loading = "lazy";
 
-      if (typeof item === "string") {
-        li.textContent = item;
-        experienceList.appendChild(li);
-        return;
-      }
-
-      li.className = "activity-card";
-
-      const main = document.createElement("div");
-      main.className = "activity-main";
-
-      const header = document.createElement("div");
-      header.className = "timeline-header";
-
-      const period = document.createElement("span");
-      period.className = "timeline-period";
-      period.textContent = item.period || "YYYY.MM";
-
-      const status = document.createElement("span");
-      const normalizedStatus = normalizeStatus(item.status);
-      status.className = `timeline-status ${normalizedStatus === "ongoing" ? "ongoing" : ""}`.trim();
-      status.textContent = item.statusLabel || (normalizedStatus === "ongoing" ? "ONGOING" : "COMPLETED");
-
-      header.appendChild(period);
-      header.appendChild(status);
-
+      const body = document.createElement("div");
+      body.className = "project-card-body";
       const title = document.createElement("h3");
-      title.className = "timeline-title";
-      title.textContent = item.title || "";
+      title.textContent = highlight.title || (activity && activity.title) || "";
+      const detail = document.createElement("p");
+      detail.textContent = activity ? activity.detail : "";
+      const tags = document.createElement("div");
+      tags.className = "tag-list";
+      (highlight.tags || []).forEach((tag) => tags.appendChild(createTag(tag)));
+      body.append(title, detail, tags);
 
-      main.appendChild(header);
-      main.appendChild(title);
-
-      if (item.detail) {
-        const detail = document.createElement("p");
-        detail.className = "timeline-detail";
-        detail.textContent = item.detail;
-        main.appendChild(detail);
+      if (activity) {
+        const button = document.createElement("button");
+        button.className = "project-open";
+        button.type = "button";
+        button.textContent = activeLang === "ja" ? "記録を見る" : "View details";
+        button.addEventListener("click", () => openActivityModal(activity));
+        body.appendChild(button);
       }
 
-      const openButton = document.createElement("button");
-      openButton.type = "button";
-      openButton.className = "activity-open";
-      openButton.textContent = cardLabels.open || "View details";
-      openButton.addEventListener("click", () => openActivityModal(item));
-      main.appendChild(openButton);
-
-      li.appendChild(main);
-
-      const thumb = document.createElement("img");
-      thumb.className = "activity-thumb";
-      thumb.src = item.coverImage || "images/profile-main.png";
-      thumb.alt = item.title || "Activity";
-      thumb.loading = "lazy";
-      li.appendChild(thumb);
-
-      experienceList.appendChild(li);
+      card.append(img, body);
+      grid.appendChild(card);
     });
   }
 
-  function setText(node, text) {
-    if (node && typeof text === "string") {
-      node.textContent = text;
-    }
+  function renderContactLinks() {
+    const links = config.links || {};
+    const labels = activeCopy.contactLabels || {};
+    const fallbacks = activeCopy.contactFallbacks || {};
+    const target = $("contact-links");
+    const items = [
+      { label: labels.github || "GitHub", key: "github", fallback: fallbacks.github || "GitHub URL" },
+      { label: labels.x || "X", key: "x", fallback: fallbacks.x || "X URL" },
+      { label: labels.linkedin || "LinkedIn", key: "linkedin", fallback: fallbacks.linkedin || "LinkedIn URL" },
+      { label: labels.email || "Email", key: "email", fallback: fallbacks.email || "your-email@example.com" }
+    ];
+    if (!target) return;
+    target.innerHTML = "";
+    items.forEach((item) => {
+      const value = links[item.key] || "#";
+      const link = document.createElement("a");
+      link.className = "contact-link";
+      link.href = value || "#";
+      link.target = value && !value.startsWith("mailto:") && value !== "#" ? "_blank" : "_self";
+      link.rel = "noreferrer";
+      if (!value || value === "#") {
+        link.dataset.disabled = "true";
+        link.addEventListener("click", (event) => event.preventDefault());
+      }
+      const label = document.createElement("span");
+      label.className = "label";
+      label.textContent = item.label;
+      const visibleValue = document.createElement("span");
+      visibleValue.className = "value";
+      visibleValue.textContent = !value || value === "#" ? item.fallback : value.replace("mailto:", "");
+      link.append(label, visibleValue);
+      target.appendChild(link);
+    });
   }
 
-  function setLanguage(lang) {
-    const safeLang = i18n[lang] ? lang : "en";
-    const copy = i18n[safeLang] || {};
-    activeCopy = copy;
-    document.documentElement.lang = safeLang;
-    document.title = copy.pageTitle || "Taiki Misawa | Portfolio";
-    if (metaDescription && copy.metaDescription) {
-      metaDescription.setAttribute("content", copy.metaDescription);
-    }
+  function applyCopy(lang) {
+    activeLang = copySet[lang] ? lang : "ja";
+    activeCopy = copySet[activeLang] || copySet.ja || {};
+    const sections = activeCopy.sections || {};
+    const hero = activeCopy.hero || {};
+    const nav = activeCopy.nav || {};
 
-    const nav = copy.nav || {};
-    setText(navAbout, nav.about);
-    setText(navFocus, nav.focus);
-    setText(navExperience, nav.experience);
-    setText(navNow, nav.now);
-    setText(navVision, nav.vision);
-    setText(navContact, nav.contact);
-    setText(affiliation, copy.affiliation);
-    setText(identity, copy.identity);
-    setText(heroLead, copy.heroLead);
+    document.documentElement.lang = activeLang;
+    document.title = activeCopy.pageTitle || "Taiki Misawa | Portfolio";
+    const meta = $("meta-description");
+    if (meta && activeCopy.metaDescription) meta.setAttribute("content", activeCopy.metaDescription);
 
-    const heroButtons = copy.heroButtons || {};
-    setText(heroBtnContact, heroButtons.contact);
-    setText(heroBtnExperience, heroButtons.experience);
+    setText($("nav-timeline"), nav.timeline);
+    setText($("nav-daily"), nav.daily);
+    setText($("nav-projects"), nav.projects);
+    setText($("nav-vision"), nav.vision);
+    setText($("nav-about"), nav.about);
+    setText($("hero-affiliation"), hero.affiliation);
+    setText($("hero-identity"), hero.identity);
+    setText($("hero-lead"), hero.lead);
+    setText($("hero-btn-timeline"), hero.timelineButton);
+    setText($("hero-btn-daily"), hero.dailyButton);
+    setText($("hero-caption"), hero.caption);
 
-    const headings = copy.headings || {};
-    setText(headingAbout, headings.about);
-    setText(headingFocus, headings.focus);
-    setText(headingExperience, headings.experience);
-    setText(headingNow, headings.now);
-    setText(headingVision, headings.vision);
-    setText(headingContact, headings.contact);
-
-    const about = copy.about || [];
-    setText(aboutP1, about[0] || "");
-    setText(aboutP2, about[1] || "");
-    setText(aboutP3, about[2] || "");
-    setText(contactIntro, copy.contactIntro || "");
-    setText(experienceNote, copy.experienceNote || "");
-
-    setList(focusList, copy.focusAreas || []);
-    renderExperienceList(getLocalizedActivities(safeLang, copy));
-    setList(nowList, copy.now || []);
-    setText(visionText, copy.vision || "");
-    renderContactLinks(copy);
+    setText($("about-kicker"), sections.aboutKicker);
+    setText($("heading-about"), sections.aboutTitle);
+    setText($("about-lead"), sections.aboutLead);
+    setText($("focus-kicker"), sections.focusKicker);
+    setText($("heading-focus"), sections.focusTitle);
+    setText($("timeline-kicker"), sections.timelineKicker);
+    setText($("heading-timeline"), sections.timelineTitle);
+    setText($("timeline-link"), sections.timelineLink);
+    setText($("daily-kicker"), sections.dailyKicker);
+    setText($("heading-daily"), sections.dailyTitle);
+    setText($("daily-subtext"), sections.dailySubtext);
+    setText($("daily-link"), sections.dailyLink);
+    setText($("projects-kicker"), sections.projectsKicker);
+    setText($("heading-projects"), sections.projectsTitle);
+    setText($("projects-link"), sections.projectsLink);
+    setText($("vision-kicker"), sections.visionKicker);
+    setText($("heading-vision"), sections.visionTitle);
+    setText($("vision-text"), (config.vision && (config.vision[activeLang] || config.vision.ja)) || "");
+    setText($("contact-kicker"), sections.contactKicker);
+    setText($("heading-contact"), sections.contactTitle);
+    setText($("contact-intro"), sections.contactIntro);
+    setText($("daily-page-title"), activeLang === "ja" ? "Daily Log" : "Daily Log");
+    setText($("daily-page-lead"), activeLang === "ja" ? "日々の活動・研究・開発・思考を、AIと一緒に整理して残していくログです。" : "A log for organizing daily activities, research, development, and thoughts together with AI.");
 
     if (updatedAt) {
-      const updatedLabel = copy.footerUpdated || "Updated";
-      updatedAt.textContent = `${updatedLabel}: ${config.updatedAt || "April 2026"}`;
+      updatedAt.textContent = `${activeCopy.footerUpdated || "Updated"}: ${config.updatedAt || "April 2026"}`;
     }
+    langButtons.forEach((button) => button.classList.toggle("is-active", button.dataset.lang === activeLang));
+    setMenu(false);
 
-    langButtons.forEach((button) => {
-      button.classList.toggle("is-active", button.dataset.lang === safeLang);
-    });
+    renderIdentityCards();
+    renderFocusAreas();
+    renderTimeline();
+    renderLatestDaily();
+    renderDailyArchive();
+    renderProjects();
+    renderContactLinks();
 
     try {
-      localStorage.setItem("portfolio-lang", safeLang);
+      localStorage.setItem("portfolio-lang", activeLang);
     } catch (_e) {
-      // Ignore storage restriction.
+      // Ignore storage restrictions.
     }
   }
+
+  function initReveal() {
+    const revealElements = document.querySelectorAll(".reveal");
+    if (!("IntersectionObserver" in window)) {
+      revealElements.forEach((el) => el.classList.add("is-visible"));
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+    revealElements.forEach((el) => observer.observe(el));
+  }
+
+  if ($("profile-image")) $("profile-image").src = safePath(config.profileImage || "images/profile-main.png");
+  if (year) year.textContent = String(new Date().getFullYear());
 
   buildHeroStream();
 
-  langButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const nextLang = button.dataset.lang || "en";
-      setLanguage(nextLang);
+  if (menuToggle) {
+    menuToggle.addEventListener("click", () => {
+      const nextOpen = menuToggle.getAttribute("aria-expanded") !== "true";
+      setMenu(nextOpen);
     });
+  }
+
+  document.querySelectorAll(".main-nav a").forEach((link) => {
+    link.addEventListener("click", () => setMenu(false));
   });
 
-  if (activityModalBackdrop) {
-    activityModalBackdrop.addEventListener("click", closeActivityModal);
-  }
+  langButtons.forEach((button) => {
+    button.addEventListener("click", () => applyCopy(button.dataset.lang || "ja"));
+  });
 
-  if (activityModalClose) {
-    activityModalClose.addEventListener("click", closeActivityModal);
-  }
-
+  if (activityModalBackdrop) activityModalBackdrop.addEventListener("click", closeActivityModal);
+  if (activityModalClose) activityModalClose.addEventListener("click", closeActivityModal);
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       closeActivityModal();
+      setMenu(false);
     }
   });
 
-  if (year) {
-    year.textContent = String(new Date().getFullYear());
-  }
-
-  let initialLang = config.defaultLanguage || "ja";
   try {
-    initialLang = localStorage.getItem("portfolio-lang") || initialLang;
+    activeLang = localStorage.getItem("portfolio-lang") || activeLang;
   } catch (_e) {
-    // Ignore storage restriction.
+    // Ignore storage restrictions.
   }
-  setLanguage(initialLang);
 
-  const revealElements = document.querySelectorAll(".reveal");
-  const observer = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          obs.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.12
-    }
-  );
+  applyCopy(activeLang);
+  initReveal();
 
-  revealElements.forEach((el) => observer.observe(el));
+  if (page === "daily-post") {
+    renderContactLinks();
+  }
 })();

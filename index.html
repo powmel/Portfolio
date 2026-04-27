@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta id="meta-description" name="description" content="Taiki Misawa portfolio - AI, Automation, Community, and Regional Innovation.">
+  <meta id="meta-description" name="description" content="Taiki Misawaのポートフォリオ。AI・研究・開発・地域活動を日々つなげながら動いています。">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Taiki Misawa | Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,107 +10,140 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-page="home">
   <header class="site-header">
     <div class="container header-inner">
       <a href="#top" class="brand">Taiki Misawa</a>
-      <nav class="main-nav" aria-label="Primary">
-        <a id="nav-about" href="#about">About</a>
-        <a id="nav-focus" href="#focus">Focus</a>
-        <a id="nav-experience" href="#experience">Experience</a>
-        <a id="nav-now" href="#now">Now</a>
-        <a id="nav-vision" href="#vision">Vision</a>
-        <a id="nav-contact" href="#contact">Contact</a>
-      </nav>
-      <nav class="lang-switch" aria-label="Language switch">
-        <button type="button" class="lang-btn is-active" data-lang="ja">日本語</button>
-        <button type="button" class="lang-btn" data-lang="en">EN</button>
-      </nav>
+      <button id="menu-toggle" class="menu-toggle" type="button" aria-label="メニューを開く" aria-controls="primary-nav" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div id="primary-nav" class="header-panel">
+        <nav class="main-nav" aria-label="Primary">
+          <a id="nav-timeline" href="#timeline-log">Timeline</a>
+          <a id="nav-daily" href="daily.html">Daily Log</a>
+          <a id="nav-projects" href="#projects">Projects</a>
+          <a id="nav-vision" href="#vision">Vision</a>
+          <a id="nav-about" href="#about">About</a>
+        </nav>
+        <nav class="lang-switch" aria-label="Language switch">
+          <button type="button" class="lang-btn is-active" data-lang="ja">JP</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </nav>
       </div>
+    </div>
   </header>
 
   <main id="top">
     <section class="hero section">
-      <div class="hero-stream" aria-hidden="true">
-        <div id="hero-stream-track-a" class="hero-stream-track"></div>
-        <div id="hero-stream-track-b" class="hero-stream-track hero-stream-track-reverse"></div>
-      </div>
-      <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <p id="affiliation" class="eyebrow">Graduate School, University of Tsukuba</p>
-          <h1>Taiki Misawa</h1>
-          <p id="identity" class="identity">AI, Automation, Community, and Regional Innovation</p>
-          <p id="hero-lead" class="lead">
-            I am a student builder-researcher exploring how practical AI systems can support real communities,
-            local regions, and everyday life.
-          </p>
-          <div class="hero-actions">
-            <a id="hero-btn-contact" class="button" href="#contact">Get in touch</a>
-            <a id="hero-btn-experience" class="button button-secondary" href="#experience">See activities</a>
+      <div class="container">
+        <div class="hero-card reveal">
+          <div class="hero-copy">
+            <p id="hero-affiliation" class="eyebrow">筑波大学大学院</p>
+            <h1>Taiki Misawa</h1>
+            <p id="hero-identity" class="identity">研究・開発・地域をつなぐ、学生ビルダー／リサーチャー</p>
+            <p id="hero-lead" class="lead">
+              筑波大学大学院で、視覚情報・センサー・AIを活用し、人の判断や行動を支援するシステムを探究しています。
+            </p>
+            <div class="hero-actions">
+              <a id="hero-btn-timeline" class="button" href="#timeline-log">View Timeline</a>
+              <a id="hero-btn-daily" class="button button-secondary" href="daily.html">View Daily Log</a>
+            </div>
           </div>
-        </div>
-        <div class="hero-photo-wrap reveal">
-          <img id="profile-image" class="hero-photo" src="" alt="Portrait of Taiki Misawa">
+          <figure class="hero-photo-wrap">
+            <div class="hero-stream" aria-hidden="true">
+              <div id="hero-stream-track-a" class="hero-stream-track"></div>
+              <div id="hero-stream-track-b" class="hero-stream-track hero-stream-track-reverse"></div>
+            </div>
+            <img id="profile-image" class="hero-photo" src="images/profile-main.png" alt="オーストラリアで芝生に座るTaiki Misawa">
+            <figcaption id="hero-caption">オーストラリアでの学生発表（2023）</figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
     <section id="about" class="section">
-      <div class="container narrow reveal">
-        <h2 id="heading-about">About</h2>
-        <p id="about-p1">
-          I study information science and am interested in AI, automation, product development,
-          community building, and the relationship between technology and society.
-        </p>
-        <p id="about-p2">
-          In my undergraduate research, I worked on GAN-based game level generation.
-          Beyond research, I care about how AI and automation can be applied to real communities,
-          local regions, and everyday systems.
-        </p>
-        <p id="about-p3">
-          I am interested not only in technology itself, but in how it can change people's lives,
-          communities, and the time humans can spend on meaningful things.
-        </p>
+      <div class="container reveal">
+        <div class="section-heading">
+          <p id="about-kicker" class="section-kicker">About / Identity</p>
+          <h2 id="heading-about">About / Identity</h2>
+          <p id="about-lead" class="section-lead">
+            情報科学を学びながら、AI・自動化・プロダクト開発・コミュニティ形成、そして技術と社会の関係に関心を持っています。
+          </p>
+        </div>
+        <div id="identity-grid" class="identity-grid"></div>
       </div>
     </section>
 
     <section id="focus" class="section section-soft">
       <div class="container reveal">
-        <h2 id="heading-focus">Interests / Focus Areas</h2>
-        <ul class="chip-list" id="focus-list"></ul>
+        <div class="section-heading compact">
+          <p id="focus-kicker" class="section-kicker">Focus Areas</p>
+          <h2 id="heading-focus">Focus Areas</h2>
+        </div>
+        <ul id="focus-list" class="chip-list"></ul>
       </div>
     </section>
 
-    <section id="experience" class="section">
+    <section id="timeline-log" class="section">
       <div class="container reveal">
-        <h2 id="heading-experience">Selected Activities / Experience</h2>
-        <p id="experience-note" class="section-note">
-          Ordered from most recent. Month/year details can be updated later.
-        </p>
-        <ul class="card-list" id="experience-list"></ul>
+        <div class="timeline-log-grid">
+          <section class="timeline-panel" aria-labelledby="heading-timeline">
+            <div class="section-heading compact">
+              <p id="timeline-kicker" class="section-kicker">Timeline</p>
+              <h2 id="heading-timeline">Timeline（主要な歩み）</h2>
+            </div>
+            <div id="timeline-list" class="timeline-list"></div>
+            <a id="timeline-link" class="text-link" href="#projects">Timelineをもっと見る →</a>
+          </section>
+
+          <aside class="daily-panel" aria-labelledby="heading-daily">
+            <div class="section-heading compact">
+              <p id="daily-kicker" class="section-kicker">Latest Daily Log</p>
+              <h2 id="heading-daily">Latest Daily Log</h2>
+              <p id="daily-subtext" class="section-note">毎日更新される、生きているポートフォリオ</p>
+            </div>
+            <div id="latest-daily-list" class="daily-card-list"></div>
+            <a id="daily-link" class="text-link" href="daily.html">Daily Log 一覧へ →</a>
+          </aside>
+        </div>
       </div>
     </section>
 
-    <section id="now" class="section section-soft">
+    <section id="projects" class="section section-soft">
       <div class="container reveal">
-        <h2 id="heading-now">What I am Working On Now</h2>
-        <ul class="bullet-list" id="now-list"></ul>
+        <div class="section-heading">
+          <p id="projects-kicker" class="section-kicker">Projects / Activities</p>
+          <h2 id="heading-projects">Projects / Activities（最近の取り組み）</h2>
+        </div>
+        <div id="project-grid" class="project-grid"></div>
+        <a id="projects-link" class="text-link" href="#projects">すべてのプロジェクトを見る →</a>
       </div>
     </section>
 
     <section id="vision" class="section">
-      <div class="container narrow reveal">
-        <h2 id="heading-vision">Vision / Future Direction</h2>
-        <p id="vision-text"></p>
+      <div class="container reveal">
+        <div class="vision-card">
+          <div class="vision-copy">
+            <p id="vision-kicker" class="section-kicker">Vision</p>
+            <h2 id="heading-vision">Vision</h2>
+            <p id="vision-text">
+              AIによって、人が本来向き合うべき活動に集中できる環境をつくる。自動化と知能化を通じて、情報の整理・判断・実行を支援し、一人ひとりが創造的で意味のある活動に時間を使える社会を目指します。
+            </p>
+          </div>
+          <img id="vision-image" class="vision-image" src="images/moment-2.png" alt="活動中の実写真">
+        </div>
       </div>
     </section>
 
     <section id="contact" class="section section-soft">
       <div class="container reveal">
-        <h2 id="heading-contact">Links / Contact</h2>
-        <p id="contact-intro" class="contact-intro">
-          I am always open to conversations about AI, community-oriented technology, and practical implementation.
-        </p>
+        <div class="section-heading compact">
+          <p id="contact-kicker" class="section-kicker">Contact</p>
+          <h2 id="heading-contact">Links / Contact</h2>
+          <p id="contact-intro" class="contact-intro">AIとコミュニティ実装、実用的な技術活用に関する対話・連携のご相談を歓迎します。</p>
+        </div>
         <div class="link-grid" id="contact-links"></div>
       </div>
     </section>
@@ -146,6 +179,7 @@
   </div>
 
   <script src="site.config.js"></script>
+  <script src="data/daily-posts.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
