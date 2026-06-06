@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="2026年4月レビュー：Taiki OSを立ち上げた月 - Taiki Misawa Daily Log">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026年4月レビュー：Taiki OSを立ち上げた月 | Taiki Misawa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body data-page="daily-post">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html#top" class="brand">Taiki Misawa</a>
+      <button id="menu-toggle" class="menu-toggle" type="button" aria-label="メニューを開く" aria-controls="primary-nav" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div id="primary-nav" class="header-panel">
+        <nav class="main-nav" aria-label="Primary">
+          <a id="nav-timeline" href="../index.html#timeline-log">Timeline</a>
+          <a id="nav-daily" href="../daily.html">Daily Log</a>
+          <a id="nav-projects" href="../index.html#projects">Projects</a>
+          <a id="nav-vision" href="../index.html#vision">Vision</a>
+          <a id="nav-about" href="../index.html#about">About</a>
+        </nav>
+        <nav class="lang-switch" aria-label="Language switch">
+          <button type="button" class="lang-btn is-active" data-lang="ja">JP</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="article-shell">
+    <article class="article-card">
+      <p class="article-meta">2026-04 / Monthly Review</p>
+      <h1>2026年4月レビュー：Taiki OSを立ち上げた月</h1>
+      <p>
+        4月後半は、日記、ポートフォリオ、AIメモリをどう分けるかを考え直した月でした。
+        最終的に、公開サイトをいきなり作り込むのではなく、まず自分の思考や作業を安全に残せる場所としてTaiki OSを立ち上げました。
+      </p>
+      <p>
+        この月の中心は「見せること」よりも「残すこと」でした。
+        AIと一緒に作業するほど、毎回同じ説明を繰り返すのではなく、日々の判断、プロジェクト、決定、引き継ぎを読める場所が必要になると感じました。
+      </p>
+
+      <h2>何を作ったか</h2>
+      <ul>
+        <li>日々の活動を残すdaily logの土台</li>
+        <li>プロジェクト、意思決定、AI handoffを分けるmemory構造</li>
+        <li>複数AIが直接同じファイルを壊さないためのinbox運用</li>
+        <li>privateな記録からpublicなポートフォリオ候補を作るためのpublishing bridge</li>
+      </ul>
+
+      <h2>なぜ重要だったか</h2>
+      <p>
+        Taiki OSは、単なる日記ではなく、AIと一緒に考え続けるための個人用Context Hubです。
+        Codex、ChatGPT、Cursorなど複数のAIが関わると、作業内容や判断の背景が散らばりやすくなります。
+        それをMarkdownベースで読み返せる形にしたことが、4月の一番大きな進捗でした。
+      </p>
+      <p>
+        また、公開ポートフォリオとprivate logを分ける方針も固まりました。
+        privateな記録をそのまま公開するのではなく、公開できる部分だけを候補として切り出し、人間の確認を挟んでからサイトに反映する。
+        この安全な距離感を作れたことも大きかったです。
+      </p>
+
+      <h2>この月を一言で言うと</h2>
+      <p>
+        4月は、AIと暮らすための「記録の器」を作った月でした。
+        まだ自動化もUIも十分ではありませんでしたが、後から振り返れる土台を持てたことで、5月以降の実験を積み上げられるようになりました。
+      </p>
+      <a class="text-link" href="../daily.html">Daily Log 一覧へ →</a>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>(c) <span id="year"></span> Taiki Misawa</p>
+      <p id="updated-at"></p>
+    </div>
+  </footer>
+
+  <script src="../site.config.js"></script>
+  <script src="../data/daily-posts.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

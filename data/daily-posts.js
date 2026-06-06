@@ -8,6 +8,22 @@ window.DAILY_POSTS = [
     url: "daily/2026-06-05.html"
   },
   {
+    date: "2026-05-31",
+    title: "2026年5月レビュー：AI環境を生活と研究へつなげた月",
+    summary:
+      "5月は、iPhone-Codex、Taiki OS、研究テーマ、学内ハッカソン構想、生活設計が一気に現実と接続し始めた月だった。",
+    tags: ["Monthly Review", "AI Workspace", "Research", "Community"],
+    url: "daily/2026-05-month-review.html"
+  },
+  {
+    date: "2026-04-30",
+    title: "2026年4月レビュー：Taiki OSを立ち上げた月",
+    summary:
+      "4月は、日記・ポートフォリオ・AIメモリを分け直し、Taiki OSをローカルファーストなAI Context Hubとして始めた月だった。",
+    tags: ["Monthly Review", "Taiki OS", "AI Memory", "Portfolio"],
+    url: "daily/2026-04-month-review.html"
+  },
+  {
     date: "2026-04-27",
     title: "AIで毎日更新するポートフォリオへ",
     summary:

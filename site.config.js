@@ -225,6 +225,18 @@ window.PORTFOLIO_CONFIG = {
         image: "images/profile-main.png"
       },
       {
+        year: "2026.04",
+        title: "Taiki OS Foundation",
+        description: "日々の記録、AIとの作業、意思決定を整理する個人用AI Context Hubを立ち上げた。",
+        image: "images/moment-1.png"
+      },
+      {
+        year: "2026.05",
+        title: "AI Workspace and Campus Momentum",
+        description: "iPhoneからAIエージェントを動かす実験、研究軸の整理、学内AIハッカソン構想を進めた。",
+        image: "images/profile-main.png"
+      },
+      {
         year: "2026",
         title: "Daily AI-assisted Portfolio Log",
         description: "AIと一緒に、日々の活動・研究・開発・思考を記録するポートフォリオ運用を開始。",
@@ -266,6 +278,18 @@ window.PORTFOLIO_CONFIG = {
         year: "2026",
         title: "Graduate School / University of Tsukuba",
         description: "Researching human-centered support systems using visual information, sensors, and AI.",
+        image: "images/profile-main.png"
+      },
+      {
+        year: "2026.04",
+        title: "Taiki OS Foundation",
+        description: "Started a personal AI context hub for organizing daily records, AI-assisted work, and decisions.",
+        image: "images/moment-1.png"
+      },
+      {
+        year: "2026.05",
+        title: "AI Workspace and Campus Momentum",
+        description: "Advanced a local AI agent workspace, research direction, and campus AI hackathon/community ideas.",
         image: "images/profile-main.png"
       },
       {
