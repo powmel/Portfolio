@@ -9,11 +9,11 @@ window.PORTFOLIO_CONFIG = {
     "images/moment-6.png"
   ],
   defaultLanguage: "ja",
-  updatedAt: "April 2026",
+  updatedAt: "June 2026",
   lpCopy: {
     ja: {
       pageTitle: "Taiki Misawa | Portfolio",
-      metaDescription: "Taiki Misawaのポートフォリオ。AI・研究・開発・地域活動を日々つなげながら動いています。",
+      metaDescription: "Taiki Misawaのポートフォリオ。AI・研究・開発・英語コミュニケーション・地域活動を日々つなげながら動いています。",
       nav: {
         timeline: "Timeline",
         daily: "Daily Log",
@@ -27,8 +27,8 @@ window.PORTFOLIO_CONFIG = {
       },
       hero: {
         affiliation: "筑波大学大学院",
-        identity: "研究・開発・地域をつなぐ、学生ビルダー／リサーチャー",
-        lead: "筑波大学大学院で、視覚情報・センサー・AIを活用し、人の判断や行動を支援するシステムを探究しています。",
+        identity: "AI・英語・研究をつなぐ、学生ビルダー／リサーチャー",
+        lead: "筑波大学大学院で、視覚情報・センサー・AIを活用した支援システムを探究しながら、英語で世界と協働する力を磨いています。",
         timelineButton: "View Timeline",
         dailyButton: "View Daily Log",
         caption: "オーストラリアでの学生発表（2023）"
@@ -37,7 +37,7 @@ window.PORTFOLIO_CONFIG = {
         aboutKicker: "About / Identity",
         aboutTitle: "About / Identity",
         aboutLead:
-          "情報科学を学びながら、AI・自動化・プロダクト開発・コミュニティ形成、そして技術と社会の関係に関心を持っています。研究だけでなく、技術を地域や日常の仕組みにどう実装できるかを重視しています。",
+          "情報科学を学びながら、AI・自動化・プロダクト開発・コミュニティ形成、英語での異文化コミュニケーション、そして技術と社会の関係に関心を持っています。研究だけでなく、技術を地域や日常の仕組みにどう実装できるかを重視しています。",
         focusKicker: "Focus Areas",
         focusTitle: "Focus Areas",
         timelineKicker: "Timeline",
@@ -54,7 +54,7 @@ window.PORTFOLIO_CONFIG = {
         visionTitle: "Vision",
         contactKicker: "Contact",
         contactTitle: "Links / Contact",
-        contactIntro: "AIとコミュニティ実装、実用的な技術活用に関する対話・連携のご相談を歓迎します。"
+        contactIntro: "AI、英語を使った国際的な協働、コミュニティ実装、実用的な技術活用に関する対話・連携を歓迎します。"
       },
       modal: {
         recordsTitle: "記録メモ",
@@ -78,7 +78,7 @@ window.PORTFOLIO_CONFIG = {
     },
     en: {
       pageTitle: "Taiki Misawa | Portfolio",
-      metaDescription: "Taiki Misawa portfolio - research, development, AI, and regional activities in motion.",
+      metaDescription: "Taiki Misawa portfolio - research, development, AI, English communication, and regional activities in motion.",
       nav: {
         timeline: "Timeline",
         daily: "Daily Log",
@@ -92,8 +92,8 @@ window.PORTFOLIO_CONFIG = {
       },
       hero: {
         affiliation: "Graduate School, University of Tsukuba",
-        identity: "Student builder / researcher connecting research, development, and local communities",
-        lead: "At the University of Tsukuba, I explore systems that use visual information, sensors, and AI to support human judgment and action.",
+        identity: "Student builder / researcher connecting AI, English, and research",
+        lead: "At the University of Tsukuba, I explore AI systems using visual information and sensors while building the English communication skills needed to collaborate globally.",
         timelineButton: "View Timeline",
         dailyButton: "View Daily Log",
         caption: "Student presentation in Australia (2023)"
@@ -102,7 +102,7 @@ window.PORTFOLIO_CONFIG = {
         aboutKicker: "About / Identity",
         aboutTitle: "About / Identity",
         aboutLead:
-          "While studying information science, I am interested in AI, automation, product development, community building, and the relationship between technology and society. Beyond research, I care about how technology can be implemented in local communities and everyday systems.",
+          "While studying information science, I am interested in AI, automation, product development, community building, cross-cultural communication in English, and the relationship between technology and society. Beyond research, I care about how technology can be implemented in local communities and everyday systems.",
         focusKicker: "Focus Areas",
         focusTitle: "Focus Areas",
         timelineKicker: "Timeline",
@@ -119,7 +119,7 @@ window.PORTFOLIO_CONFIG = {
         visionTitle: "Vision",
         contactKicker: "Contact",
         contactTitle: "Links / Contact",
-        contactIntro: "I am always open to conversations about AI, community-oriented technology, and practical implementation."
+        contactIntro: "I am open to conversations about AI, global collaboration through English, community-oriented technology, and practical implementation."
       },
       modal: {
         recordsTitle: "Records",
@@ -158,7 +158,7 @@ window.PORTFOLIO_CONFIG = {
       },
       {
         title: "Connector",
-        text: "人やコミュニティをつなぎ、協働の場を生み出す。"
+        text: "言語や文化を越えて人をつなぎ、協働の場を生み出す。"
       }
     ],
     en: [
@@ -176,7 +176,7 @@ window.PORTFOLIO_CONFIG = {
       },
       {
         title: "Connector",
-        text: "Connecting people and communities, and creating spaces for collaboration."
+        text: "Connecting people across languages and cultures, and creating spaces for collaboration."
       }
     ]
   },
@@ -185,6 +185,8 @@ window.PORTFOLIO_CONFIG = {
     "AI Agents",
     "Automation",
     "Human-Centered AI",
+    "English Communication",
+    "Global Collaboration",
     "Regional Innovation",
     "Agriculture × AI",
     "Community Systems",
@@ -227,6 +229,12 @@ window.PORTFOLIO_CONFIG = {
         title: "Daily AI-assisted Portfolio Log",
         description: "AIと一緒に、日々の活動・研究・開発・思考を記録するポートフォリオ運用を開始。",
         image: "images/moment-1.png"
+      },
+      {
+        year: "2026.06",
+        title: "English × AI as Core Lanes",
+        description: "国際的な仲間との交流を通じて、英語とAIを大学院生活の中心スキルとして鍛える方針を明確化。",
+        image: "images/profile-main.png"
       }
     ],
     en: [
@@ -265,10 +273,21 @@ window.PORTFOLIO_CONFIG = {
         title: "Daily AI-assisted Portfolio Log",
         description: "Started a portfolio operation that records daily activities, research, development, and thoughts with AI.",
         image: "images/moment-1.png"
+      },
+      {
+        year: "2026.06",
+        title: "English × AI as Core Lanes",
+        description: "Clarified a new direction: treating English communication and AI as core skills for graduate school and global collaboration.",
+        image: "images/profile-main.png"
       }
     ]
   },
   projectHighlights: [
+    {
+      title: "English × AI Learning Direction",
+      slug: "english-ai-learning-direction",
+      tags: ["English", "AI", "Communication"]
+    },
     {
       title: "GAN-based Game Level Generation",
       slug: "graduation-research-gan",
@@ -306,10 +325,34 @@ window.PORTFOLIO_CONFIG = {
     }
   ],
   vision: {
-    ja: "AIによって、人が本来向き合うべき活動に集中できる環境をつくる。自動化と知能化を通じて、情報の整理・判断・実行を支援し、一人ひとりが創造的で意味のある活動に時間を使える社会を目指します。",
-    en: "I want to create environments where people can focus on the work they should truly face. Through automation and intelligence, I aim to support organizing information, making decisions, and taking action so each person can spend more time on creative and meaningful activity."
+    ja: "AIによって、人が本来向き合うべき活動に集中できる環境をつくる。同時に、英語で世界の人と学び、議論し、協働する力を鍛える。自動化と知能化を通じて、情報の整理・判断・実行を支援し、一人ひとりが創造的で意味のある活動に時間を使える社会を目指します。",
+    en: "I want to create environments where people can focus on the work they should truly face. At the same time, I am training the English communication skills needed to learn, discuss, and collaborate globally. Through automation and intelligence, I aim to support organizing information, making decisions, and taking action so each person can spend more time on creative and meaningful activity."
   },
   activities: [
+    {
+      slug: "english-ai-learning-direction",
+      period: "2026.06 - Present",
+      status: "ongoing",
+      title_ja: "英語 × AI 学習方針の再設計",
+      title_en: "Redesigning My English × AI Learning Direction",
+      detail_ja:
+        "国際的な学生コミュニティでの交流を通じて、英語は自然に話せるものではなく、意識的に鍛えるべき技術だと捉え直した。AI開発と英語コミュニケーションを、大学院生活の中心スキルとして並行して伸ばしていく。",
+      detail_en:
+        "Through interaction with an international student community, I reframed English as a skill that must be trained deliberately, not something people naturally have. I am now treating AI development and English communication as parallel core skills in graduate school.",
+      records_ja: [
+        "英語を「試す場所」だけでなく、継続的に学ぶ対象として捉え直した",
+        "AI開発と英語コミュニケーションを主要な成長レーンとして設定",
+        "会話、発表、国際的な協働を実践の場として活用していく"
+      ],
+      records_en: [
+        "Reframed English as a skill to study continuously, not only a place to test myself",
+        "Set AI development and English communication as the main lanes for growth",
+        "Will use conversation, presentation, and international collaboration as practice fields"
+      ],
+      url: "daily/2026-06-05.html",
+      coverImage: "images/profile-main.png",
+      gallery: []
+    },
     {
       slug: "humai-application-local-ai",
       period: "2026.04 - Present",

@@ -1,5 +1,13 @@
 window.DAILY_POSTS = [
   {
+    date: "2026-06-05",
+    title: "英語とAIを、自分の中心に置き直す",
+    summary:
+      "国際的な仲間との交流を通じて、英語は自然にできるものではなく努力して鍛える技術だと捉え直し、AIと英語を今後の中心スキルに据えた。",
+    tags: ["English", "AI", "Communication", "Graduate School"],
+    url: "daily/2026-06-05.html"
+  },
+  {
     date: "2026-04-27",
     title: "AIで毎日更新するポートフォリオへ",
     summary:
