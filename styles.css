@@ -864,8 +864,36 @@ h3 {
 
 .daily-archive {
   display: grid;
-  gap: 0.9rem;
+  gap: 1.4rem;
   padding-bottom: 50px;
+}
+
+.daily-month-group {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.daily-month-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0 0.2rem;
+}
+
+.daily-month-heading h2 {
+  font-size: 1.1rem;
+}
+
+.daily-month-heading p {
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.daily-month-posts {
+  display: grid;
+  gap: 0.9rem;
 }
 
 .article-shell {

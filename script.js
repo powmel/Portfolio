@@ -161,6 +161,36 @@
     return posts.slice().sort((a, b) => String(b.date).localeCompare(String(a.date)));
   }
 
+  function dailyMonthKey(date) {
+    return typeof date === "string" && date.length >= 7 ? date.slice(0, 7) : "unknown";
+  }
+
+  function dailyMonthLabel(key) {
+    if (!/^\d{4}-\d{2}$/.test(key)) return activeLang === "ja" ? "日付未設定" : "Undated";
+    const [year, month] = key.split("-");
+    if (activeLang === "ja") return `${year}年${Number(month)}月`;
+    const monthNames = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ];
+    return `${monthNames[Number(month) - 1] || month} ${year}`;
+  }
+
+  function dailyPostCountLabel(count) {
+    if (activeLang === "ja") return `${count}件`;
+    return count === 1 ? "1 post" : `${count} posts`;
+  }
+
   function createTag(text) {
     const span = document.createElement("span");
     span.className = "tag";
@@ -200,7 +230,36 @@
     const list = $("daily-archive-list");
     if (!list) return;
     list.innerHTML = "";
-    sortedDailyPosts().forEach((post) => list.appendChild(createDailyCard(post, false)));
+    const grouped = new Map();
+    sortedDailyPosts().forEach((post) => {
+      const key = dailyMonthKey(post.date);
+      if (!grouped.has(key)) grouped.set(key, []);
+      grouped.get(key).push(post);
+    });
+
+    grouped.forEach((items, key) => {
+      const section = document.createElement("section");
+      section.className = "daily-month-group";
+      section.setAttribute("aria-labelledby", `daily-month-${key}`);
+
+      const heading = document.createElement("div");
+      heading.className = "daily-month-heading";
+
+      const title = document.createElement("h2");
+      title.id = `daily-month-${key}`;
+      title.textContent = dailyMonthLabel(key);
+
+      const count = document.createElement("p");
+      count.textContent = dailyPostCountLabel(items.length);
+
+      const cards = document.createElement("div");
+      cards.className = "daily-month-posts";
+      items.forEach((post) => cards.appendChild(createDailyCard(post, false)));
+
+      heading.append(title, count);
+      section.append(heading, cards);
+      list.appendChild(section);
+    });
   }
 
   function openActivityModal(item) {
