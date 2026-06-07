@@ -31,6 +31,20 @@ window.DAILY_POSTS = [
     tags: ["Research", "Graduate School", "Papers", "Role Models"]
   },
   {
+    date: "2026-05-22",
+    title: "早起きできても、応募作業は分解しないと進まない",
+    summary:
+      "睡眠を整えると朝の入りは良くなる一方で、インターン応募のような複雑な作業は、締切・提出物・次の5分アクションまで分ける必要があると感じた。",
+    tags: ["Internship", "Planning", "Life Design", "Next Actions"]
+  },
+  {
+    date: "2026-05-21",
+    title: "Taiki OSにも、短期記憶と長期記憶が必要だ",
+    summary:
+      "研究室での距離感やCodexの話題をきっかけに、深いログだけでなく、直近の状態や考えの変化を保持する短期記憶レイヤーの必要性を考えた。",
+    tags: ["Taiki OS", "AI Memory", "Research Lab", "Codex"]
+  },
+  {
     date: "2026-05-20",
     title: "ゼロから作る前に、まず使いこなす",
     summary:
@@ -50,6 +64,27 @@ window.DAILY_POSTS = [
     summary:
       "大学院生交流会で重要な再会があり、学内AI講座やハッカソンを一緒に形にできそうな人脈が見えた。構想を企画書へ落とす必要が出てきた。",
     tags: ["Hackathon", "AI Education", "Community", "Campus"]
+  },
+  {
+    date: "2026-05-17",
+    title: "合う場所を選び、開発できる時間を守る",
+    summary:
+      "交流の場やサークルを試しながら、自分に合う空気と合わない空気を見分け始めた。開発やCodexを動かす時間を大切にしたい感覚も強まった。",
+    tags: ["Community", "Development", "Campus Life", "Reflection"]
+  },
+  {
+    date: "2026-05-16",
+    title: "Taiki OSの入力経路を、実際に動かし始める",
+    summary:
+      "ローカルのMemory Intake Serverを動かし、外部入力をTaiki OSへ低リスクに流す実験を進めた。記録を人力だけに頼らない流れの小さな確認になった。",
+    tags: ["Taiki OS", "Memory Intake", "Local First", "Automation"]
+  },
+  {
+    date: "2026-05-15",
+    title: "スマホからの短い記録を、Taiki OSへ流すテスト",
+    summary:
+      "モバイルのクイックメモやIdea Factory側の安全な要約を、Taiki OSへ取り込むための低リスクなテストを行った。入力ブリッジの基礎確認になった。",
+    tags: ["Taiki OS", "Mobile Input", "Idea Factory", "Workflow"]
   },
   {
     date: "2026-05-14",
