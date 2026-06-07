@@ -15,6 +15,7 @@
   const activityModalClose = document.getElementById("activity-modal-close");
   let activeLang = config.defaultLanguage || "ja";
   let activeCopy = copySet[activeLang] || copySet.ja || {};
+  const dailyMonthState = new Map();
 
   function $(id) {
     return document.getElementById(id);
@@ -191,6 +192,33 @@
     return count === 1 ? "1 post" : `${count} posts`;
   }
 
+  function dailyMonthActionLabel(expanded) {
+    if (activeLang === "ja") return expanded ? "閉じる" : "開く";
+    return expanded ? "Close" : "Open";
+  }
+
+  function latestDailyMonthKey() {
+    const latest = sortedDailyPosts()[0];
+    return latest ? dailyMonthKey(latest.date) : "";
+  }
+
+  function shouldExpandDailyMonth(key) {
+    if (dailyMonthState.has(key)) return dailyMonthState.get(key);
+    return key === latestDailyMonthKey();
+  }
+
+  function setDailyMonthExpanded(key, section, panel, button, expanded) {
+    dailyMonthState.set(key, expanded);
+    section.classList.toggle("is-open", expanded);
+    button.setAttribute("aria-expanded", String(expanded));
+    panel.setAttribute("aria-hidden", String(!expanded));
+    if ("inert" in panel) panel.inert = !expanded;
+    const action = button.querySelector(".daily-month-action");
+    const symbol = button.querySelector(".daily-month-symbol");
+    if (action) action.textContent = dailyMonthActionLabel(expanded);
+    if (symbol) symbol.textContent = expanded ? "-" : "+";
+  }
+
   function createTag(text) {
     const span = document.createElement("span");
     span.className = "tag";
@@ -203,12 +231,16 @@
     article.className = compact ? "daily-card compact-card" : "daily-card";
     const date = document.createElement("p");
     date.className = "daily-date";
-    date.textContent = post.date || "";
+    date.textContent = post.displayDate || post.date || "";
     const title = document.createElement("h3");
-    const link = document.createElement("a");
-    link.href = post.url || "#";
-    link.textContent = post.title || "";
-    title.appendChild(link);
+    if (post.url) {
+      const link = document.createElement("a");
+      link.href = post.url;
+      link.textContent = post.title || "";
+      title.appendChild(link);
+    } else {
+      title.textContent = post.title || "";
+    }
     const summary = document.createElement("p");
     summary.className = "daily-summary";
     summary.textContent = post.summary || "";
@@ -240,24 +272,52 @@
     grouped.forEach((items, key) => {
       const section = document.createElement("section");
       section.className = "daily-month-group";
-      section.setAttribute("aria-labelledby", `daily-month-${key}`);
+      const panelId = `daily-month-panel-${key}`;
 
-      const heading = document.createElement("div");
-      heading.className = "daily-month-heading";
+      const button = document.createElement("button");
+      button.className = "daily-month-toggle";
+      button.type = "button";
+      button.setAttribute("aria-controls", panelId);
 
+      const text = document.createElement("span");
+      text.className = "daily-month-title-stack";
+      const kicker = document.createElement("span");
+      kicker.className = "daily-month-kicker";
+      kicker.textContent = activeLang === "ja" ? "月別フォルダ" : "Monthly Folder";
       const title = document.createElement("h2");
-      title.id = `daily-month-${key}`;
       title.textContent = dailyMonthLabel(key);
+      text.append(kicker, title);
 
       const count = document.createElement("p");
+      count.className = "daily-month-count";
       count.textContent = dailyPostCountLabel(items.length);
 
+      const control = document.createElement("span");
+      control.className = "daily-month-control";
+      const action = document.createElement("span");
+      action.className = "daily-month-action";
+      const symbol = document.createElement("span");
+      symbol.className = "daily-month-symbol";
+      symbol.setAttribute("aria-hidden", "true");
+      control.append(count, action, symbol);
+
+      const panel = document.createElement("div");
+      panel.id = panelId;
+      panel.className = "daily-month-panel";
+      const panelInner = document.createElement("div");
+      panelInner.className = "daily-month-panel-inner";
       const cards = document.createElement("div");
       cards.className = "daily-month-posts";
       items.forEach((post) => cards.appendChild(createDailyCard(post, false)));
+      panelInner.appendChild(cards);
+      panel.appendChild(panelInner);
 
-      heading.append(title, count);
-      section.append(heading, cards);
+      button.append(text, control);
+      button.addEventListener("click", () => {
+        setDailyMonthExpanded(key, section, panel, button, !section.classList.contains("is-open"));
+      });
+      section.append(button, panel);
+      setDailyMonthExpanded(key, section, panel, button, shouldExpandDailyMonth(key));
       list.appendChild(section);
     });
   }

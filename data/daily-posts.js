@@ -9,6 +9,7 @@ window.DAILY_POSTS = [
   },
   {
     date: "2026-05-31",
+    displayDate: "2026-05 / Monthly Review",
     title: "2026年5月レビュー：AI環境を生活と研究へつなげた月",
     summary:
       "5月は、iPhone-Codex、Taiki OS、研究テーマ、学内ハッカソン構想、生活設計が一気に現実と接続し始めた月だった。",
@@ -16,12 +17,125 @@ window.DAILY_POSTS = [
     url: "daily/2026-05-month-review.html"
   },
   {
+    date: "2026-05-29",
+    title: "英語で人を助け、研究の問いに近づいた日",
+    summary:
+      "留学生の救急対応で通訳として動き、授業では人間や生物を知能システムとして捉える関心が深まった。英語、研究、現実の行動がつながった日。",
+    tags: ["English", "Research", "Community", "Embodied AI"]
+  },
+  {
+    date: "2026-05-28",
+    title: "研究室で、手本にしたい熱量を見つけた",
+    summary:
+      "研究室の新歓を通じて、価値観の違いを理解しつつ、自分が参考にしたい研究姿勢も見えた。論文100本を読むという現実的な目標も得た。",
+    tags: ["Research", "Graduate School", "Papers", "Role Models"]
+  },
+  {
+    date: "2026-05-20",
+    title: "ゼロから作る前に、まず使いこなす",
+    summary:
+      "SkillsやMCP、既存ツールを調べる中で、全部を自作するより、既にあるものを試してから足りない部分だけ作る方針へ切り替えた。",
+    tags: ["AI Workflow", "Reuse First", "Tools", "Development"]
+  },
+  {
+    date: "2026-05-19",
+    title: "広げるフェーズから、選ぶフェーズへ",
+    summary:
+      "締切を逃す問題をきっかけに、興味や活動を増やすだけでは回らないと実感した。研究、AI、海外、事業に時間を寄せる必要が見えてきた。",
+    tags: ["Life Design", "Prioritization", "LifePilot", "Reflection"]
+  },
+  {
+    date: "2026-05-18",
+    title: "偶然の再会が、学内AIイベント構想を現実に近づけた",
+    summary:
+      "大学院生交流会で重要な再会があり、学内AI講座やハッカソンを一緒に形にできそうな人脈が見えた。構想を企画書へ落とす必要が出てきた。",
+    tags: ["Hackathon", "AI Education", "Community", "Campus"]
+  },
+  {
+    date: "2026-05-14",
+    title: "研究の中心軸をAIそのものへ寄せる",
+    summary:
+      "Physical AI、マルチモーダル認識、センサー、World Modelなどを整理し、地方創生よりもAI・知能システムを中心に研究を組み立てたいと感じた。",
+    tags: ["Research", "Physical AI", "Multimodal AI", "Sensors"]
+  },
+  {
+    date: "2026-05-13",
+    title: "水曜日を、プロジェクトを現実につなぐ日にする",
+    summary:
+      "奨学金提出、企業接点、ボードゲームサークル、週間設計を通じて、授業のない水曜日をハッカソン準備や開発の主軸日にする方針が見えた。",
+    tags: ["Weekly Design", "Hackathon", "Community", "Planning"]
+  },
+  {
+    date: "2026-05-12",
+    title: "AI講座とハッカソンで、学生がAIを使える場を作る",
+    summary:
+      "AIが仕事から娯楽へ広がる流れを考え、筑波でAI講座とバイブコーディング・ハッカソンを組み合わせる構想が強まった。",
+    tags: ["AI Education", "Hackathon", "Community", "Vibe Coding"]
+  },
+  {
+    date: "2026-05-11",
+    title: "自然、人との時間、AIスケジューラーの必要性",
+    summary:
+      "筑波の自然を自転車で感じる時間を通じて、AIに寄りすぎた生活には自然と人間関係が必要だと再確認した。予定を能動的に組むAIの必要性も見えた。",
+    tags: ["LifePilot", "Nature", "Scheduling", "Community"]
+  },
+  {
+    date: "2026-05-08",
+    title: "AIを回すだけでは、進んでいることにならない",
+    summary:
+      "睡眠不足とAI利用量の枯渇、車購入への不安が重なった日。AIを動かし続けるだけでなく、方向確認と生活の安定が必要だと感じた。",
+    tags: ["AI Workflow", "Life Balance", "Reflection", "Graduate School"]
+  },
+  {
+    date: "2026-05-04",
+    title: "人とのテンポのズレを、疲労として見る",
+    summary:
+      "外出と会話の中で波長のズレを感じたが、相手や関係性の問題と決めつけず、睡眠不足と体内時計の崩れの影響として見ることにした。",
+    tags: ["Life Balance", "Reflection", "Communication", "Recovery"]
+  },
+  {
+    date: "2026-05-03",
+    title: "深夜のAI開発と、生活リズムの代償",
+    summary:
+      "Codex pet、Taiki OS、iPhone-Codex周辺の作業に没頭した一方で、睡眠不足が対人感覚や日中の動きに影響することを実感した。",
+    tags: ["AI Workspace", "iPhone Codex", "Life Balance", "Taiki OS"]
+  },
+  {
+    date: "2026-05-02",
+    title: "iPhoneからMacのAIエージェントを動かす実験",
+    summary:
+      "iPhone-Codex、Cursor Skill、Codex petを進め、iPhoneからMac上の複数AIエージェントへアクセスするlocal-firstな作業環境を作り始めた。",
+    tags: ["iPhone Codex", "Local First", "AI Agents", "Taiki OS"]
+  },
+  {
+    date: "2026-05-01",
+    title: "AI作業ではなく、人との時間を優先した日",
+    summary:
+      "帰国前の仲間と新宿で漫才、散歩、映画、食事を楽しんだ。AI関連の作業は進まなかったが、人との時間を大切にした意味のある1日。",
+    tags: ["Community", "Graduate School", "Reflection", "Tokyo"]
+  },
+  {
     date: "2026-04-30",
+    displayDate: "2026-04 / Monthly Review",
     title: "2026年4月レビュー：Taiki OSを立ち上げた月",
     summary:
       "4月は、日記・ポートフォリオ・AIメモリを分け直し、Taiki OSをローカルファーストなAI Context Hubとして始めた月だった。",
     tags: ["Monthly Review", "Taiki OS", "AI Memory", "Portfolio"],
     url: "daily/2026-04-month-review.html"
+  },
+  {
+    date: "2026-04-30",
+    title: "複数AIが同じ記憶を壊さないためのinbox運用",
+    summary:
+      "Taiki OSを運用できる形に近づけ、複数AIがまずinboxへ記録し、あとでdailyへ統合する流れを整えた。公開と非公開の境界も整理した。",
+    tags: ["Taiki OS", "AI Memory", "Inbox Workflow", "Publishing"]
+  },
+  {
+    date: "2026-04-29",
+    title: "Taiki OSの最初の器を作った日",
+    summary:
+      "ローカルMarkdownベースでdaily、memory、decisions、handoff、public candidatesを分け、AIが読み返せる個人用Context HubのMVPを作った。",
+    tags: ["Taiki OS", "Local First", "Markdown", "AI Context Hub"]
   },
   {
     date: "2026-04-27",
@@ -30,21 +144,5 @@ window.DAILY_POSTS = [
       "大学院生活が少し落ち着いてきたので、日々の活動・研究・開発・思考をAIと一緒に記録するポートフォリオ運用を始める。",
     tags: ["AI Automation", "Portfolio", "Graduate School", "Daily Log"],
     url: "daily/2026-04-27.html"
-  },
-  {
-    date: "2026-04-26",
-    title: "研究アイデアの整理と実験計画",
-    summary:
-      "人の意思決定と行動理解のためのフィードバックデザインについて、関連研究を整理しながら実験計画を立てた。",
-    tags: ["Research", "Human-Centered AI", "Planning"],
-    url: "daily.html"
-  },
-  {
-    date: "2026-04-25",
-    title: "Agentプロトタイプの改善",
-    summary:
-      "物体認識と行動計画を合わせたプロトタイプの動作を改善し、ログ設計と評価指標の見直しを実施。",
-    tags: ["AI Agents", "Prototype", "Evaluation"],
-    url: "daily.html"
   }
 ];

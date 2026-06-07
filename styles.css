@@ -873,22 +873,95 @@ h3 {
   gap: 0.75rem;
 }
 
-.daily-month-heading {
+.daily-month-toggle {
+  width: 100%;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0 0.2rem;
+  padding: 0.95rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: 0 8px 20px rgba(17, 39, 76, 0.05);
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
-.daily-month-heading h2 {
+.daily-month-toggle:hover {
+  border-color: rgba(47, 109, 246, 0.32);
+  box-shadow: 0 12px 28px rgba(17, 39, 76, 0.09);
+  transform: translateY(-1px);
+}
+
+.daily-month-title-stack {
+  display: grid;
+  gap: 0.08rem;
+}
+
+.daily-month-kicker {
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.daily-month-toggle h2 {
   font-size: 1.1rem;
 }
 
-.daily-month-heading p {
+.daily-month-control {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
   color: var(--muted);
   font-size: 0.86rem;
   font-weight: 800;
+  white-space: nowrap;
+}
+
+.daily-month-count,
+.daily-month-action {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.daily-month-symbol {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-deep);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.daily-month-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 0.32s ease,
+    opacity 0.22s ease;
+}
+
+.daily-month-group.is-open .daily-month-panel {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.daily-month-panel-inner {
+  overflow: hidden;
 }
 
 .daily-month-posts {
