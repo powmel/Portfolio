@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Taiki OSの最初の器を作った日 - Taiki Misawa Daily Log">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taiki OSの最初の器を作った日 | Taiki Misawa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body data-page="daily-post">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html#top" class="brand">Taiki Misawa</a>
+      <button id="menu-toggle" class="menu-toggle" type="button" aria-label="メニューを開く" aria-controls="primary-nav" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div id="primary-nav" class="header-panel">
+        <nav class="main-nav" aria-label="Primary">
+          <a id="nav-timeline" href="../index.html#timeline-log">Timeline</a>
+          <a id="nav-daily" href="../daily.html">Daily Log</a>
+          <a id="nav-projects" href="../index.html#projects">Projects</a>
+          <a id="nav-vision" href="../index.html#vision">Vision</a>
+          <a id="nav-about" href="../index.html#about">About</a>
+        </nav>
+        <nav class="lang-switch" aria-label="Language switch">
+          <button type="button" class="lang-btn is-active" data-lang="ja">JP</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="article-shell">
+    <article class="article-card">
+      <p class="article-meta">2026-04-29 / Daily Log</p>
+      <h1>Taiki OSの最初の器を作った日</h1>
+      <p>
+        この日は、Taiki OSをローカルMarkdownベースのAI Context Hubとして動かし始めた日でした。
+        まだ大きな自動化やUIではなく、まず毎日の記録、意思決定、プロジェクト、AIへの引き継ぎを壊れにくい形で置ける器を作ることが中心でした。
+      </p>
+
+      <h2>気づいたこと</h2>
+      <p>
+        最初に必要だったのは、派手なアプリではなく、AIが後から読み返せる安定した文脈でした。
+        記録が残っていなければ、次のAIは毎回ゼロから説明を受けることになります。
+      </p>
+      <p>
+        だから、daily、memory、decisions、handoff、public candidatesを分けることは、単なるフォルダ整理ではなく、未来のAIと共同作業するための土台でした。
+      </p>
+
+      <h2>これからの軸</h2>
+      <p>
+        Taiki OSは、完成品を見せる場所ではなく、考えや作業を失わないためのprivateな記録層として始まりました。
+        まずは小さく、毎日使える状態にすることが大事です。
+      </p>
+
+      <h2>次にやること</h2>
+      <ul>
+        <li>毎日のログを継続して残す</li>
+        <li>重要な判断をdecisionとして分けて保存する</li>
+        <li>公開できる内容だけを後からportfolio候補へ切り出す</li>
+      </ul>
+      <a class="text-link" href="../daily.html">Daily Log 一覧へ →</a>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>(c) <span id="year"></span> Taiki Misawa</p>
+      <p id="updated-at"></p>
+    </div>
+  </footer>
+
+  <script src="../site.config.js"></script>
+  <script src="../data/daily-posts.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Taiki OSの入力経路を、実際に動かし始める - Taiki Misawa Daily Log">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taiki OSの入力経路を、実際に動かし始める | Taiki Misawa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body data-page="daily-post">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html#top" class="brand">Taiki Misawa</a>
+      <button id="menu-toggle" class="menu-toggle" type="button" aria-label="メニューを開く" aria-controls="primary-nav" aria-expanded="false"><span></span><span></span><span></span></button>
+      <div id="primary-nav" class="header-panel">
+        <nav class="main-nav" aria-label="Primary">
+          <a id="nav-timeline" href="../index.html#timeline-log">Timeline</a>
+          <a id="nav-daily" href="../daily.html">Daily Log</a>
+          <a id="nav-projects" href="../index.html#projects">Projects</a>
+          <a id="nav-vision" href="../index.html#vision">Vision</a>
+          <a id="nav-about" href="../index.html#about">About</a>
+        </nav>
+        <nav class="lang-switch" aria-label="Language switch">
+          <button type="button" class="lang-btn is-active" data-lang="ja">JP</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="article-shell">
+    <article class="article-card">
+      <p class="article-meta">2026-05-16 / Daily Log</p>
+      <h1>Taiki OSの入力経路を、実際に動かし始める</h1>
+      <p>
+        Taiki OSを「読むだけの記録」から、外部入力を受け取れる仕組みへ近づけた日でした。
+        Memory Intake Serverを動かし、記録を人力だけに頼らない流れを試し始めました。
+      </p>
+
+      <h2>気づいたこと</h2>
+      <p>
+        毎日の記録を続けるには、入力の摩擦を下げる必要があります。
+        ただし、入力を自動化するほど、何を自動で入れてよいか、何をレビューに止めるかの境界が重要になります。
+      </p>
+      <p>
+        低リスクなdaily summaryは流せても、意思決定、公開候補、個人情報、他人の詳細は別扱いにする。
+        そのルールを保ったまま入口を作ることが、Taiki OSらしい進め方です。
+      </p>
+
+      <h2>これからの軸</h2>
+      <p>
+        Taiki OSは、ただの保存先ではなく、入力、整理、記憶、活用をつなぐ流れの一部になります。
+        まずはローカルで安全に動く小さな入口を育てることが大切です。
+      </p>
+
+      <h2>次にやること</h2>
+      <ul>
+        <li>入力サーバーをローカル前提で安全に運用する</li>
+        <li>自動promoteできる内容とレビュー必須の内容を分ける</li>
+        <li>入力された記録がdailyにどう見えるかを確認する</li>
+      </ul>
+      <a class="text-link" href="../daily.html">Daily Log 一覧へ →</a>
+    </article>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><p>(c) <span id="year"></span> Taiki Misawa</p><p id="updated-at"></p></div></footer>
+  <script src="../site.config.js"></script>
+  <script src="../data/daily-posts.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>
