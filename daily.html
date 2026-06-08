@@ -49,6 +49,14 @@
     <section class="container daily-archive" id="daily-archive-list" aria-label="Daily Log posts"></section>
   </main>
 
+  <div class="daily-modal" id="daily-modal" hidden>
+    <div class="daily-modal-backdrop" id="daily-modal-backdrop"></div>
+    <section class="daily-modal-panel" id="daily-modal-panel" role="dialog" aria-modal="true" aria-label="Daily Log detail">
+      <button class="daily-modal-close" id="daily-modal-close" type="button" aria-label="閉じる">X</button>
+      <div class="daily-modal-content" id="daily-modal-content"></div>
+    </section>
+  </div>
+
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>(c) <span id="year"></span> Taiki Misawa</p>

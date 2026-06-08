@@ -13,9 +13,16 @@
   const activityModal = document.getElementById("activity-modal");
   const activityModalBackdrop = document.getElementById("activity-modal-backdrop");
   const activityModalClose = document.getElementById("activity-modal-close");
+  const dailyModal = document.getElementById("daily-modal");
+  const dailyModalPanel = document.getElementById("daily-modal-panel");
+  const dailyModalBackdrop = document.getElementById("daily-modal-backdrop");
+  const dailyModalClose = document.getElementById("daily-modal-close");
+  const dailyModalContent = document.getElementById("daily-modal-content");
   let activeLang = config.defaultLanguage || "ja";
   let activeCopy = copySet[activeLang] || copySet.ja || {};
   const dailyMonthState = new Map();
+  let lastDailyModalTrigger = null;
+  let dailyModalCloseTimer = 0;
 
   function $(id) {
     return document.getElementById(id);
@@ -226,6 +233,117 @@
     return span;
   }
 
+  function shouldOpenDailyModal(event) {
+    if (page !== "daily-list" || !dailyModal || !dailyModalContent) return false;
+    if (!event || event.defaultPrevented) return false;
+    if (event.button !== 0) return false;
+    return !(event.metaKey || event.ctrlKey || event.shiftKey || event.altKey);
+  }
+
+  function resolveUrlForArticle(url) {
+    try {
+      return new URL(url, window.location.href).href;
+    } catch (_e) {
+      return url;
+    }
+  }
+
+  function setEmbedParam(url) {
+    try {
+      const embedUrl = new URL(url, window.location.href);
+      embedUrl.searchParams.set("embed", "1");
+      return embedUrl.href;
+    } catch (_e) {
+      const joiner = String(url).includes("?") ? "&" : "?";
+      return `${url}${joiner}embed=1`;
+    }
+  }
+
+  function normalizeEmbeddedLinks(root, baseUrl) {
+    root.querySelectorAll("[href]").forEach((node) => {
+      const href = node.getAttribute("href") || "";
+      if (!href || href.startsWith("#")) return;
+      try {
+        node.setAttribute("href", new URL(href, baseUrl).href);
+      } catch (_e) {
+        // Keep the original href when URL construction fails.
+      }
+    });
+    root.querySelectorAll("[src]").forEach((node) => {
+      const src = node.getAttribute("src") || "";
+      if (!src) return;
+      try {
+        node.setAttribute("src", new URL(src, baseUrl).href);
+      } catch (_e) {
+        // Keep the original src when URL construction fails.
+      }
+    });
+  }
+
+  function extractDailyArticle(html, baseUrl) {
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    const article = doc.querySelector(".article-card");
+    if (!article) throw new Error("Daily article body was not found.");
+    const cloned = article.cloneNode(true);
+    cloned.classList.add("daily-modal-article");
+    cloned.querySelectorAll(".text-link").forEach((link) => {
+      const href = link.getAttribute("href") || "";
+      if (href.includes("daily.html")) link.remove();
+    });
+    const heading = cloned.querySelector("h1");
+    if (heading) heading.id = "daily-modal-title";
+    normalizeEmbeddedLinks(cloned, baseUrl);
+    return cloned;
+  }
+
+  function renderDailyModalFallback(post) {
+    if (!dailyModalContent) return;
+    dailyModalContent.innerHTML = "";
+    const frame = document.createElement("iframe");
+    frame.className = "daily-modal-frame";
+    frame.title = post.title || "Daily Log";
+    frame.src = setEmbedParam(post.url);
+    dailyModalContent.appendChild(frame);
+  }
+
+  function openDailyPostModal(post, trigger) {
+    if (!dailyModal || !dailyModalContent || !post || !post.url) return;
+    window.clearTimeout(dailyModalCloseTimer);
+    lastDailyModalTrigger = trigger || null;
+    if (dailyModalPanel) dailyModalPanel.setAttribute("aria-label", post.title || "Daily Log detail");
+    dailyModal.hidden = false;
+    dailyModalContent.innerHTML = `<p class="daily-modal-loading">${activeLang === "ja" ? "記事を開いています..." : "Opening article..."}</p>`;
+    document.body.classList.add("modal-open");
+    window.requestAnimationFrame(() => dailyModal.classList.add("is-open"));
+
+    const articleUrl = resolveUrlForArticle(post.url);
+    fetch(articleUrl)
+      .then((response) => {
+        if (!response.ok) throw new Error(`Unable to load article: ${response.status}`);
+        return response.text();
+      })
+      .then((html) => {
+        const article = extractDailyArticle(html, articleUrl);
+        dailyModalContent.innerHTML = "";
+        dailyModalContent.appendChild(article);
+      })
+      .catch(() => renderDailyModalFallback(post));
+  }
+
+  function closeDailyPostModal() {
+    if (!dailyModal || dailyModal.hidden) return;
+    dailyModal.classList.remove("is-open");
+    dailyModalCloseTimer = window.setTimeout(() => {
+      dailyModal.hidden = true;
+      if (dailyModalContent) dailyModalContent.innerHTML = "";
+      if (!activityModal || activityModal.hidden) document.body.classList.remove("modal-open");
+      if (lastDailyModalTrigger && typeof lastDailyModalTrigger.focus === "function") {
+        lastDailyModalTrigger.focus();
+      }
+      lastDailyModalTrigger = null;
+    }, 180);
+  }
+
   function createDailyCard(post, compact) {
     const article = document.createElement("article");
     article.className = compact ? "daily-card compact-card" : "daily-card";
@@ -237,6 +355,11 @@
       const link = document.createElement("a");
       link.href = post.url;
       link.textContent = post.title || "";
+      link.addEventListener("click", (event) => {
+        if (!shouldOpenDailyModal(event)) return;
+        event.preventDefault();
+        openDailyPostModal(post, link);
+      });
       title.appendChild(link);
     } else {
       title.textContent = post.title || "";
@@ -561,9 +684,12 @@
 
   if (activityModalBackdrop) activityModalBackdrop.addEventListener("click", closeActivityModal);
   if (activityModalClose) activityModalClose.addEventListener("click", closeActivityModal);
+  if (dailyModalBackdrop) dailyModalBackdrop.addEventListener("click", closeDailyPostModal);
+  if (dailyModalClose) dailyModalClose.addEventListener("click", closeDailyPostModal);
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       closeActivityModal();
+      closeDailyPostModal();
       setMenu(false);
     }
   });
@@ -572,6 +698,16 @@
     activeLang = localStorage.getItem("portfolio-lang") || activeLang;
   } catch (_e) {
     // Ignore storage restrictions.
+  }
+
+  if (page === "daily-post") {
+    try {
+      if (new URLSearchParams(window.location.search).get("embed") === "1") {
+        document.body.classList.add("daily-post-embed");
+      }
+    } catch (_e) {
+      // Ignore malformed search params.
+    }
   }
 
   applyCopy(activeLang);

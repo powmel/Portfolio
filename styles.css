@@ -833,6 +833,130 @@ h3 {
   text-decoration: none;
 }
 
+.daily-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.daily-modal[hidden] {
+  display: none;
+}
+
+.daily-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(12, 20, 34, 0.56);
+  opacity: 0;
+  transition: opacity 0.18s ease;
+}
+
+.daily-modal-panel {
+  position: relative;
+  width: min(900px, 100%);
+  max-height: min(88vh, 900px);
+  overflow: auto;
+  border: 1px solid #d6deea;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 22px 58px rgba(14, 25, 44, 0.32);
+  opacity: 0;
+  transform: translateY(18px) scale(0.985);
+  transition:
+    opacity 0.18s ease,
+    transform 0.2s ease;
+}
+
+.daily-modal.is-open .daily-modal-backdrop,
+.daily-modal.is-open .daily-modal-panel {
+  opacity: 1;
+}
+
+.daily-modal.is-open .daily-modal-panel {
+  transform: translateY(0) scale(1);
+}
+
+.daily-modal-close {
+  position: sticky;
+  top: 14px;
+  z-index: 2;
+  float: right;
+  width: 36px;
+  height: 36px;
+  margin: 14px 14px -50px 0;
+  border: 1px solid #d8e1ef;
+  border-radius: 999px;
+  background: #f7fafe;
+  color: #24405e;
+  font-size: 0.92rem;
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.daily-modal-content {
+  min-height: 220px;
+  padding: 42px;
+}
+
+.daily-modal-loading {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.daily-modal-content .article-card {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.daily-modal-content .article-card h1 {
+  font-size: clamp(1.8rem, 4vw, 2.35rem);
+}
+
+.daily-modal-frame {
+  display: block;
+  width: 100%;
+  min-height: min(72vh, 760px);
+  border: 0;
+  background: #fff;
+}
+
+body.daily-post-embed {
+  background: #fff;
+}
+
+body.daily-post-embed .site-header,
+body.daily-post-embed .site-footer {
+  display: none;
+}
+
+body.daily-post-embed .article-shell {
+  padding: 0;
+}
+
+body.daily-post-embed .article-card {
+  max-width: none;
+  padding: 34px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .daily-modal-backdrop,
+  .daily-modal-panel {
+    transition: none;
+  }
+}
+
 .reveal {
   opacity: 1;
   transform: none;
@@ -1195,6 +1319,30 @@ h3 {
   .link-grid,
   .activity-modal-gallery {
     grid-template-columns: 1fr;
+  }
+
+  .daily-modal {
+    padding: 12px;
+  }
+
+  .daily-modal-panel {
+    max-height: 90vh;
+    border-radius: 14px;
+  }
+
+  .daily-modal-close {
+    top: 10px;
+    width: 34px;
+    height: 34px;
+    margin: 10px 10px -44px 0;
+  }
+
+  .daily-modal-content {
+    padding: 30px 18px;
+  }
+
+  body.daily-post-embed .article-card {
+    padding: 26px 18px;
   }
 
   .footer-inner {
