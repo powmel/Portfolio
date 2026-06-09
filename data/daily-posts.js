@@ -1,5 +1,13 @@
 window.DAILY_POSTS = [
   {
+    date: "2026-06-10",
+    title: "記録を、翌日の行動につなげるAIへ",
+    summary:
+      "Daily LogやPC作業の記録から、完了・未完了・翌日の最小タスクを判断するAIループの必要性を感じた。英語の実践も小さく継続した日。",
+    tags: ["AI Workflow", "Daily Log", "LifePilot", "English"],
+    url: "daily/2026-06-10.html"
+  },
+  {
     date: "2026-06-05",
     title: "英語とAIを、自分の中心に置き直す",
     summary:
