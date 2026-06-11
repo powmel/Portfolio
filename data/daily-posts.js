@@ -1,5 +1,13 @@
 window.DAILY_POSTS = [
   {
+    date: "2026-06-11",
+    title: "20代の発想を、価値に変換する",
+    summary:
+      "集中型授業と企業連携ワークショップを通じて、若い時期の発想を記録し、Who / Why / Valueから価値あるアイデアへ育てる必要性を感じた。",
+    tags: ["Ideas", "Innovation", "AI", "Workshop"],
+    url: "daily/2026-06-11.html"
+  },
+  {
     date: "2026-06-10",
     title: "記録を、翌日の行動につなげるAIへ",
     summary:
