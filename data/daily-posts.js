@@ -1,5 +1,13 @@
 window.DAILY_POSTS = [
   {
+    date: "2026-06-12",
+    title: "高性能AIを、研究インフラとして捉え直す",
+    summary:
+      "Claude最新モデルを研究実装に使い、AIモデルの性能や利用上限は研究成果に関わるインフラだと感じた。研究室を集中拠点として使う手応えも得た。",
+    tags: ["AI", "Research", "Claude", "Deep Work"],
+    url: "daily/2026-06-12.html"
+  },
+  {
     date: "2026-06-11",
     title: "20代の発想を、価値に変換する",
     summary:
