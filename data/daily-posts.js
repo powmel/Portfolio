@@ -1,5 +1,13 @@
 window.DAILY_POSTS = [
   {
+    date: "2026-06-13",
+    title: "AI時代の自己投資を設計する",
+    summary:
+      "AIサブスクの上限が作業の勢いを止める感覚から、学習・研究・開発に必要な資金配分を自己投資として設計する必要性を感じた。",
+    tags: ["AI", "Self Investment", "Learning", "Finance"],
+    url: "daily/2026-06-13.html"
+  },
+  {
     date: "2026-06-12",
     title: "高性能AIを、研究インフラとして捉え直す",
     summary:
