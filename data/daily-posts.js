@@ -1,5 +1,13 @@
 window.DAILY_POSTS = [
   {
+    date: "2026-06-14",
+    title: "AIから離れる時間を、AIのために持つ",
+    summary:
+      "AIモデルの停止や利用制限への不安から、人と過ごす時間で距離を取れた。AIと長く付き合うためには、情報を追う時間と離れる時間の両方が必要だと感じた。",
+    tags: ["AI", "Tools", "Reflection", "Balance"],
+    url: "daily/2026-06-14.html"
+  },
+  {
     date: "2026-06-13",
     title: "AI時代の自己投資を設計する",
     summary:
