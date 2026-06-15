@@ -1,10 +1,18 @@
 window.DAILY_POSTS = [
   {
+    date: "2026-06-15",
+    title: "記録の入口を、AIの理解につなげる",
+    summary:
+      "AIツールの制限、三味線との距離、毎日10分の音声記録を通じて、AIを使う環境と注意を奪われない生活設計を整える必要性を感じた。",
+    tags: ["AI Workflow", "Daily Log", "Tools", "Focus"],
+    url: "daily/2026-06-15.html"
+  },
+  {
     date: "2026-06-14",
     title: "AIから離れる時間を、AIのために持つ",
     summary:
-      "AIモデルの停止や利用制限への不安から、人と過ごす時間で距離を取れた。AIと長く付き合うためには、情報を追う時間と離れる時間の両方が必要だと感じた。",
-    tags: ["AI", "Tools", "Reflection", "Balance"],
+      "AI関連の情報を追い続けて不安が増える中、人と過ごす時間で自然に距離を取れた。AIと長く付き合うためには、離れる時間も必要だと感じた。",
+    tags: ["AI", "Reflection", "Balance", "Life"],
     url: "daily/2026-06-14.html"
   },
   {
