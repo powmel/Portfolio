@@ -1,5 +1,13 @@
 window.DAILY_POSTS = [
   {
+    date: "2026-06-16",
+    title: "AIの答えに折れず、知能のスケールを広げる",
+    summary:
+      "発表と授業を通じて、知能を個体だけでなく集合知や多層システムとして捉え直した。AIの否定を結論ではなく条件付きの結果として扱う必要性も感じた。",
+    tags: ["Research", "AI", "Intelligence", "Reflection"],
+    url: "daily/2026-06-16.html"
+  },
+  {
     date: "2026-06-15",
     title: "記録の入口を、AIの理解につなげる",
     summary:

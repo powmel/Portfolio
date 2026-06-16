@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="AIの答えに折れず、知能のスケールを広げる - Taiki Misawa Daily Log">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIの答えに折れず、知能のスケールを広げる | Taiki Misawa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body data-page="daily-post">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html#top" class="brand">Taiki Misawa</a>
+      <button id="menu-toggle" class="menu-toggle" type="button" aria-label="メニューを開く" aria-controls="primary-nav" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div id="primary-nav" class="header-panel">
+        <nav class="main-nav" aria-label="Primary">
+          <a id="nav-timeline" href="../index.html#timeline-log">Timeline</a>
+          <a id="nav-daily" href="../daily.html">Daily Log</a>
+          <a id="nav-projects" href="../index.html#projects">Projects</a>
+          <a id="nav-vision" href="../index.html#vision">Vision</a>
+          <a id="nav-about" href="../index.html#about">About</a>
+        </nav>
+        <nav class="lang-switch" aria-label="Language switch">
+          <button type="button" class="lang-btn is-active" data-lang="ja">JP</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="article-shell">
+    <article class="article-card">
+      <p class="article-meta">2026-06-16 / Daily Log</p>
+      <h1>AIの答えに折れず、知能のスケールを広げる</h1>
+      <p>
+        今日は発表と授業を通じて、「知能とは何か」という問いの見え方が少し変わりました。
+        これまでは、知能を個体の中にあるものとして見ていたところがありました。
+        でも、集団のふるまいや集合知まで広げて考えると、知能はもっと多層的なものとして捉えられます。
+      </p>
+      <p>
+        個体の中にある脳も、細かく見れば細胞や信号の受け渡しの集合です。
+        逆に大きく見れば、人間の集団、社会、あるいはもっと大きなシステムも、情報を受け取り、変化し、判断する構造を持っています。
+        どこをひとつの単位として見るかで、知能の輪郭は変わるのだと思いました。
+      </p>
+
+      <h2>知能は、モデル単体だけではない</h2>
+      <p>
+        AIの性能を上げるという話も、モデルだけを強くすることに限られません。
+        データ、アノテーション、知識、道具、環境、そして人間の集団。
+        何を部品として組み合わせるかによって、システム全体の知能は変わります。
+      </p>
+      <p>
+        研究テーマを考える時も、ひとつのモデルができるかできないかだけで判断すると、見落とすものがあります。
+        条件を変えた時に何が立ち上がるのかを見ることが、これから大事になりそうです。
+      </p>
+
+      <h2>AIの否定は、結論ではなく条件付きの結果</h2>
+      <p>
+        今日は、AIや周囲の判断が自分の研究方向を否定するように見える場面もありました。
+        でも、小さなデータや薄いアノテーションでうまくいかなかったからといって、仮説そのものが終わるわけではありません。
+      </p>
+      <p>
+        大量のデータ、精密なアノテーション、背景知識の入れ方。
+        そこまで含めて初めて、本当に可能性がないのかを判断できます。
+        AIの言葉を聞くことは大事ですが、AIの言葉をそのまま権威にして折れる必要はない。
+        どの条件で出た答えなのかを見極めて、押す時は押す力が必要です。
+      </p>
+
+      <h2>使うAIも、役割で分ける</h2>
+      <p>
+        一方で、AIを使う環境そのものにも課題があります。
+        開発や研究には高性能なAIが必要ですが、日記入力や要約のような比較的軽い処理まで、すべて同じ高コストな環境で回す必要はありません。
+      </p>
+      <p>
+        これからは、研究実装、発表準備、日記入力、アイデア抽出を、それぞれ適したAIに分けていく必要があります。
+        AIを使うほど、AIの使い分け自体も設計対象になります。
+      </p>
+
+      <h2>次にやること</h2>
+      <ul>
+        <li>今日話が通じそうだと感じた先生に連絡する</li>
+        <li>研究仮説を、データ・アノテーション・知識の条件に分けて整理する</li>
+        <li>Codex、Claude Code、Antigravity、Geminiの役割分担を決める</li>
+        <li>日記入力のような軽い処理を、Codex以外でも回せるか試す</li>
+      </ul>
+      <a class="text-link" href="../daily.html">Daily Log 一覧へ →</a>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>(c) <span id="year"></span> Taiki Misawa</p>
+      <p id="updated-at"></p>
+    </div>
+  </footer>
+
+  <script src="../site.config.js"></script>
+  <script src="../data/daily-posts.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>
