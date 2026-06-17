@@ -1,5 +1,13 @@
 window.DAILY_POSTS = [
   {
+    date: "2026-06-17",
+    title: "センサーからミラーボールまで、手を動かし続けた1日",
+    summary:
+      "組み込みシステムで加速度センサーとミラーボール・紙吹雪を連動させた作品を完成。NTTデータプロジェクトのアイデア出しも好感触。深夜まで続くAI作業のリズムを振り返った。",
+    tags: ["Embedded Systems", "NTT Data", "AI Workflow", "Reflection"],
+    url: "daily/2026-06-17.html"
+  },
+  {
     date: "2026-06-16",
     title: "AIの答えに折れず、知能のスケールを広げる",
     summary:
