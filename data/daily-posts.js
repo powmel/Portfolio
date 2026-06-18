@@ -1,5 +1,13 @@
 window.DAILY_POSTS = [
   {
+    date: "2026-06-18",
+    title: "睡眠と構成が、研究発表の土台になる",
+    summary:
+      "睡眠不足と準備不足のまま研究発表に臨み、手応えの弱い時間になった。AI環境や実験以前に、前日までの構成作りと睡眠が研究の土台だと感じた。",
+    tags: ["Research", "Sleep", "Presentation", "Lab"],
+    url: "daily/2026-06-18.html"
+  },
+  {
     date: "2026-06-17",
     title: "センサーからミラーボールまで、手を動かし続けた1日",
     summary:
