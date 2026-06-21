@@ -1,5 +1,21 @@
 window.DAILY_POSTS = [
   {
+    date: "2026-06-20",
+    title: "鎌倉で考えた、協力と主導権の境界",
+    summary:
+      "鎌倉旅行の中で、ハッカソン企画の協力候補との主導権や役割分担を考えた。企画が現実に近づくほど、協力と所有の境界を先に決める必要があると感じた。",
+    tags: ["Hackathon", "Partnership", "Kamakura", "Planning"],
+    url: "daily/2026-06-20.html"
+  },
+  {
+    date: "2026-06-19",
+    title: "睡眠と記憶を、AIの設計につなげる",
+    summary:
+      "脳と記憶の授業を通じて、睡眠を単なる休息ではなく記憶の再編成として捉え直した。AIの記憶整理や自分の学習法にも応用できる可能性を感じた。",
+    tags: ["Memory", "Sleep", "AI", "Learning"],
+    url: "daily/2026-06-19.html"
+  },
+  {
     date: "2026-06-18",
     title: "睡眠と構成が、研究発表の土台になる",
     summary:
