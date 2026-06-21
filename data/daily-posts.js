@@ -1,5 +1,13 @@
 window.DAILY_POSTS = [
   {
+    date: "2026-06-21",
+    title: "協力はする。でも、自分の旗は下ろさない",
+    summary:
+      "ハッカソン企画について、外部団体に協力することと自分の団体を預けることは別だと整理した。上野を歩きながら、活動量を支える体力づくりの必要性も感じた。",
+    tags: ["Hackathon", "Leadership", "Community", "Kyudo"],
+    url: "daily/2026-06-21.html"
+  },
+  {
     date: "2026-06-20",
     title: "鎌倉で考えた、協力と主導権の境界",
     summary:
