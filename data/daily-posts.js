@@ -1,5 +1,13 @@
 window.DAILY_POSTS = [
   {
+    date: "2026-06-22",
+    title: "書き出すことで、自分の企画に戻る",
+    summary:
+      "ハッカソン企画を外部プロジェクトに従属させず、自分の目的から進める必要を再確認した。質問や予定も、頭の中だけでなく書き出すことで行動に戻れると感じた。",
+    tags: ["Hackathon", "Planning", "Focus", "Learning"],
+    url: "daily/2026-06-22.html"
+  },
+  {
     date: "2026-06-21",
     title: "協力はする。でも、自分の旗は下ろさない",
     summary:
