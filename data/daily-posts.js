@@ -1,5 +1,21 @@
 window.DAILY_POSTS = [
   {
+    date: "2026-06-24",
+    title: "準備不足の痛みを、型に変える",
+    summary:
+      "大事な発表で準備不足の痛みを感じた。直前のAI任せではなく、1週間前から型と逆算スケジュールを作り、AIには図や構造を渡す必要があると学んだ。",
+    tags: ["Presentation", "AI Workflow", "Planning", "Reflection"],
+    url: "daily/2026-06-24.html"
+  },
+  {
+    date: "2026-06-23",
+    title: "余白がないと、言葉も発表も崩れる",
+    summary:
+      "複数の発表と予定の中で、余白がないと日本語で説明する力や発表の質が落ちると感じた。忙しさを能力で押し切るのではなく、休む時間と考える時間を設計したい。",
+    tags: ["Presentation", "Language", "Focus", "Health"],
+    url: "daily/2026-06-23.html"
+  },
+  {
     date: "2026-06-22",
     title: "書き出すことで、自分の企画に戻る",
     summary:
