@@ -1,10 +1,10 @@
 window.DAILY_POSTS = [
   {
     date: "2026-06-27",
-    title: "別れの翌朝、日常へ戻る",
+    title: "紙とペンから、生活を立て直す",
     summary:
-      "前夜から続いた送別の時間が朝に終わり、睡眠と朝食を挟みながら日常へ戻った。大きな出来事は、普通の時間の中で少しずつ区切られていく。",
-    tags: ["Friendship", "Reflection", "Daily Life"],
+      "別れは去る側と残る側で同じ重さではないと気づいた。危険な運転を避けた判断を振り返り、白い紙とペンから生活と人生を立て直すことを決めた。",
+    tags: ["Reflection", "Life Design", "Safety", "Writing"],
     url: "daily/2026-06-27.html"
   },
   {
