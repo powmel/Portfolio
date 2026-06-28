@@ -9,10 +9,10 @@ window.DAILY_POSTS = [
   },
   {
     date: "2026-06-26",
-    title: "送別のプレゼンで、自分の表現を取り戻す",
+    title: "最後は、笑って送り出した",
     summary:
-      "友人を送り出すプレゼンを作り、AIに任せる前に自分で物語、構図、感情の流れを決める必要性を再確認した。AIは表現の代役ではなく、核を磨く道具として使いたい。",
-    tags: ["Presentation", "AI Workflow", "Communication", "Reflection"],
+      "帰国する友人を、皆のメッセージ、涙、グループハグ、そして最後の笑いで送り出した。プレゼンは技術成果ではなく、皆の思いを一つの時間にまとめる手段だった。",
+    tags: ["Friendship", "Farewell", "Communication", "Reflection"],
     url: "daily/2026-06-26.html"
   },
   {
