@@ -1,0 +1,8 @@
+{
+  "name": "taiki-portfolio",
+  "private": true,
+  "scripts": {
+    "daily:build": "node scripts/build-daily-site.js",
+    "daily:check": "node scripts/build-daily-site.js --check"
+  }
+}

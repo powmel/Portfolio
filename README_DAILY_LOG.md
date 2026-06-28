@@ -1,13 +1,15 @@
 # Daily Log 運用メモ
 
-Daily Logは、GitHub Pagesでそのまま動く静的HTMLと `data/daily-posts.js` で管理します。
+Daily Logの正本は `data/daily-posts.js` の構造化データです。
+`daily/YYYY-MM-DD.html` はGitHub Pagesの個別URLを維持するための生成物であり、直接編集しません。
 
 ## 新しいログを追加する手順
 
-1. `daily/YYYY-MM-DD.html` を作成します。
-2. `data/daily-posts.js` の配列先頭に、同じ日付の記事メタデータを追加します。
-3. 写真を使う場合は `images/daily/YYYY-MM-DD/` に配置し、記事HTMLから相対パスで参照します。
-4. ローカルで `python -m http.server 8080` を実行し、`http://localhost:8080/daily.html` と個別記事を確認します。
+1. `data/daily-posts.js` の配列先頭へ、メタデータと構造化 `content` を追加します。
+2. `npm run daily:build` を実行し、個別HTMLを生成します。
+3. `npm run daily:check` を実行し、データと生成物が一致することを確認します。
+4. 写真を使う場合は `images/daily/YYYY-MM-DD/` に配置し、構造化データから参照します。
+5. `file://.../daily.html` とローカルHTTPサーバーの両方で一覧・モーダル・個別記事を確認します。
 
 ## `data/daily-posts.js` の形
 
@@ -17,7 +19,17 @@ Daily Logは、GitHub Pagesでそのまま動く静的HTMLと `data/daily-posts.
   title: "記事タイトル",
   summary: "一覧とトップページに表示する短い概要",
   tags: ["Research", "AI Agents"],
-  url: "daily/YYYY-MM-DD.html"
+  url: "daily/YYYY-MM-DD.html",
+  content: {
+    lead: ["導入文"],
+    sections: [
+      {
+        heading: "見出し",
+        paragraphs: ["本文"],
+        bullets: ["必要な場合のみ"]
+      }
+    ]
+  }
 }
 ```
 
@@ -26,6 +38,8 @@ Daily Logは、GitHub Pagesでそのまま動く静的HTMLと `data/daily-posts.
 ## 公開前チェック
 
 - `daily.html` で新しい記事が先頭に出ているか
+- `file://` で記事タイトルを押した時に本文がモーダル表示されるか
 - タグが長すぎてスマホ幅ではみ出していないか
 - 個別記事の見出し、本文、リンクが読みやすいか
 - 公開してよい個人情報や写真だけが含まれているか
+- `npm run daily:check` が通るか

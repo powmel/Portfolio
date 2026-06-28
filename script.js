@@ -296,6 +296,59 @@
     return cloned;
   }
 
+  function hasStructuredDailyContent(post) {
+    return Boolean(
+      post
+      && post.content
+      && Array.isArray(post.content.lead)
+      && Array.isArray(post.content.sections)
+    );
+  }
+
+  function buildStructuredDailyArticle(post) {
+    const article = document.createElement("article");
+    article.className = "article-card daily-modal-article";
+
+    const meta = document.createElement("p");
+    meta.className = "article-meta";
+    meta.textContent = `${post.date || ""} / Daily Log`;
+
+    const title = document.createElement("h1");
+    title.id = "daily-modal-title";
+    title.textContent = post.title || "";
+    article.append(meta, title);
+
+    post.content.lead.forEach((text) => {
+      const paragraph = document.createElement("p");
+      paragraph.textContent = text;
+      article.appendChild(paragraph);
+    });
+
+    post.content.sections.forEach((section) => {
+      const heading = document.createElement("h2");
+      heading.textContent = section.heading || "";
+      article.appendChild(heading);
+
+      (section.paragraphs || []).forEach((text) => {
+        const paragraph = document.createElement("p");
+        paragraph.textContent = text;
+        article.appendChild(paragraph);
+      });
+
+      if (Array.isArray(section.bullets) && section.bullets.length) {
+        const list = document.createElement("ul");
+        section.bullets.forEach((text) => {
+          const item = document.createElement("li");
+          item.textContent = text;
+          list.appendChild(item);
+        });
+        article.appendChild(list);
+      }
+    });
+
+    return article;
+  }
+
   function renderDailyModalFallback(post) {
     if (!dailyModalContent) return;
     dailyModalContent.innerHTML = "";
@@ -315,6 +368,12 @@
     dailyModalContent.innerHTML = `<p class="daily-modal-loading">${activeLang === "ja" ? "記事を開いています..." : "Opening article..."}</p>`;
     document.body.classList.add("modal-open");
     window.requestAnimationFrame(() => dailyModal.classList.add("is-open"));
+
+    if (hasStructuredDailyContent(post)) {
+      dailyModalContent.innerHTML = "";
+      dailyModalContent.appendChild(buildStructuredDailyArticle(post));
+      return;
+    }
 
     const articleUrl = resolveUrlForArticle(post.url);
     fetch(articleUrl)
@@ -357,6 +416,7 @@
       link.textContent = post.title || "";
       link.addEventListener("click", (event) => {
         if (!shouldOpenDailyModal(event)) return;
+        if (window.location.protocol === "file:" && !hasStructuredDailyContent(post)) return;
         event.preventDefault();
         openDailyPostModal(post, link);
       });
