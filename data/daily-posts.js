@@ -1,5 +1,29 @@
 window.DAILY_POSTS = [
   {
+    date: "2026-06-27",
+    title: "別れの翌朝、日常へ戻る",
+    summary:
+      "前夜から続いた送別の時間が朝に終わり、睡眠と朝食を挟みながら日常へ戻った。大きな出来事は、普通の時間の中で少しずつ区切られていく。",
+    tags: ["Friendship", "Reflection", "Daily Life"],
+    url: "daily/2026-06-27.html"
+  },
+  {
+    date: "2026-06-26",
+    title: "送別のプレゼンで、自分の表現を取り戻す",
+    summary:
+      "友人を送り出すプレゼンを作り、AIに任せる前に自分で物語、構図、感情の流れを決める必要性を再確認した。AIは表現の代役ではなく、核を磨く道具として使いたい。",
+    tags: ["Presentation", "AI Workflow", "Communication", "Reflection"],
+    url: "daily/2026-06-26.html"
+  },
+  {
+    date: "2026-06-25",
+    title: "エージェンティックAIを扱う経験が、価値になる",
+    summary:
+      "NECのインターン合格を通じて、エージェンティックAIや新しい開発ツールを日常的に扱う経験が、共有可能な強みになり得ると感じた。",
+    tags: ["AI Agents", "Internship", "Research", "Learning"],
+    url: "daily/2026-06-25.html"
+  },
+  {
     date: "2026-06-24",
     title: "準備不足の痛みを、型に変える",
     summary:
