@@ -16,4 +16,6 @@
 - Keep private Taiki OS material out of this public repository.
 - Publish only edited Level 0 content.
 - Verify `daily.html`, the generated article, and mobile-width layout before push.
-- Do not push public changes without Taiki's explicit approval.
+- Taiki has given standing approval to publish routine Daily Log entries after private Taiki OS capture and a Level 0 privacy edit. A separate per-day approval is not required.
+- If Taiki says `非公開`, `記録だけ`, `公開しない`, or equivalent, do not add or push that day's public article.
+- Non-Daily portfolio changes still require explicit approval.
