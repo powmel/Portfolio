@@ -1,11 +1,11 @@
 window.DAILY_POSTS = [
   {
-    date: "2026-07-07",
+    date: "2026-07-06",
     title: "AIに任せる部分と、自分で受け取る部分",
     summary:
       "事務的な提出物はAIに任せる一方、少人数の授業で得た気づきは自分でしか受け取れなかった。AIに任せていい部分と、そうでない部分の境界を意識した一日。",
     tags: ["AI Workflow", "Research", "Learning", "Reflection"],
-    url: "daily/2026-07-07.html",
+    url: "daily/2026-07-06.html",
     content: {
       lead: [
         "予定していたよりずっと事務的な一日でした。オンラインの課題は後回しにし、提出物の一つは中身をほぼAIに任せて出しました。ただその一方で、ある授業だけは強く印象に残りました。"
@@ -42,12 +42,12 @@ window.DAILY_POSTS = [
     }
   },
   {
-    date: "2026-07-06",
+    date: "2026-07-05",
     title: "レビューを減らし、任せて進める",
     summary:
       "一歩も外に出ない一日を過ごしながら、AIエージェントの進め方を見直した。都度のレビューより、チェックボックスと自己評価で長く任せる方が前に進むと気づいた。",
     tags: ["AI Workflow", "Agent Orchestration", "Deep Work", "Career Direction"],
-    url: "daily/2026-07-06.html",
+    url: "daily/2026-07-05.html",
     content: {
       lead: [
         "日曜日、一歩も外に出ないまま一日が終わりました。だるさと後悔を感じつつ、複数日続けてきたAIエージェントの作業を通じて、進め方について明確な気づきがありました。"
