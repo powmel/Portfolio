@@ -1,0 +1,661 @@
+[
+  {
+    "date": "2026-07-09",
+    "title": "未完成の発表が、畑での撮影に変わった日",
+    "summary": "準備しきれなかった発表が、先生や仲間との議論を経て泥臭いフィールド撮影という具体的な次の一歩に変わった。使い切れなかったAI利用枠にも小さな教訓を得た。",
+    "tags": [
+      "Research",
+      "Fieldwork",
+      "AI Workflow",
+      "Reflection"
+    ],
+    "url": "daily/2026-07-09.html"
+  },
+  {
+    "date": "2026-07-08",
+    "title": "説明するより、見せる",
+    "summary": "企業との会議で、言葉だけでなく実際に動くモックアップを見せたところ提案がそのまま採用された。視覚的に「見せる」ことの説得力を実感した一日。",
+    "tags": [
+      "Prototyping",
+      "Communication",
+      "AI Workflow",
+      "Reflection"
+    ],
+    "url": "daily/2026-07-08.html"
+  },
+  {
+    "date": "2026-07-07",
+    "title": "紙のメモが、会議を前に進める",
+    "summary": "会議中に紙へメモを書き、全員が見える形で共有しながら議論を進めたところ好評だった。視覚的な共有は言語の壁を越える助けにもなると実感した。",
+    "tags": [
+      "Communication",
+      "Teamwork",
+      "Reflection"
+    ],
+    "url": "daily/2026-07-07.html"
+  },
+  {
+    "date": "2026-07-06",
+    "title": "AIに任せる部分と、自分で受け取る部分",
+    "summary": "事務的な提出物はAIに任せる一方、少人数の授業で得た気づきは自分でしか受け取れなかった。AIに任せていい部分と、そうでない部分の境界を意識した一日。",
+    "tags": [
+      "AI Workflow",
+      "Research",
+      "Learning",
+      "Reflection"
+    ],
+    "url": "daily/2026-07-06.html"
+  },
+  {
+    "date": "2026-07-05",
+    "title": "レビューを減らし、任せて進める",
+    "summary": "一歩も外に出ない一日を過ごしながら、AIエージェントの進め方を見直した。都度のレビューより、チェックボックスと自己評価で長く任せる方が前に進むと気づいた。",
+    "tags": [
+      "AI Workflow",
+      "Agent Orchestration",
+      "Deep Work",
+      "Career Direction"
+    ],
+    "url": "daily/2026-07-05.html"
+  },
+  {
+    "date": "2026-07-04",
+    "title": "回復も、作業環境の一部にする",
+    "summary": "課題や図書館作業を進めても、睡眠不足では一日の密度が上がらなかった。AIや場所を工夫する前に、回復を作業基盤として扱い直す。",
+    "tags": [
+      "Recovery",
+      "Deep Work",
+      "AI Workflow",
+      "Reflection"
+    ],
+    "url": "daily/2026-07-04.html"
+  },
+  {
+    "date": "2026-07-03",
+    "title": "独立したまま、協力できる形を作る",
+    "summary": "ハッカソン企画書を共通の土台に、協力関係が一歩具体化した。技術、人脈、運営の強みを組み合わせながら、双方が自走できる組織を目指す。",
+    "tags": [
+      "Hackathon",
+      "Community",
+      "Partnership",
+      "Organization Design"
+    ],
+    "url": "daily/2026-07-03.html"
+  },
+  {
+    "date": "2026-07-02",
+    "title": "準備不足を、研究の進め方へ変える",
+    "summary": "研究発表で準備と理解の浅さが表に出た。AIが作った資料に頼るだけでなく、関連研究、仮説、実験結果を自分の言葉で説明できる状態へ戻す。",
+    "tags": [
+      "Research",
+      "Preparation",
+      "AI Workflow",
+      "Deep Work"
+    ],
+    "url": "daily/2026-07-02.html"
+  },
+  {
+    "date": "2026-07-01",
+    "title": "身体を動かすと、一日が動き始める",
+    "summary": "弓道と朝の短い散歩をきっかけに、授業、企業との会話、プロジェクト提案まで行動が連鎖した。運動をやる気の前提として捉え直した。",
+    "tags": [
+      "Exercise",
+      "Momentum",
+      "Community",
+      "Project"
+    ],
+    "url": "daily/2026-07-01.html"
+  },
+  {
+    "date": "2026-06-30",
+    "title": "書くことを、AIとの共通画面にする",
+    "summary": "未完了のことが頭の中で混ざり、動けなくなっていた。壁へ書き出すことで、知識、焦り、次の行動を分け、AIとも同じ対象を見て考えられると気づいた。",
+    "tags": [
+      "Writing",
+      "AI Memory",
+      "Planning",
+      "Reflection"
+    ],
+    "url": "daily/2026-06-30.html"
+  },
+  {
+    "date": "2026-06-29",
+    "title": "続けたい場所は、身体が教えてくれる",
+    "summary": "新しい活動へ足を運び、実際に身体を動かす中で、考えるだけでは分からなかった相性が見えた。人と話す時間も含め、続けたい場所を選び直した。",
+    "tags": [
+      "Kyudo",
+      "Community",
+      "Exercise",
+      "Reflection"
+    ],
+    "url": "daily/2026-06-29.html"
+  },
+  {
+    "date": "2026-06-28",
+    "title": "紙一枚で、一日を動かし直す",
+    "summary": "紙の活動日誌と予定図を試すと、一日の流れが見え、生活が回りやすくなった。仕組みの高度さより、すぐ書けて続けられる物理環境が大切だと分かった。",
+    "tags": [
+      "Paper Planning",
+      "Life Design",
+      "Writing",
+      "Reflection"
+    ],
+    "url": "daily/2026-06-28.html"
+  },
+  {
+    "date": "2026-06-27",
+    "title": "紙とペンから、生活を立て直す",
+    "summary": "別れは去る側と残る側で同じ重さではないと気づいた。危険な運転を避けた判断を振り返り、白い紙とペンから生活と人生を立て直すことを決めた。",
+    "tags": [
+      "Reflection",
+      "Life Design",
+      "Safety",
+      "Writing"
+    ],
+    "url": "daily/2026-06-27.html"
+  },
+  {
+    "date": "2026-06-26",
+    "title": "最後は、笑って送り出した",
+    "summary": "帰国する友人を、皆のメッセージ、涙、グループハグ、そして最後の笑いで送り出した。プレゼンは技術成果ではなく、皆の思いを一つの時間にまとめる手段だった。",
+    "tags": [
+      "Friendship",
+      "Farewell",
+      "Communication",
+      "Reflection"
+    ],
+    "url": "daily/2026-06-26.html"
+  },
+  {
+    "date": "2026-06-25",
+    "title": "エージェンティックAIを扱う経験が、価値になる",
+    "summary": "NECのインターン合格を通じて、エージェンティックAIや新しい開発ツールを日常的に扱う経験が、共有可能な強みになり得ると感じた。",
+    "tags": [
+      "AI Agents",
+      "Internship",
+      "Research",
+      "Learning"
+    ],
+    "url": "daily/2026-06-25.html"
+  },
+  {
+    "date": "2026-06-24",
+    "title": "準備不足の痛みを、型に変える",
+    "summary": "大事な発表で準備不足の痛みを感じた。直前のAI任せではなく、自分の表現の核を先に作り、1週間前から型と逆算スケジュールを用意する必要があると学んだ。",
+    "tags": [
+      "Presentation",
+      "AI Workflow",
+      "Planning",
+      "Reflection"
+    ],
+    "url": "daily/2026-06-24.html"
+  },
+  {
+    "date": "2026-06-23",
+    "title": "余白がないと、言葉も発表も崩れる",
+    "summary": "複数の発表と予定の中で、余白がないと日本語で説明する力や発表の質が落ちると感じた。忙しさを能力で押し切るのではなく、休む時間と考える時間を設計したい。",
+    "tags": [
+      "Presentation",
+      "Language",
+      "Focus",
+      "Health"
+    ],
+    "url": "daily/2026-06-23.html"
+  },
+  {
+    "date": "2026-06-22",
+    "title": "書き出すことで、自分の企画に戻る",
+    "summary": "ハッカソン企画を外部プロジェクトに従属させず、自分の目的から進める必要を再確認した。質問や予定も、頭の中だけでなく書き出すことで行動に戻れると感じた。",
+    "tags": [
+      "Hackathon",
+      "Planning",
+      "Focus",
+      "Learning"
+    ],
+    "url": "daily/2026-06-22.html"
+  },
+  {
+    "date": "2026-06-21",
+    "title": "協力はする。でも、自分の旗は下ろさない",
+    "summary": "ハッカソン企画について、外部団体に協力することと自分の団体を預けることは別だと整理した。複数の入口が並走することも、文化を残すうえでは健全かもしれない。",
+    "tags": [
+      "Hackathon",
+      "Leadership",
+      "Community",
+      "Kyudo"
+    ],
+    "url": "daily/2026-06-21.html"
+  },
+  {
+    "date": "2026-06-20",
+    "title": "鎌倉で考えた、協力と主導権の境界",
+    "summary": "鎌倉旅行の中で、ハッカソン企画の協力候補との主導権や役割分担を考えた。企画が現実に近づくほど、協力と所有の境界を先に決める必要があると感じた。",
+    "tags": [
+      "Hackathon",
+      "Partnership",
+      "Kamakura",
+      "Planning"
+    ],
+    "url": "daily/2026-06-20.html"
+  },
+  {
+    "date": "2026-06-19",
+    "title": "睡眠と記憶を、AIの設計につなげる",
+    "summary": "脳と記憶の授業を通じて、睡眠を単なる休息ではなく記憶の再編成として捉え直した。AIの記憶整理や自分の学習法にも応用できる可能性を感じた。",
+    "tags": [
+      "Memory",
+      "Sleep",
+      "AI",
+      "Learning"
+    ],
+    "url": "daily/2026-06-19.html"
+  },
+  {
+    "date": "2026-06-18",
+    "title": "睡眠と構成が、研究発表の土台になる",
+    "summary": "睡眠不足と準備不足のまま研究発表に臨み、手応えの弱い時間になった。AI環境や実験以前に、前日までの構成作りと睡眠が研究の土台だと感じた。",
+    "tags": [
+      "Research",
+      "Sleep",
+      "Presentation",
+      "Lab"
+    ],
+    "url": "daily/2026-06-18.html"
+  },
+  {
+    "date": "2026-06-17",
+    "title": "センサーからミラーボールまで、手を動かし続けた1日",
+    "summary": "組み込みシステムで加速度センサーとミラーボール・紙吹雪を連動させた作品を完成。NTTデータプロジェクトのアイデア出しも好感触。深夜まで続くAI作業のリズムを振り返った。",
+    "tags": [
+      "Embedded Systems",
+      "NTT Data",
+      "AI Workflow",
+      "Reflection"
+    ],
+    "url": "daily/2026-06-17.html"
+  },
+  {
+    "date": "2026-06-16",
+    "title": "AIの答えに折れず、知能のスケールを広げる",
+    "summary": "発表と授業を通じて、知能を個体だけでなく集合知や多層システムとして捉え直した。AIの否定を結論ではなく条件付きの結果として扱う必要性も感じた。",
+    "tags": [
+      "Research",
+      "AI",
+      "Intelligence",
+      "Reflection"
+    ],
+    "url": "daily/2026-06-16.html"
+  },
+  {
+    "date": "2026-06-15",
+    "title": "記録の入口を、AIの理解につなげる",
+    "summary": "AIツールの制限、三味線との距離、毎日10分の音声記録を通じて、AIを使う環境と注意を奪われない生活設計を整える必要性を感じた。",
+    "tags": [
+      "AI Workflow",
+      "Daily Log",
+      "Tools",
+      "Focus"
+    ],
+    "url": "daily/2026-06-15.html"
+  },
+  {
+    "date": "2026-06-14",
+    "title": "AIから離れる時間を、AIのために持つ",
+    "summary": "AI関連の情報を追い続けて不安が増える中、人と過ごす時間で自然に距離を取れた。AIと長く付き合うためには、離れる時間も必要だと感じた。",
+    "tags": [
+      "AI",
+      "Reflection",
+      "Balance",
+      "Life"
+    ],
+    "url": "daily/2026-06-14.html"
+  },
+  {
+    "date": "2026-06-13",
+    "title": "AI時代の自己投資を設計する",
+    "summary": "AIサブスクの上限が作業の勢いを止める感覚から、学習・研究・開発に必要な資金配分を自己投資として設計する必要性を感じた。",
+    "tags": [
+      "AI",
+      "Self Investment",
+      "Learning",
+      "Finance"
+    ],
+    "url": "daily/2026-06-13.html"
+  },
+  {
+    "date": "2026-06-12",
+    "title": "高性能AIを、研究インフラとして捉え直す",
+    "summary": "Claude最新モデルを研究実装に使い、AIモデルの性能や利用上限は研究成果に関わるインフラだと感じた。研究室を集中拠点として使う手応えも得た。",
+    "tags": [
+      "AI",
+      "Research",
+      "Claude",
+      "Deep Work"
+    ],
+    "url": "daily/2026-06-12.html"
+  },
+  {
+    "date": "2026-06-11",
+    "title": "20代の発想を、価値に変換する",
+    "summary": "集中型授業と企業連携ワークショップを通じて、若い時期の発想を記録し、Who / Why / Valueから価値あるアイデアへ育てる必要性を感じた。",
+    "tags": [
+      "Ideas",
+      "Innovation",
+      "AI",
+      "Workshop"
+    ],
+    "url": "daily/2026-06-11.html"
+  },
+  {
+    "date": "2026-06-10",
+    "title": "記録を、翌日の行動につなげるAIへ",
+    "summary": "Daily LogやPC作業の記録から、完了・未完了・翌日の最小タスクを判断するAIループの必要性を感じた。英語の実践も小さく継続した日。",
+    "tags": [
+      "AI Workflow",
+      "Daily Log",
+      "LifePilot",
+      "English"
+    ],
+    "url": "daily/2026-06-10.html"
+  },
+  {
+    "date": "2026-06-05",
+    "title": "英語とAIを、自分の中心に置き直す",
+    "summary": "国際的な仲間との交流を通じて、英語は自然にできるものではなく努力して鍛える技術だと捉え直し、AIと英語を今後の中心スキルに据えた。",
+    "tags": [
+      "English",
+      "AI",
+      "Communication",
+      "Graduate School"
+    ],
+    "url": "daily/2026-06-05.html"
+  },
+  {
+    "date": "2026-05-31",
+    "title": "2026年5月レビュー：AI環境を生活と研究へつなげた月",
+    "summary": "5月は、iPhone-Codex、Taiki OS、研究テーマ、学内ハッカソン構想、生活設計が一気に現実と接続し始めた月だった。",
+    "tags": [
+      "Monthly Review",
+      "AI Workspace",
+      "Research",
+      "Community"
+    ],
+    "url": "daily/2026-05-month-review.html"
+  },
+  {
+    "date": "2026-05-29",
+    "title": "英語で人を助け、研究の問いに近づいた日",
+    "summary": "留学生の救急対応で通訳として動き、授業では人間や生物を知能システムとして捉える関心が深まった。英語、研究、現実の行動がつながった日。",
+    "tags": [
+      "English",
+      "Research",
+      "Community",
+      "Embodied AI"
+    ],
+    "url": "daily/2026-05-29.html"
+  },
+  {
+    "date": "2026-05-28",
+    "title": "研究室で、手本にしたい熱量を見つけた",
+    "summary": "研究室の新歓を通じて、価値観の違いを理解しつつ、自分が参考にしたい研究姿勢も見えた。論文100本を読むという現実的な目標も得た。",
+    "tags": [
+      "Research",
+      "Graduate School",
+      "Papers",
+      "Role Models"
+    ],
+    "url": "daily/2026-05-28.html"
+  },
+  {
+    "date": "2026-05-22",
+    "title": "早起きできても、応募作業は分解しないと進まない",
+    "summary": "睡眠を整えると朝の入りは良くなる一方で、インターン応募のような複雑な作業は、締切・提出物・次の5分アクションまで分ける必要があると感じた。",
+    "tags": [
+      "Internship",
+      "Planning",
+      "Life Design",
+      "Next Actions"
+    ],
+    "url": "daily/2026-05-22.html"
+  },
+  {
+    "date": "2026-05-21",
+    "title": "Taiki OSにも、短期記憶と長期記憶が必要だ",
+    "summary": "研究室での距離感やCodexの話題をきっかけに、深いログだけでなく、直近の状態や考えの変化を保持する短期記憶レイヤーの必要性を考えた。",
+    "tags": [
+      "Taiki OS",
+      "AI Memory",
+      "Research Lab",
+      "Codex"
+    ],
+    "url": "daily/2026-05-21.html"
+  },
+  {
+    "date": "2026-05-20",
+    "title": "ゼロから作る前に、まず使いこなす",
+    "summary": "SkillsやMCP、既存ツールを調べる中で、全部を自作するより、既にあるものを試してから足りない部分だけ作る方針へ切り替えた。",
+    "tags": [
+      "AI Workflow",
+      "Reuse First",
+      "Tools",
+      "Development"
+    ],
+    "url": "daily/2026-05-20.html"
+  },
+  {
+    "date": "2026-05-19",
+    "title": "広げるフェーズから、選ぶフェーズへ",
+    "summary": "締切を逃す問題をきっかけに、興味や活動を増やすだけでは回らないと実感した。研究、AI、海外、事業に時間を寄せる必要が見えてきた。",
+    "tags": [
+      "Life Design",
+      "Prioritization",
+      "LifePilot",
+      "Reflection"
+    ],
+    "url": "daily/2026-05-19.html"
+  },
+  {
+    "date": "2026-05-18",
+    "title": "偶然の再会が、学内AIイベント構想を現実に近づけた",
+    "summary": "大学院生交流会で重要な再会があり、学内AI講座やハッカソンを一緒に形にできそうな人脈が見えた。構想を企画書へ落とす必要が出てきた。",
+    "tags": [
+      "Hackathon",
+      "AI Education",
+      "Community",
+      "Campus"
+    ],
+    "url": "daily/2026-05-18.html"
+  },
+  {
+    "date": "2026-05-17",
+    "title": "合う場所を選び、開発できる時間を守る",
+    "summary": "交流の場やサークルを試しながら、自分に合う空気と合わない空気を見分け始めた。開発やCodexを動かす時間を大切にしたい感覚も強まった。",
+    "tags": [
+      "Community",
+      "Development",
+      "Campus Life",
+      "Reflection"
+    ],
+    "url": "daily/2026-05-17.html"
+  },
+  {
+    "date": "2026-05-16",
+    "title": "Taiki OSの入力経路を、実際に動かし始める",
+    "summary": "ローカルのMemory Intake Serverを動かし、外部入力をTaiki OSへ低リスクに流す実験を進めた。記録を人力だけに頼らない流れの小さな確認になった。",
+    "tags": [
+      "Taiki OS",
+      "Memory Intake",
+      "Local First",
+      "Automation"
+    ],
+    "url": "daily/2026-05-16.html"
+  },
+  {
+    "date": "2026-05-15",
+    "title": "スマホからの短い記録を、Taiki OSへ流すテスト",
+    "summary": "モバイルのクイックメモやIdea Factory側の安全な要約を、Taiki OSへ取り込むための低リスクなテストを行った。入力ブリッジの基礎確認になった。",
+    "tags": [
+      "Taiki OS",
+      "Mobile Input",
+      "Idea Factory",
+      "Workflow"
+    ],
+    "url": "daily/2026-05-15.html"
+  },
+  {
+    "date": "2026-05-14",
+    "title": "研究の中心軸をAIそのものへ寄せる",
+    "summary": "Physical AI、マルチモーダル認識、センサー、World Modelなどを整理し、地方創生よりもAI・知能システムを中心に研究を組み立てたいと感じた。",
+    "tags": [
+      "Research",
+      "Physical AI",
+      "Multimodal AI",
+      "Sensors"
+    ],
+    "url": "daily/2026-05-14.html"
+  },
+  {
+    "date": "2026-05-13",
+    "title": "水曜日を、プロジェクトを現実につなぐ日にする",
+    "summary": "奨学金提出、企業接点、ボードゲームサークル、週間設計を通じて、授業のない水曜日をハッカソン準備や開発の主軸日にする方針が見えた。",
+    "tags": [
+      "Weekly Design",
+      "Hackathon",
+      "Community",
+      "Planning"
+    ],
+    "url": "daily/2026-05-13.html"
+  },
+  {
+    "date": "2026-05-12",
+    "title": "AI講座とハッカソンで、学生がAIを使える場を作る",
+    "summary": "AIが仕事から娯楽へ広がる流れを考え、筑波でAI講座とバイブコーディング・ハッカソンを組み合わせる構想が強まった。",
+    "tags": [
+      "AI Education",
+      "Hackathon",
+      "Community",
+      "Vibe Coding"
+    ],
+    "url": "daily/2026-05-12.html"
+  },
+  {
+    "date": "2026-05-11",
+    "title": "自然、人との時間、AIスケジューラーの必要性",
+    "summary": "筑波の自然を自転車で感じる時間を通じて、AIに寄りすぎた生活には自然と人間関係が必要だと再確認した。予定を能動的に組むAIの必要性も見えた。",
+    "tags": [
+      "LifePilot",
+      "Nature",
+      "Scheduling",
+      "Community"
+    ],
+    "url": "daily/2026-05-11.html"
+  },
+  {
+    "date": "2026-05-08",
+    "title": "AIを回すだけでは、進んでいることにならない",
+    "summary": "睡眠不足とAI利用量の枯渇、車購入への不安が重なった日。AIを動かし続けるだけでなく、方向確認と生活の安定が必要だと感じた。",
+    "tags": [
+      "AI Workflow",
+      "Life Balance",
+      "Reflection",
+      "Graduate School"
+    ],
+    "url": "daily/2026-05-08.html"
+  },
+  {
+    "date": "2026-05-04",
+    "title": "人とのテンポのズレを、疲労として見る",
+    "summary": "外出と会話の中で波長のズレを感じたが、相手や関係性の問題と決めつけず、睡眠不足と体内時計の崩れの影響として見ることにした。",
+    "tags": [
+      "Life Balance",
+      "Reflection",
+      "Communication",
+      "Recovery"
+    ],
+    "url": "daily/2026-05-04.html"
+  },
+  {
+    "date": "2026-05-03",
+    "title": "深夜のAI開発と、生活リズムの代償",
+    "summary": "Codex pet、Taiki OS、iPhone-Codex周辺の作業に没頭した一方で、睡眠不足が対人感覚や日中の動きに影響することを実感した。",
+    "tags": [
+      "AI Workspace",
+      "iPhone Codex",
+      "Life Balance",
+      "Taiki OS"
+    ],
+    "url": "daily/2026-05-03.html"
+  },
+  {
+    "date": "2026-05-02",
+    "title": "iPhoneからMacのAIエージェントを動かす実験",
+    "summary": "iPhone-Codex、Cursor Skill、Codex petを進め、iPhoneからMac上の複数AIエージェントへアクセスするlocal-firstな作業環境を作り始めた。",
+    "tags": [
+      "iPhone Codex",
+      "Local First",
+      "AI Agents",
+      "Taiki OS"
+    ],
+    "url": "daily/2026-05-02.html"
+  },
+  {
+    "date": "2026-05-01",
+    "title": "AI作業ではなく、人との時間を優先した日",
+    "summary": "帰国前の仲間と新宿で漫才、散歩、映画、食事を楽しんだ。AI関連の作業は進まなかったが、人との時間を大切にした意味のある1日。",
+    "tags": [
+      "Community",
+      "Graduate School",
+      "Reflection",
+      "Tokyo"
+    ],
+    "url": "daily/2026-05-01.html"
+  },
+  {
+    "date": "2026-04-30",
+    "title": "2026年4月レビュー：Taiki OSを立ち上げた月",
+    "summary": "4月は、日記・ポートフォリオ・AIメモリを分け直し、Taiki OSをローカルファーストなAI Context Hubとして始めた月だった。",
+    "tags": [
+      "Monthly Review",
+      "Taiki OS",
+      "AI Memory",
+      "Portfolio"
+    ],
+    "url": "daily/2026-04-month-review.html"
+  },
+  {
+    "date": "2026-04-30",
+    "title": "複数AIが同じ記憶を壊さないためのinbox運用",
+    "summary": "Taiki OSを運用できる形に近づけ、複数AIがまずinboxへ記録し、あとでdailyへ統合する流れを整えた。公開と非公開の境界も整理した。",
+    "tags": [
+      "Taiki OS",
+      "AI Memory",
+      "Inbox Workflow",
+      "Publishing"
+    ],
+    "url": "daily/2026-04-30.html"
+  },
+  {
+    "date": "2026-04-29",
+    "title": "Taiki OSの最初の器を作った日",
+    "summary": "ローカルMarkdownベースでdaily、memory、decisions、handoff、public candidatesを分け、AIが読み返せる個人用Context HubのMVPを作った。",
+    "tags": [
+      "Taiki OS",
+      "Local First",
+      "Markdown",
+      "AI Context Hub"
+    ],
+    "url": "daily/2026-04-29.html"
+  },
+  {
+    "date": "2026-04-27",
+    "title": "AIで毎日更新するポートフォリオへ",
+    "summary": "大学院生活が少し落ち着いてきたので、日々の活動・研究・開発・思考をAIと一緒に記録するポートフォリオ運用を始める。",
+    "tags": [
+      "AI Automation",
+      "Portfolio",
+      "Graduate School",
+      "Daily Log"
+    ],
+    "url": "daily/2026-04-27.html"
+  }
+]

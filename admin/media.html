@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#f4f6f8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Daily Capture">
+  <title>写真台帳 / Taiki Portfolio</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="../icons/Icon-192.png">
+  <link rel="stylesheet" href="media.css">
+</head>
+<body>
+  <header class="admin-header">
+    <div>
+      <p class="eyebrow" id="admin-mode">LOCAL ADMIN</p>
+      <h1>写真台帳</h1>
+      <p id="admin-description">撮影日からDaily Logに合う写真を提案します。承認した写真だけ公開側へ移します。</p>
+    </div>
+    <div class="header-actions">
+      <span id="sync-status" class="status">読み込み中</span>
+      <button id="rescan" class="button" type="button" data-local-only>再スキャン</button>
+    </div>
+  </header>
+
+  <main>
+    <nav class="admin-tabs" aria-label="管理画面">
+      <a href="#review-deck" class="is-active">スワイプ</a>
+      <a href="#capture">手動追加</a>
+      <a href="#source-title" data-local-only>Mac取り込み</a>
+      <a href="#review-title">台帳</a>
+    </nav>
+
+    <section id="review-deck" class="swipe-panel" aria-labelledby="swipe-title">
+      <div class="swipe-heading">
+        <div>
+          <p class="eyebrow">ONE DECISION AT A TIME</p>
+          <h2 id="swipe-title">載せる？ 載せない？</h2>
+          <p>右へ送ると公開待ち、左へ送ると非公開。ここではまだサイトに公開されません。</p>
+        </div>
+        <div class="swipe-progress" aria-live="polite">
+          <strong id="swipe-position">0 / 0</strong>
+          <span id="swipe-pending-label">未確認 0枚</span>
+        </div>
+      </div>
+      <div class="swipe-stage" id="swipe-stage" aria-live="polite">
+        <article class="swipe-card" id="swipe-card" tabindex="0">
+          <div class="swipe-photo-frame">
+            <img id="swipe-photo" alt="">
+            <span class="swipe-stamp swipe-stamp-reject" aria-hidden="true">公開しない</span>
+            <span class="swipe-stamp swipe-stamp-publish" aria-hidden="true">公開する</span>
+            <div id="swipe-preview-unavailable" class="swipe-preview-unavailable" hidden>プレビューを表示できません</div>
+          </div>
+          <div class="swipe-card-body">
+            <div class="swipe-meta-row">
+              <time id="swipe-captured-at"></time>
+              <span id="swipe-ai-score" class="ai-score"></span>
+            </div>
+            <h3 id="swipe-daily-title"></h3>
+            <p id="swipe-reason" class="swipe-reason"></p>
+            <div id="swipe-warnings" class="swipe-warnings"></div>
+            <p class="swipe-notice">「公開する」は次回の日記公開キューへ入るだけです。</p>
+          </div>
+        </article>
+        <div id="swipe-empty" class="swipe-empty" hidden>
+          <span>✓</span>
+          <h3>いま判断する写真はありません</h3>
+          <p>Apple Photosの新着同期後、ここへ自動的に候補が届きます。</p>
+        </div>
+      </div>
+      <div class="swipe-actions" aria-label="写真の判断">
+        <button id="swipe-reject" class="swipe-action reject" type="button"><span>←</span> 公開しない</button>
+        <button id="swipe-later" class="swipe-action later" type="button">あとで</button>
+        <button id="swipe-publish" class="swipe-action publish" type="button">公開する <span>→</span></button>
+      </div>
+      <div class="swipe-footer">
+        <button id="swipe-undo" class="text-button" type="button" disabled>直前の判断を戻す</button>
+        <p>PCでは ← / → / ↑ キーでも操作できます</p>
+      </div>
+    </section>
+
+    <section id="capture" class="capture-panel" aria-labelledby="capture-title">
+      <div class="capture-heading">
+        <div>
+          <p class="eyebrow">TODAY</p>
+          <h2 id="capture-title">今日の記録と写真</h2>
+          <p>日記の材料を残し、iPhoneの写真からその日の候補を追加します。ここではまだ公開されません。</p>
+        </div>
+        <span class="private-badge">非公開の下書き</span>
+      </div>
+      <form id="capture-form">
+        <label for="capture-date">日付<input id="capture-date" type="date" required></label>
+        <label for="daily-note" class="note-field">今日のメモ<textarea id="daily-note" rows="5" placeholder="何をしたか、何を感じたか。話すようにそのまま入力できます。"></textarea></label>
+        <label for="mobile-photos" class="photo-picker" id="photo-picker-label">
+          <span class="photo-picker-icon">＋</span>
+          <span><strong>iPhoneの写真を選ぶ</strong><small id="photo-picker-help">写真ライブラリ・カメラ・ファイルから複数選択できます。JPEG、HEIC、ProRAW（DNG）対応</small></span>
+          <input id="mobile-photos" type="file" accept=".jpg,.jpeg,.png,.webp,.heic,.heif,.dng,image/jpeg,image/png,image/webp,image/heic,image/heif,image/x-adobe-dng" aria-describedby="photo-picker-help" multiple>
+        </label>
+        <div id="upload-preview" class="upload-preview" aria-live="polite" aria-relevant="additions text"></div>
+        <div class="capture-actions">
+          <button class="button upload-submit" type="submit">
+            <span class="button-spinner" aria-hidden="true"></span>
+            <span class="button-label">下書きと写真を保存</span>
+          </button>
+          <span id="capture-status" class="capture-status" role="status" aria-live="polite"></span>
+        </div>
+        <aside class="capture-next-step" aria-label="保存後の流れ">
+          <span class="capture-next-step-icon" aria-hidden="true">→</span>
+          <p><strong>保存後の流れ</strong> 夜のAI対話でメモと写真を整理し、日記候補にします。現在はまだ自動連携前のため、夜の対話でこの下書きを読み込む操作が必要です。</p>
+        </aside>
+      </form>
+    </section>
+
+    <section class="source-panel" id="source-panel" aria-labelledby="source-title" data-local-only>
+      <div>
+        <p class="eyebrow">SOURCE</p>
+        <h2 id="source-title">写真フォルダを自動連携</h2>
+        <p>最初にフォルダを指定すると、次回から同じ場所を自動スキャンします。写真ごとの入力は不要です。</p>
+      </div>
+      <form id="source-form">
+        <label for="source-path">写真フォルダのパス</label>
+        <div class="source-row">
+          <input id="source-path" type="text" placeholder="例: /Users/taiki/Pictures/Portfolio Photos">
+          <button class="button secondary" type="submit">このフォルダを連携</button>
+        </div>
+      </form>
+      <div id="source-list" class="source-list"></div>
+    </section>
+
+    <section class="summary" aria-label="写真台帳の集計">
+      <div><strong id="photo-count">0</strong><span>台帳の写真</span></div>
+      <div><strong id="proposal-count">0</strong><span>提案のある日</span></div>
+      <div><strong id="approved-count">0</strong><span>公開承認済み</span></div>
+      <div><strong id="pending-count">0</strong><span>未確認</span></div>
+    </section>
+
+    <section class="review-section" aria-labelledby="review-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">REVIEW QUEUE</p>
+          <h2 id="review-title">写真台帳・判断履歴</h2>
+        </div>
+        <label class="filter-label">表示
+          <select id="filter">
+            <option value="pending">未確認</option>
+            <option value="all">すべて</option>
+            <option value="publish">承認済み</option>
+            <option value="reject">非公開</option>
+            <option value="later">あとで</option>
+          </select>
+        </label>
+      </div>
+      <div id="review-list" class="review-list"></div>
+    </section>
+  </main>
+
+  <template id="review-template">
+    <article class="review-card">
+      <div class="post-context">
+        <p class="post-date"></p>
+        <h3 class="post-title"></h3>
+        <p class="post-summary"></p>
+        <div class="post-tags"></div>
+        <p class="decision-state"></p>
+      </div>
+      <div class="candidate-area">
+        <div class="candidate-grid"></div>
+        <div class="review-actions">
+          <label>公開キャプション<input class="caption-input" type="text" placeholder="例: 南伊豆でのフィールド撮影"></label>
+          <div class="action-row">
+            <button class="button approve" type="button">選んだ写真を載せる</button>
+            <button class="button secondary no-photo" type="button">この日は写真なし</button>
+          </div>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script src="media.js"></script>
+</body>
+</html>

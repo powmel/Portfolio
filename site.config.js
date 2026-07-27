@@ -1,12 +1,12 @@
 window.PORTFOLIO_CONFIG = {
-  profileImage: "images/profile-main.png",
+  profileImage: "images/profile-main.jpg",
   heroStreamImages: [
-    "images/moment-1.png",
-    "images/moment-2.png",
-    "images/moment-3.png",
-    "images/moment-4.png",
-    "images/moment-5.png",
-    "images/moment-6.png"
+    "images/moment-1.jpg",
+    "images/moment-2.jpg",
+    "images/moment-3.jpg",
+    "images/moment-4.jpg",
+    "images/moment-5.jpg",
+    "images/moment-6.jpg"
   ],
   defaultLanguage: "ja",
   updatedAt: "June 2026",
@@ -15,10 +15,10 @@ window.PORTFOLIO_CONFIG = {
       pageTitle: "Taiki Misawa | Portfolio",
       metaDescription: "Taiki Misawaのポートフォリオ。AI・研究・開発・英語コミュニケーション・地域活動を日々つなげながら動いています。",
       nav: {
-        timeline: "Timeline",
+        timeline: "Journey",
         daily: "Daily Log",
-        projects: "Projects",
-        vision: "Vision",
+        projects: "Selected Work",
+        vision: "Contact",
         about: "About"
       },
       menu: {
@@ -27,33 +27,33 @@ window.PORTFOLIO_CONFIG = {
       },
       hero: {
         affiliation: "筑波大学大学院",
-        identity: "AI・英語・研究をつなぐ、学生ビルダー／リサーチャー",
-        lead: "筑波大学大学院で、視覚情報・センサー・AIを活用した支援システムを探究しながら、英語で世界と協働する力を磨いています。",
-        timelineButton: "View Timeline",
-        dailyButton: "View Daily Log",
-        caption: "オーストラリアでの学生発表（2023）"
+        identity: "AIを、現場で使える仕組みにする。",
+        lead: "視覚情報・センサー・AIを研究しながら、エージェント開発、地域活動、国際協働を通じて、人の判断と行動を支える仕組みをつくっています。",
+        timelineButton: "代表プロジェクトを見る",
+        dailyButton: "最新の活動を見る",
+        caption: "オーストラリア交換留学・学生リーダー / 2023"
       },
       sections: {
-        aboutKicker: "About / Identity",
-        aboutTitle: "About / Identity",
+        aboutKicker: "About",
+        aboutTitle: "研究と実装の間を歩く",
         aboutLead:
           "情報科学を学びながら、AI・自動化・プロダクト開発・コミュニティ形成、英語での異文化コミュニケーション、そして技術と社会の関係に関心を持っています。研究だけでなく、技術を地域や日常の仕組みにどう実装できるかを重視しています。",
-        focusKicker: "Focus Areas",
-        focusTitle: "Focus Areas",
-        timelineKicker: "Timeline",
-        timelineTitle: "Timeline（主要な歩み）",
-        timelineLink: "Timelineをもっと見る →",
-        dailyKicker: "Latest Daily Log",
+        focusKicker: "Current Lanes",
+        focusTitle: "いま伸ばしている領域",
+        timelineKicker: "Journey",
+        timelineTitle: "主要な歩み",
+        timelineLink: "考え方を読む →",
+        dailyKicker: "Latest Activity",
         dailyTitle: "Latest Daily Log",
         dailySubtext: "毎日更新される、生きているポートフォリオ",
         dailyLink: "Daily Log 一覧へ →",
-        projectsKicker: "Projects / Activities",
-        projectsTitle: "Projects / Activities（最近の取り組み）",
-        projectsLink: "すべてのプロジェクトを見る →",
+        projectsKicker: "Selected Work",
+        projectsTitle: "成果と証拠で見る、3つの取り組み",
+        projectsLink: "これまでの歩みを見る →",
         visionKicker: "Vision",
-        visionTitle: "Vision",
+        visionTitle: "人が、本来向き合う活動に集中できる環境をつくる。",
         contactKicker: "Contact",
-        contactTitle: "Links / Contact",
+        contactTitle: "一緒に考え、つくるための連絡先",
         contactIntro: "AI、英語を使った国際的な協働、コミュニティ実装、実用的な技術活用に関する対話・連携を歓迎します。"
       },
       modal: {
@@ -198,55 +198,55 @@ window.PORTFOLIO_CONFIG = {
         year: "2023",
         title: "Australia Exchange / Student Leader",
         description: "オーストラリアでの学生交流・発表・リーダー経験。",
-        image: "images/activities/australia-student-leader/cover.png"
+        image: "images/activities/australia-student-leader/cover.jpg"
       },
       {
         year: "2024",
         title: "Hackathon / App Dev / Web Projects",
         description: "ハッカソン、アプリ開発、Web制作への挑戦。",
-        image: "images/activities/hackathon-participation/cover.png"
+        image: "images/activities/hackathon-participation/cover.jpg"
       },
       {
         year: "2025",
         title: "GAN-based Game Level Generation",
         description: "学部卒業研究として、GANを用いたゲームレベル生成に取り組む。",
-        image: "images/activities/graduation-research-gan/cover.png"
+        image: "images/activities/graduation-research-gan/cover.jpg"
       },
       {
         year: "2025",
         title: "Regional Activities",
         description: "南伊豆などでの地域活動・農業・フィールドワーク。",
-        image: "images/activities/rural-activities-minamiizu/cover.png"
+        image: "images/activities/rural-activities-minamiizu/cover.jpg"
       },
       {
         year: "2026",
         title: "Graduate School / University of Tsukuba",
         description: "筑波大学大学院で、視覚情報・センサー・AIを用いた人間中心の支援システムを研究。",
-        image: "images/profile-main.png"
+        image: "images/profile-main.jpg"
       },
       {
         year: "2026.04",
         title: "Taiki OS Foundation",
         description: "日々の記録、AIとの作業、意思決定を整理する個人用AI Context Hubを立ち上げた。",
-        image: "images/moment-1.png"
+        image: "images/moment-1.jpg"
       },
       {
         year: "2026.05",
         title: "AI Workspace and Campus Momentum",
         description: "iPhoneからAIエージェントを動かす実験、研究軸の整理、学内AIハッカソン構想を進めた。",
-        image: "images/profile-main.png"
+        image: "images/profile-main.jpg"
       },
       {
         year: "2026",
         title: "Daily AI-assisted Portfolio Log",
         description: "AIと一緒に、日々の活動・研究・開発・思考を記録するポートフォリオ運用を開始。",
-        image: "images/moment-1.png"
+        image: "images/moment-1.jpg"
       },
       {
         year: "2026.06",
         title: "English × AI as Core Lanes",
         description: "国際的な仲間との交流を通じて、英語とAIを大学院生活の中心スキルとして鍛える方針を明確化。",
-        image: "images/profile-main.png"
+        image: "images/profile-main.jpg"
       }
     ],
     en: [
@@ -254,55 +254,55 @@ window.PORTFOLIO_CONFIG = {
         year: "2023",
         title: "Australia Exchange / Student Leader",
         description: "Student exchange, presentation, and leadership experience in Australia.",
-        image: "images/activities/australia-student-leader/cover.png"
+        image: "images/activities/australia-student-leader/cover.jpg"
       },
       {
         year: "2024",
         title: "Hackathon / App Dev / Web Projects",
         description: "Took on hackathons, app development, and web projects.",
-        image: "images/activities/hackathon-participation/cover.png"
+        image: "images/activities/hackathon-participation/cover.jpg"
       },
       {
         year: "2025",
         title: "GAN-based Game Level Generation",
         description: "Worked on GAN-based game level generation as undergraduate research.",
-        image: "images/activities/graduation-research-gan/cover.png"
+        image: "images/activities/graduation-research-gan/cover.jpg"
       },
       {
         year: "2025",
         title: "Regional Activities",
         description: "Joined regional activities, agriculture, and fieldwork around Minami-Izu.",
-        image: "images/activities/rural-activities-minamiizu/cover.png"
+        image: "images/activities/rural-activities-minamiizu/cover.jpg"
       },
       {
         year: "2026",
         title: "Graduate School / University of Tsukuba",
         description: "Researching human-centered support systems using visual information, sensors, and AI.",
-        image: "images/profile-main.png"
+        image: "images/profile-main.jpg"
       },
       {
         year: "2026.04",
         title: "Taiki OS Foundation",
         description: "Started a personal AI context hub for organizing daily records, AI-assisted work, and decisions.",
-        image: "images/moment-1.png"
+        image: "images/moment-1.jpg"
       },
       {
         year: "2026.05",
         title: "AI Workspace and Campus Momentum",
         description: "Advanced a local AI agent workspace, research direction, and campus AI hackathon/community ideas.",
-        image: "images/profile-main.png"
+        image: "images/profile-main.jpg"
       },
       {
         year: "2026",
         title: "Daily AI-assisted Portfolio Log",
         description: "Started a portfolio operation that records daily activities, research, development, and thoughts with AI.",
-        image: "images/moment-1.png"
+        image: "images/moment-1.jpg"
       },
       {
         year: "2026.06",
         title: "English × AI as Core Lanes",
         description: "Clarified a new direction: treating English communication and AI as core skills for graduate school and global collaboration.",
-        image: "images/profile-main.png"
+        image: "images/profile-main.jpg"
       }
     ]
   },
@@ -374,7 +374,7 @@ window.PORTFOLIO_CONFIG = {
         "Will use conversation, presentation, and international collaboration as practice fields"
       ],
       url: "daily/2026-06-05.html",
-      coverImage: "images/profile-main.png",
+      coverImage: "images/profile-main.jpg",
       gallery: []
     },
     {
@@ -398,8 +398,8 @@ window.PORTFOLIO_CONFIG = {
         "Planning field interviews and prototyping"
       ],
       url: "https://zen.ac.jp/humai",
-      coverImage: "/images/activities/humai-application-local-ai/cover.png",
-      gallery: ["/images/activities/humai-application-local-ai/gallery-1.png"]
+      coverImage: "/images/activities/humai-application-local-ai/cover.jpg",
+      gallery: ["/images/activities/humai-application-local-ai/gallery-1.jpg"]
     },
     {
       slug: "gdg-on-campus-tsukuba",
@@ -422,8 +422,8 @@ window.PORTFOLIO_CONFIG = {
         "Planning a student-focused developer community"
       ],
       url: "",
-      coverImage: "/images/activities/gdg-on-campus-tsukuba/cover.png",
-      gallery: ["/images/activities/gdg-on-campus-tsukuba/gallery-1.png"]
+      coverImage: "/images/activities/gdg-on-campus-tsukuba/cover.jpg",
+      gallery: ["/images/activities/gdg-on-campus-tsukuba/gallery-1.jpg"]
     },
     {
       slug: "agent-matching-prototype",
@@ -446,10 +446,10 @@ window.PORTFOLIO_CONFIG = {
         "Considered applications for local communities and social systems"
       ],
       url: "https://github.com/Powmel",
-      coverImage: "/images/activities/agent-matching-prototype/cover.png",
+      coverImage: "/images/activities/agent-matching-prototype/cover.jpg",
       gallery: [
-        "/images/activities/agent-matching-prototype/gallery-1.png",
-        "/images/activities/agent-matching-prototype/gallery-2.png"
+        "/images/activities/agent-matching-prototype/gallery-1.jpg",
+        "/images/activities/agent-matching-prototype/gallery-2.jpg"
       ]
     },
     {
@@ -475,11 +475,11 @@ window.PORTFOLIO_CONFIG = {
         "Built ongoing relationships with people in Minami-Izu"
       ],
       url: "",
-      coverImage: "/images/activities/rural-activities-minamiizu/cover.png",
+      coverImage: "/images/activities/rural-activities-minamiizu/cover.jpg",
       gallery: [
-        "/images/activities/rural-activities-minamiizu/gallery-1.png",
-        "/images/activities/rural-activities-minamiizu/gallery-2.png",
-        "/images/activities/rural-activities-minamiizu/gallery-3.png"
+        "/images/activities/rural-activities-minamiizu/gallery-1.jpg",
+        "/images/activities/rural-activities-minamiizu/gallery-2.jpg",
+        "/images/activities/rural-activities-minamiizu/gallery-3.jpg"
       ]
     },
     {
@@ -505,10 +505,10 @@ window.PORTFOLIO_CONFIG = {
         "Completed final presentation and evaluation"
       ],
       url: "",
-      coverImage: "/images/activities/graduation-research-gan/cover.png",
+      coverImage: "/images/activities/graduation-research-gan/cover.jpg",
       gallery: [
-        "/images/activities/graduation-research-gan/gallery-1.png",
-        "/images/activities/graduation-research-gan/gallery-2.png"
+        "/images/activities/graduation-research-gan/gallery-1.jpg",
+        "/images/activities/graduation-research-gan/gallery-2.jpg"
       ]
     },
     {
@@ -532,8 +532,8 @@ window.PORTFOLIO_CONFIG = {
         "Worked on it as a practical development project"
       ],
       url: "",
-      coverImage: "/images/activities/family-website-development/cover.png",
-      gallery: ["/images/activities/family-website-development/gallery-1.png"]
+      coverImage: "/images/activities/family-website-development/cover.jpg",
+      gallery: ["/images/activities/family-website-development/gallery-1.jpg"]
     },
     {
       slug: "university-festival-project",
@@ -556,10 +556,10 @@ window.PORTFOLIO_CONFIG = {
         "Gained experience in team-based event operations"
       ],
       url: "",
-      coverImage: "/images/activities/university-festival-project/cover.png",
+      coverImage: "/images/activities/university-festival-project/cover.jpg",
       gallery: [
-        "/images/activities/university-festival-project/gallery-1.png",
-        "/images/activities/university-festival-project/gallery-2.png"
+        "/images/activities/university-festival-project/gallery-1.jpg",
+        "/images/activities/university-festival-project/gallery-2.jpg"
       ]
     },
     {
@@ -583,8 +583,8 @@ window.PORTFOLIO_CONFIG = {
         "Worked in a practical development environment"
       ],
       url: "",
-      coverImage: "/images/activities/hackathon-participation/cover.png",
-      gallery: ["/images/activities/hackathon-participation/gallery-1.png"]
+      coverImage: "/images/activities/hackathon-participation/cover.jpg",
+      gallery: ["/images/activities/hackathon-participation/gallery-1.jpg"]
     },
     {
       slug: "australia-student-leader",
@@ -609,10 +609,10 @@ window.PORTFOLIO_CONFIG = {
         "Took part in cultural promotion and speaking activities"
       ],
       url: "",
-      coverImage: "/images/activities/australia-student-leader/cover.png",
+      coverImage: "/images/activities/australia-student-leader/cover.jpg",
       gallery: [
-        "/images/activities/australia-student-leader/gallery-1.png",
-        "/images/activities/australia-student-leader/gallery-2.png"
+        "/images/activities/australia-student-leader/gallery-1.jpg",
+        "/images/activities/australia-student-leader/gallery-2.jpg"
       ]
     }
   ],
@@ -677,10 +677,10 @@ window.PORTFOLIO_CONFIG = {
           statusLabel: "進行中",
           title: "GDG on Campus立ち上げ準備",
           detail: "University of Tsukubaでの立ち上げに向けた企画・調整。",
-          coverImage: "images/activities/gdg-launch/cover.png",
+          coverImage: "images/activities/gdg-launch/cover.jpg",
           gallery: [
-            "images/activities/gdg-launch/gallery-1.png",
-            "images/activities/gdg-launch/gallery-2.png"
+            "images/activities/gdg-launch/gallery-1.jpg",
+            "images/activities/gdg-launch/gallery-2.jpg"
           ],
           records: [
             "コミュニティ設計と初期運営方針の検討",
@@ -695,10 +695,10 @@ window.PORTFOLIO_CONFIG = {
           statusLabel: "進行中",
           title: "AI x 地域コミュニティ x 自動化の研究テーマ探索",
           detail: "地域での実装を前提としたテーマ設定・検討。",
-          coverImage: "images/activities/ai-local-research/cover.png",
+          coverImage: "images/activities/ai-local-research/cover.jpg",
           gallery: [
-            "images/activities/ai-local-research/gallery-1.png",
-            "images/activities/ai-local-research/gallery-2.png"
+            "images/activities/ai-local-research/gallery-1.jpg",
+            "images/activities/ai-local-research/gallery-2.jpg"
           ],
           records: [
             "地域課題に対するAI適用パターンを整理",
@@ -713,10 +713,10 @@ window.PORTFOLIO_CONFIG = {
           statusLabel: "完了",
           title: "GANベースのゲームレベル生成に関する学部研究",
           detail: "生成手法の検証と応用可能性の検討。",
-          coverImage: "images/activities/gan-research/cover.png",
+          coverImage: "images/activities/gan-research/cover.jpg",
           gallery: [
-            "images/activities/gan-research/gallery-1.png",
-            "images/activities/gan-research/gallery-2.png"
+            "images/activities/gan-research/gallery-1.jpg",
+            "images/activities/gan-research/gallery-2.jpg"
           ],
           records: [
             "生成品質と多様性の観点からモデルを比較",
@@ -731,10 +731,10 @@ window.PORTFOLIO_CONFIG = {
           statusLabel: "完了",
           title: "オーストラリア交換留学時の学生リーダー",
           detail: "学生活動の推進とチームコミュニケーションを担当。",
-          coverImage: "images/activities/exchange-australia/cover.png",
+          coverImage: "images/activities/exchange-australia/cover.jpg",
           gallery: [
-            "images/activities/exchange-australia/gallery-1.png",
-            "images/activities/exchange-australia/gallery-2.png"
+            "images/activities/exchange-australia/gallery-1.jpg",
+            "images/activities/exchange-australia/gallery-2.jpg"
           ],
           records: [
             "多様な背景のメンバー間の連携を推進",
@@ -749,10 +749,10 @@ window.PORTFOLIO_CONFIG = {
           statusLabel: "完了",
           title: "大学祭プロジェクトの企画・実行",
           detail: "企画立案から運営まで一貫して担当。",
-          coverImage: "images/activities/university-festival/cover.png",
+          coverImage: "images/activities/university-festival/cover.jpg",
           gallery: [
-            "images/activities/university-festival/gallery-1.png",
-            "images/activities/university-festival/gallery-2.png"
+            "images/activities/university-festival/gallery-1.jpg",
+            "images/activities/university-festival/gallery-2.jpg"
           ],
           records: [
             "企画段階から実施当日まで進行管理を担当",
@@ -767,10 +767,10 @@ window.PORTFOLIO_CONFIG = {
           statusLabel: "完了",
           title: "地域活動・農業ボランティア（南伊豆ほか）",
           detail: "地域コミュニティでの実地活動に参加。",
-          coverImage: "images/activities/minami-izu-community/cover.png",
+          coverImage: "images/activities/minami-izu-community/cover.jpg",
           gallery: [
-            "images/activities/minami-izu-community/gallery-1.png",
-            "images/activities/minami-izu-community/gallery-2.png"
+            "images/activities/minami-izu-community/gallery-1.jpg",
+            "images/activities/minami-izu-community/gallery-2.jpg"
           ],
           records: [
             "農作業支援や地域交流活動に参加",
@@ -785,10 +785,10 @@ window.PORTFOLIO_CONFIG = {
           statusLabel: "完了",
           title: "両親向けサイトを含むWebサイト制作",
           detail: "要件整理から実装・公開まで対応。",
-          coverImage: "images/activities/web-building/cover.png",
+          coverImage: "images/activities/web-building/cover.jpg",
           gallery: [
-            "images/activities/web-building/gallery-1.png",
-            "images/activities/web-building/gallery-2.png"
+            "images/activities/web-building/gallery-1.jpg",
+            "images/activities/web-building/gallery-2.jpg"
           ],
           records: [
             "利用者視点で要件整理とUI改善を実施",
@@ -803,10 +803,10 @@ window.PORTFOLIO_CONFIG = {
           statusLabel: "完了",
           title: "エージェント型マッチング／自動化アイデアの試作",
           detail: "小規模プロトタイピングを通じて実用性を検証。",
-          coverImage: "images/activities/agent-prototypes/cover.png",
+          coverImage: "images/activities/agent-prototypes/cover.jpg",
           gallery: [
-            "images/activities/agent-prototypes/gallery-1.png",
-            "images/activities/agent-prototypes/gallery-2.png"
+            "images/activities/agent-prototypes/gallery-1.jpg",
+            "images/activities/agent-prototypes/gallery-2.jpg"
           ],
           records: [
             "課題設定からプロトタイプ設計までを反復",
@@ -899,10 +899,10 @@ window.PORTFOLIO_CONFIG = {
           statusLabel: "ONGOING",
           title: "Preparing to launch GDG on Campus",
           detail: "Planning and coordinating launch activities at the University of Tsukuba.",
-          coverImage: "images/activities/gdg-launch/cover.png",
+          coverImage: "images/activities/gdg-launch/cover.jpg",
           gallery: [
-            "images/activities/gdg-launch/gallery-1.png",
-            "images/activities/gdg-launch/gallery-2.png"
+            "images/activities/gdg-launch/gallery-1.jpg",
+            "images/activities/gdg-launch/gallery-2.jpg"
           ],
           records: [
             "Defining the initial community structure and operating direction",
@@ -917,10 +917,10 @@ window.PORTFOLIO_CONFIG = {
           statusLabel: "ONGOING",
           title: "Research exploration: AI x local communities x automation",
           detail: "Framing directions and practical implementation hypotheses.",
-          coverImage: "images/activities/ai-local-research/cover.png",
+          coverImage: "images/activities/ai-local-research/cover.jpg",
           gallery: [
-            "images/activities/ai-local-research/gallery-1.png",
-            "images/activities/ai-local-research/gallery-2.png"
+            "images/activities/ai-local-research/gallery-1.jpg",
+            "images/activities/ai-local-research/gallery-2.jpg"
           ],
           records: [
             "Mapping AI application patterns for local/community challenges",
@@ -935,10 +935,10 @@ window.PORTFOLIO_CONFIG = {
           statusLabel: "COMPLETED",
           title: "Undergraduate research on GAN-based game level generation",
           detail: "Investigated generation approaches and potential applications.",
-          coverImage: "images/activities/gan-research/cover.png",
+          coverImage: "images/activities/gan-research/cover.jpg",
           gallery: [
-            "images/activities/gan-research/gallery-1.png",
-            "images/activities/gan-research/gallery-2.png"
+            "images/activities/gan-research/gallery-1.jpg",
+            "images/activities/gan-research/gallery-2.jpg"
           ],
           records: [
             "Compared model behaviors from quality and diversity perspectives",
@@ -953,10 +953,10 @@ window.PORTFOLIO_CONFIG = {
           statusLabel: "COMPLETED",
           title: "Student leader during exchange study in Australia",
           detail: "Supported student coordination and communication.",
-          coverImage: "images/activities/exchange-australia/cover.png",
+          coverImage: "images/activities/exchange-australia/cover.jpg",
           gallery: [
-            "images/activities/exchange-australia/gallery-1.png",
-            "images/activities/exchange-australia/gallery-2.png"
+            "images/activities/exchange-australia/gallery-1.jpg",
+            "images/activities/exchange-australia/gallery-2.jpg"
           ],
           records: [
             "Facilitated collaboration among members from diverse backgrounds",
@@ -971,10 +971,10 @@ window.PORTFOLIO_CONFIG = {
           statusLabel: "COMPLETED",
           title: "Planned and executed a university festival project",
           detail: "Led planning and on-site execution.",
-          coverImage: "images/activities/university-festival/cover.png",
+          coverImage: "images/activities/university-festival/cover.jpg",
           gallery: [
-            "images/activities/university-festival/gallery-1.png",
-            "images/activities/university-festival/gallery-2.png"
+            "images/activities/university-festival/gallery-1.jpg",
+            "images/activities/university-festival/gallery-2.jpg"
           ],
           records: [
             "Managed the flow from planning to event-day execution",
@@ -989,10 +989,10 @@ window.PORTFOLIO_CONFIG = {
           statusLabel: "COMPLETED",
           title: "Rural and local community activities (including Minami-Izu)",
           detail: "Participated in local engagement and agricultural volunteering.",
-          coverImage: "images/activities/minami-izu-community/cover.png",
+          coverImage: "images/activities/minami-izu-community/cover.jpg",
           gallery: [
-            "images/activities/minami-izu-community/gallery-1.png",
-            "images/activities/minami-izu-community/gallery-2.png"
+            "images/activities/minami-izu-community/gallery-1.jpg",
+            "images/activities/minami-izu-community/gallery-2.jpg"
           ],
           records: [
             "Joined agricultural support and local engagement activities",
@@ -1007,10 +1007,10 @@ window.PORTFOLIO_CONFIG = {
           statusLabel: "COMPLETED",
           title: "Built websites, including one for my parents",
           detail: "Handled planning, implementation, and publishing.",
-          coverImage: "images/activities/web-building/cover.png",
+          coverImage: "images/activities/web-building/cover.jpg",
           gallery: [
-            "images/activities/web-building/gallery-1.png",
-            "images/activities/web-building/gallery-2.png"
+            "images/activities/web-building/gallery-1.jpg",
+            "images/activities/web-building/gallery-2.jpg"
           ],
           records: [
             "Translated user needs into practical requirements and UI decisions",
@@ -1025,10 +1025,10 @@ window.PORTFOLIO_CONFIG = {
           statusLabel: "COMPLETED",
           title: "Prototyped agent-based matching and automation ideas",
           detail: "Tested practical concepts through lightweight prototypes.",
-          coverImage: "images/activities/agent-prototypes/cover.png",
+          coverImage: "images/activities/agent-prototypes/cover.jpg",
           gallery: [
-            "images/activities/agent-prototypes/gallery-1.png",
-            "images/activities/agent-prototypes/gallery-2.png"
+            "images/activities/agent-prototypes/gallery-1.jpg",
+            "images/activities/agent-prototypes/gallery-2.jpg"
           ],
           records: [
             "Repeated cycles from problem framing to prototype design",

@@ -1,0 +1,23 @@
+{
+  "status": "authorized",
+  "exported": 1,
+  "newestCapturedAt": "2026-07-27T09:42:00Z",
+  "items": [
+    {
+      "source": "apple-photos",
+      "sourceId": "fixture-asset-1",
+      "capturedAt": "2026-07-27T09:42:00Z",
+      "width": 4032,
+      "height": 3024,
+      "filename": "2026-07-27-fixture.jpg",
+      "analysis": {
+        "faceCount": 0,
+        "hasText": false,
+        "labels": ["outdoor", "sky"],
+        "aestheticScore": 0.81
+      }
+    }
+  ],
+  "message": null
+}
+

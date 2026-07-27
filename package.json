@@ -2,7 +2,18 @@
   "name": "taiki-portfolio",
   "private": true,
   "scripts": {
-    "daily:build": "node scripts/build-daily-site.js",
-    "daily:check": "node scripts/build-daily-site.js --check"
+    "daily:build": "node scripts/media-apply.js && node scripts/build-daily-site.js",
+    "daily:check": "node scripts/build-daily-site.js --check",
+    "media:scan": "node scripts/media-scan.js",
+    "media:admin": "node scripts/media-admin-server.js",
+    "media:apply": "node scripts/media-apply.js",
+    "media:check": "node scripts/media-check.js",
+    "media:test": "node scripts/media-workflow-test.js",
+    "media:sync:apple": "node scripts/media-sync-apple-photos.js",
+    "media:permission:apple": "open 'x-apple.systempreferences:com.apple.preference.security?Privacy_Photos'",
+    "media:build:apple": "node scripts/build-apple-photos-bridge.js",
+    "cloud:install": "npm --prefix cloud-capture install",
+    "cloud:check": "npm --prefix cloud-capture run check",
+    "cloud:dev": "npm --prefix cloud-capture run dev"
   }
 }

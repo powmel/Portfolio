@@ -1,0 +1,9 @@
+.DS_Store
+assets/.DS_Store
+.local-media/
+.superpowers/
+cloud-capture/node_modules/
+cloud-capture/public/
+cloud-capture/.wrangler/
+cloud-capture/.dev.vars*
+native/**/.build/

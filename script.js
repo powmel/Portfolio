@@ -3,6 +3,7 @@
 
   const config = window.PORTFOLIO_CONFIG || {};
   const posts = Array.isArray(window.DAILY_POSTS) ? window.DAILY_POSTS : [];
+  const mediaSelections = window.MEDIA_SELECTIONS || {};
   const page = document.body ? document.body.dataset.page : "home";
   const copySet = config.lpCopy || {};
   const langButtons = document.querySelectorAll(".lang-btn");
@@ -150,7 +151,8 @@
       description.textContent = item.description || "";
       body.append(title, description);
 
-      if (item.image) {
+      const verifiedTimelineImage = /Australia Exchange|Regional Activities/.test(item.title || "");
+      if (item.image && verifiedTimelineImage) {
         const img = document.createElement("img");
         img.className = "timeline-thumb";
         img.src = safePath(item.image);
@@ -317,6 +319,8 @@
     title.id = "daily-modal-title";
     title.textContent = post.title || "";
     article.append(meta, title);
+    const mediaFigure = createDailyMediaFigure(post);
+    if (mediaFigure) article.appendChild(mediaFigure);
 
     post.content.lead.forEach((text) => {
       const paragraph = document.createElement("p");
@@ -347,6 +351,31 @@
     });
 
     return article;
+  }
+
+  function createDailyMediaFigure(post) {
+    const value = post && mediaSelections[post.date];
+    const items = (Array.isArray(value) ? value : value ? [value] : []).filter((media) => media && media.src);
+    if (!items.length) return null;
+    const figure = document.createElement("figure");
+    figure.className = items.length > 1 ? "daily-media daily-media-gallery" : "daily-media";
+    items.forEach((media) => {
+      const item = document.createElement("div");
+      item.className = "daily-media-item";
+      const image = document.createElement("img");
+      image.src = page === "daily-post" ? `../${safePath(media.src)}` : safePath(media.src);
+      image.alt = media.alt || `${post.date}の記録写真`;
+      image.loading = "lazy";
+      item.appendChild(image);
+      if (media.capturedAt) {
+        const caption = document.createElement("figcaption");
+        const display = String(media.capturedAt).replace("T", " ").replace(/:\d{2}(?:\.\d+)?(?:Z)?$/, "");
+        caption.textContent = display;
+        item.appendChild(caption);
+      }
+      figure.appendChild(item);
+    });
+    return figure;
   }
 
   function renderDailyModalFallback(post) {
@@ -430,7 +459,12 @@
     const tags = document.createElement("div");
     tags.className = "tag-list";
     (post.tags || []).forEach((tag) => tags.appendChild(createTag(tag)));
-    article.append(date, title, summary, tags);
+    const mediaFigure = createDailyMediaFigure(post);
+    if (mediaFigure) article.append(mediaFigure);
+    const body = document.createElement("div");
+    body.className = "daily-card-body";
+    body.append(date, title, summary, tags);
+    article.appendChild(body);
     return article;
   }
 
@@ -563,32 +597,37 @@
     const grid = $("project-grid");
     if (!grid) return;
     grid.innerHTML = "";
-    (config.projectHighlights || []).forEach((highlight) => {
+    const selectedSlugs = ["rural-activities-minamiizu", "australia-student-leader", "agent-matching-prototype"];
+    const highlights = selectedSlugs.map((slug) => (config.projectHighlights || []).find((item) => item.slug === slug) || { slug, tags: [] });
+    highlights.forEach((highlight, index) => {
       const activity = localizeActivity(getActivityBySlug(highlight.slug));
       const card = document.createElement("article");
-      card.className = "project-card";
+      card.className = `project-card ${index === 0 ? "project-card-featured" : ""}`;
 
       const img = document.createElement("img");
-      img.src = activity && activity.coverImage ? activity.coverImage : "images/profile-main.png";
+      img.src = activity && activity.coverImage ? activity.coverImage : "images/profile-main.jpg";
       img.alt = highlight.title || (activity && activity.title) || "Project image";
       img.loading = "lazy";
 
       const body = document.createElement("div");
       body.className = "project-card-body";
+      const evidence = document.createElement("p");
+      evidence.className = "project-evidence";
+      evidence.textContent = `${activity ? activity.period : ""} / ${activity && activity.status === "ongoing" ? (activeLang === "ja" ? "進行中" : "ONGOING") : (activeLang === "ja" ? "記録あり" : "DOCUMENTED")}`;
       const title = document.createElement("h3");
-      title.textContent = highlight.title || (activity && activity.title) || "";
+      title.textContent = (activity && activity.title) || highlight.title || "";
       const detail = document.createElement("p");
       detail.textContent = activity ? activity.detail : "";
       const tags = document.createElement("div");
       tags.className = "tag-list";
       (highlight.tags || []).forEach((tag) => tags.appendChild(createTag(tag)));
-      body.append(title, detail, tags);
+      body.append(evidence, title, detail, tags);
 
       if (activity) {
         const button = document.createElement("button");
         button.className = "project-open";
         button.type = "button";
-        button.textContent = activeLang === "ja" ? "記録を見る" : "View details";
+        button.textContent = activeLang === "ja" ? "役割・記録・写真を見る" : "View role, records & photos";
         button.addEventListener("click", () => openActivityModal(activity));
         body.appendChild(button);
       }
@@ -722,7 +761,7 @@
     revealElements.forEach((el) => observer.observe(el));
   }
 
-  if ($("profile-image")) $("profile-image").src = safePath(config.profileImage || "images/profile-main.png");
+  if ($("profile-image")) $("profile-image").src = safePath(config.profileImage || "images/profile-main.jpg");
   if (year) year.textContent = String(new Date().getFullYear());
 
   buildHeroStream();
