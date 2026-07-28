@@ -7,7 +7,8 @@ const { applyMediaDecision, buildReviewQueue } = require("./lib/media-decisions"
 const catalog = {
   items: [
     { id: "new", capturedAt: "2026-07-27T12:00:00Z" },
-    { id: "old", capturedAt: "2026-07-26T12:00:00Z" }
+    { id: "old", capturedAt: "2026-07-26T12:00:00Z" },
+    { id: "automatic", source: "apple-photos", capturedAt: "2026-07-25T12:00:00Z", capturedDate: "2026-07-25" }
   ]
 };
 const proposals = {
@@ -43,7 +44,7 @@ store = applyMediaDecision(store, {
   date: "2026-07-27"
 }, "2026-07-27T12:11:00Z");
 let review = buildReviewQueue(proposals, catalog, store);
-assert.equal(review.queue.length, 2, "a photo appears only once even when suggested for multiple dates");
+assert.equal(review.queue.length, 3, "every automatic Apple photo appears once, even without a diary proposal");
 assert.equal(review.queue[0].mediaId, "new", "newest photo appears first");
 assert.equal(review.counts.publish, 1);
 assert.equal(review.counts.reject, 1);
@@ -54,7 +55,7 @@ store = applyMediaDecision(store, {
   date: "2026-07-27"
 }, "2026-07-27T12:12:00Z");
 review = buildReviewQueue(proposals, catalog, store);
-assert.equal(review.counts.pending, 1);
+assert.equal(review.counts.pending, 2);
 assert.equal(review.counts.reject, 0);
 
 console.log("Media workflow test passed: per-photo decisions -> deduplicated queue -> undo");

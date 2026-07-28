@@ -39,13 +39,23 @@ if (fixture) {
       process.exit(build.status || 1);
     }
   }
-  const executablePath = path.join(appPath, "Contents", "MacOS", "apple-photos-bridge");
-  run = spawnSync(executablePath, [
+  const resultPath = path.join(localDir, "apple-photos-last-result.json");
+  if (fs.existsSync(resultPath)) fs.unlinkSync(resultPath);
+  run = spawnSync("open", [
+    "-n", appPath, "--args",
     "--output", outputDir,
     "--since", since,
-    "--limit", "120"
+    "--limit", "120",
+    "--result", resultPath
   ], { cwd: root, encoding: "utf8", maxBuffer: 20 * 1024 * 1024 });
-  raw = String(run.stdout || "").trim();
+  if (run.status !== 0) {
+    console.error(run.stderr || run.stdout || `Apple Photos Bridge launch failed (${run.status}).`);
+    process.exit(run.status || 1);
+  }
+  const waitArray = new Int32Array(new SharedArrayBuffer(4));
+  const deadline = Date.now() + 300000;
+  while (!fs.existsSync(resultPath) && Date.now() < deadline) Atomics.wait(waitArray, 0, 0, 250);
+  raw = fs.existsSync(resultPath) ? fs.readFileSync(resultPath, "utf8").trim() : "";
 }
 let result;
 try {

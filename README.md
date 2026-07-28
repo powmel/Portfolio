@@ -40,7 +40,15 @@ After permission is granted, the installed LaunchAgent
 photos every hour. Review derivatives, Vision analysis, source identifiers,
 and decisions stay in `.local-media/`.
 
-Open `http://127.0.0.1:4173/admin/media.html` and decide one photo at a time:
+The primary ledger is now the local macOS app, not the cloud review page:
+
+```bash
+npm run media:build:review-app
+npm run media:open
+```
+
+`Taiki Photo Review.app` starts the loopback-only private service itself and
+opens the swipe UI. Decide one photo at a time:
 
 - swipe right: approve for the next Daily Log build;
 - swipe left: keep private;
@@ -89,6 +97,11 @@ queue used by Mac folder scans.
 Google Photos is not the automatic source: since March 31, 2025 its official
 API requires a user-driven Picker for access to existing library content.
 Apple Photos / iCloud sync therefore supplies the no-upload path.
+
+During the first flow-verification phase, Apple Photos intake deliberately
+stores neutral analysis values and does not run Vision/AI. Confirm continuous
+intake and swipe/undo behavior first; enable ranking analysis only in a later
+reviewed change.
 
 To use it from iPhone, bind the server to a specific LAN or Tailscale address.
 A token is mandatory outside loopback:

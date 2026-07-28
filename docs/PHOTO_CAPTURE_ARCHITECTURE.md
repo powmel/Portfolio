@@ -108,6 +108,13 @@ Photos permission grant for bundle
 `dev.taiki.portfolio.apple-photos-bridge`. After that grant, hourly sync is
 automatic. Safari photo-library/camera selection remains only a manual fallback.
 
+The normal review surface is `Taiki Photo Review.app`, a signed local macOS app
+that starts the loopback service and embeds the swipe UI. The Cloudflare
+surface is optional remote access, not the canonical ledger. The current
+verification phase disables Vision/AI during intake: every recent Apple Photos
+item enters the review queue with neutral analysis metadata so intake and human
+swiping can be validated independently.
+
 ## Cloud-ready MVP
 
 `cloud-capture/` contains the always-on version of the same private service:

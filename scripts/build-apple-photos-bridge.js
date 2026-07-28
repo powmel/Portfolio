@@ -19,10 +19,19 @@ fs.mkdirSync(macos, { recursive: true });
 fs.copyFileSync(path.join(packageDir, ".build", "release", "apple-photos-bridge"), path.join(macos, "apple-photos-bridge"));
 fs.copyFileSync(path.join(packageDir, "Info.plist"), path.join(contents, "Info.plist"));
 fs.chmodSync(path.join(macos, "apple-photos-bridge"), 0o755);
-const sign = spawnSync("codesign", ["--force", "--sign", "-", "--identifier", "dev.taiki.portfolio.apple-photos-bridge", appDir], {
+const signingIdentity = process.env.APPLE_PHOTOS_CODESIGN_IDENTITY
+  || "Apple Development: taiki.msw@icloud.com (WPUSJ4B3B4)";
+const sign = spawnSync("codesign", [
+  "--force",
+  "--sign", signingIdentity,
+  "--identifier", "dev.taiki.portfolio.apple-photos-bridge",
+  "--entitlements", path.join(packageDir, "Entitlements.plist"),
+  "--options", "runtime",
+  "--timestamp=none",
+  appDir
+], {
   cwd: root,
   stdio: "inherit"
 });
 if (sign.status !== 0) process.exit(sign.status || 1);
 console.log(appDir);
-

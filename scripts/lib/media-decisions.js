@@ -30,6 +30,18 @@ function buildReviewQueue(proposals, catalog, storeValue) {
       });
     }
   }
+  for (const media of catalog.items || []) {
+    if (media.source !== "apple-photos" || byMedia.has(media.id)) continue;
+    byMedia.set(media.id, {
+      mediaId: media.id,
+      date: media.capturedDate || String(media.capturedAt || "").slice(0, 10),
+      title: "Apple Photos 新着",
+      summary: "端末内へ自動流入した写真です。",
+      score: 0,
+      reasons: ["Apple Photosから自動流入"],
+      warnings: []
+    });
+  }
   const queue = [...byMedia.values()]
     .map((item) => ({
       ...item,
@@ -82,4 +94,3 @@ function applyMediaDecision(storeValue, input, now = new Date().toISOString()) {
 }
 
 module.exports = { applyMediaDecision, buildReviewQueue, normalizeStore };
-

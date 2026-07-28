@@ -154,7 +154,7 @@ function renderSwipeDeck() {
     unavailable.hidden = false;
   };
   $("#swipe-captured-at").textContent = formatCapturedAt(media?.capturedAt || media?.capturedDate || item.date);
-  $("#swipe-ai-score").textContent = `AI候補度 ${Math.max(0, Math.min(100, Math.round(item.score || 0)))}%`;
+  $("#swipe-ai-score").textContent = "自動流入";
   $("#swipe-daily-title").textContent = item.title || `${item.date} Daily Log`;
   $("#swipe-reason").textContent = (item.reasons || []).slice(0, 2).join(" ・ ");
   const warnings = item.warnings || [];
@@ -389,7 +389,7 @@ function render() {
   const isCloud = state.data.capabilities?.cloud === true;
   document.querySelectorAll("[data-local-only]").forEach((node) => { node.hidden = isCloud; });
   $("#admin-mode").textContent = isCloud ? "PRIVATE CLOUD" : "LOCAL ADMIN";
-  $("#admin-description").textContent = "AIが新着写真を候補にします。人間は公開する・しないをスワイプで決めるだけです。";
+  $("#admin-description").textContent = "Apple Photosの新着が自動で入ります。公開する・しないを端末内でスワイプします。";
   renderSummary();
   renderSwipeDeck();
   renderLedger();
