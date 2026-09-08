@@ -9,7 +9,7 @@ window.PORTFOLIO_CONFIG = {
     "images/moment-6.jpg"
   ],
   defaultLanguage: "ja",
-  updatedAt: "June 2026",
+  updatedAt: "September 2026",
   lpCopy: {
     ja: {
       pageTitle: "Taiki Misawa | Portfolio",
@@ -45,7 +45,7 @@ window.PORTFOLIO_CONFIG = {
         timelineLink: "考え方を読む →",
         dailyKicker: "Latest Activity",
         dailyTitle: "Latest Daily Log",
-        dailySubtext: "毎日更新される、生きているポートフォリオ",
+        dailySubtext: "研究・開発・コミュニティの近況と思考",
         dailyLink: "Daily Log 一覧へ →",
         projectsKicker: "Selected Work",
         projectsTitle: "成果と証拠で見る、3つの取り組み",
@@ -110,7 +110,7 @@ window.PORTFOLIO_CONFIG = {
         timelineLink: "See more timeline →",
         dailyKicker: "Latest Daily Log",
         dailyTitle: "Latest Daily Log",
-        dailySubtext: "A living portfolio updated through daily practice.",
+        dailySubtext: "Notes from research, development, and community activities.",
         dailyLink: "View Daily Log →",
         projectsKicker: "Projects / Activities",
         projectsTitle: "Projects / Activities",

@@ -680,9 +680,17 @@
     const nav = activeCopy.nav || {};
 
     document.documentElement.lang = activeLang;
-    document.title = activeCopy.pageTitle || "Taiki Misawa | Portfolio";
+    const pageKind = document.body.dataset.page;
+    if (pageKind === "daily-list") {
+      document.title = "Daily Log | Taiki Misawa";
+    } else if (pageKind === "daily-post") {
+      const articleTitle = document.querySelector(".article-card h1");
+      if (articleTitle) document.title = `${articleTitle.textContent} | Taiki Misawa`;
+    } else {
+      document.title = activeCopy.pageTitle || "Taiki Misawa | Portfolio";
+    }
     const meta = $("meta-description");
-    if (meta && activeCopy.metaDescription) meta.setAttribute("content", activeCopy.metaDescription);
+    if (meta && pageKind !== "daily-list" && activeCopy.metaDescription) meta.setAttribute("content", activeCopy.metaDescription);
 
     setText($("nav-timeline"), nav.timeline);
     setText($("nav-daily"), nav.daily);
@@ -718,7 +726,7 @@
     setText($("heading-contact"), sections.contactTitle);
     setText($("contact-intro"), sections.contactIntro);
     setText($("daily-page-title"), activeLang === "ja" ? "Daily Log" : "Daily Log");
-    setText($("daily-page-lead"), activeLang === "ja" ? "日々の活動・研究・開発・思考を、AIと一緒に整理して残していくログです。" : "A log for organizing daily activities, research, development, and thoughts together with AI.");
+    setText($("daily-page-lead"), activeLang === "ja" ? "研究、開発、人との活動。その途中で考えたことを、少しずつ書き残しています。" : "Notes from research, building, and working with people. A record of what I am learning along the way.");
 
     if (updatedAt) {
       updatedAt.textContent = `${activeCopy.footerUpdated || "Updated"}: ${config.updatedAt || "April 2026"}`;
