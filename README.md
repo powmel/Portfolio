@@ -131,6 +131,8 @@ iPhoneのJPEG・HEIC/HEIF・ProRAW（DNG）はbase64化せずR2へストリー�
 ## Edit points
 
 - Main landing page sections are in `index.html`
+- `classic.html` restores the earlier quiet layout. The header switch links both views; they share content and the saved JP/EN language choice.
+- The "Future Dream" copy for both views lives in `site.config.js > lpCopy > ja/en > dream`.
 - LP copy, identity cards, timeline, focus areas, project highlights, vision, and contact labels are in `site.config.js`
 - Activities / Experience master data is in `site.config.js > activities`
   - Recommended fields per item: `slug`, `period`, `status`, `title_ja`, `title_en`, `detail_ja`, `detail_en`, `records_ja`, `records_en`, `coverImage`, `gallery`, `url`

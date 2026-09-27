@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta id="meta-description" name="description" content="Taiki Misawaのポートフォリオ。AI・研究・開発・地域活動を日々つなげながら動いています。">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taiki Misawa | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260927">
+</head>
+<body data-page="home" class="classic-home">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="brand">Taiki Misawa</a>
+      <button id="menu-toggle" class="menu-toggle" type="button" aria-label="メニューを開く" aria-controls="primary-nav" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div id="primary-nav" class="header-panel">
+        <nav class="main-nav" aria-label="Primary">
+          <a id="nav-timeline" href="#timeline-log">Timeline</a>
+          <a id="nav-daily" href="daily.html">Daily Log</a>
+          <a id="nav-projects" href="#projects">Projects</a>
+          <a id="nav-vision" href="#vision">Vision</a>
+          <a id="nav-about" href="#about">About</a>
+          <a id="nav-dream" href="#future-dream">将来の夢</a>
+        </nav>
+        <nav class="view-switch" aria-label="表示を切り替える"><a class="view-link" href="index.html">現在版</a><a class="view-link is-active" href="classic.html" aria-current="page">従来版</a></nav>
+        <nav class="lang-switch" aria-label="Language switch">
+          <button type="button" class="lang-btn is-active" data-lang="ja">JP</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero section">
+      <div class="container">
+        <div class="hero-card reveal">
+          <div class="hero-copy">
+            <p id="hero-affiliation" class="eyebrow">筑波大学大学院</p>
+            <h1>Taiki Misawa</h1>
+            <p id="hero-identity" class="identity">研究・開発・地域をつなぐ、学生ビルダー／リサーチャー</p>
+            <p id="hero-lead" class="lead">
+              筑波大学大学院で、視覚情報・センサー・AIを活用し、人の判断や行動を支援するシステムを探究しています。
+            </p>
+            <div class="hero-actions">
+              <a id="hero-btn-timeline" class="button" href="#projects">View Timeline</a>
+              <a id="hero-btn-daily" class="button button-secondary" href="daily.html">View Daily Log</a>
+            </div>
+          </div>
+          <figure class="hero-photo-wrap">
+            <div class="hero-stream" aria-hidden="true">
+              <div id="hero-stream-track-a" class="hero-stream-track"></div>
+              <div id="hero-stream-track-b" class="hero-stream-track hero-stream-track-reverse"></div>
+            </div>
+            <img id="profile-image" class="hero-photo" src="images/profile-main.jpg" alt="オーストラリアでの学生交流に参加するTaiki Misawa">
+            <figcaption id="hero-caption">オーストラリアでの学生発表（2023）</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container reveal">
+        <div class="section-heading">
+          <p id="about-kicker" class="section-kicker">About / Identity</p>
+          <h2 id="heading-about">About / Identity</h2>
+          <p id="about-lead" class="section-lead">
+            情報科学を学びながら、AI・自動化・プロダクト開発・コミュニティ形成、そして技術と社会の関係に関心を持っています。
+          </p>
+        </div>
+        <div id="identity-grid" class="identity-grid"></div>
+      </div>
+    </section>
+
+    <section id="focus" class="section section-soft">
+      <div class="container reveal">
+        <div class="section-heading compact">
+          <p id="focus-kicker" class="section-kicker">Focus Areas</p>
+          <h2 id="heading-focus">Focus Areas</h2>
+        </div>
+        <ul id="focus-list" class="chip-list"></ul>
+      </div>
+    </section>
+
+    <section id="timeline-log" class="section">
+      <div class="container reveal">
+        <div class="timeline-log-grid">
+          <section class="timeline-panel" aria-labelledby="heading-timeline">
+            <div class="section-heading compact">
+              <p id="timeline-kicker" class="section-kicker">Timeline</p>
+              <h2 id="heading-timeline">Timeline（主要な歩み）</h2>
+            </div>
+            <div id="timeline-list" class="timeline-list"></div>
+            <a id="timeline-link" class="text-link" href="#projects">Timelineをもっと見る →</a>
+          </section>
+
+          <aside class="daily-panel" aria-labelledby="heading-daily">
+            <div class="section-heading compact">
+              <p id="daily-kicker" class="section-kicker">Latest Daily Log</p>
+              <h2 id="heading-daily">Latest Daily Log</h2>
+              <p id="daily-subtext" class="section-note">毎日更新される、生きているポートフォリオ</p>
+            </div>
+            <div id="latest-daily-list" class="daily-card-list"></div>
+            <a id="daily-link" class="text-link" href="daily.html">Daily Log 一覧へ →</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section section-soft">
+      <div class="container reveal">
+        <div class="section-heading">
+          <p id="projects-kicker" class="section-kicker">Projects / Activities</p>
+          <h2 id="heading-projects">Projects / Activities（最近の取り組み）</h2>
+        </div>
+        <div id="project-grid" class="project-grid"></div>
+        <a id="projects-link" class="text-link" href="#timeline-log">これまでの歩みを見る →</a>
+      </div>
+    </section>
+
+    <section id="vision" class="section">
+      <div class="container reveal">
+        <div class="vision-card">
+          <div class="vision-copy">
+            <p id="vision-kicker" class="section-kicker">Vision</p>
+            <h2 id="heading-vision">Vision</h2>
+            <p id="vision-text">
+              AIによって、人が本来向き合うべき活動に集中できる環境をつくる。自動化と知能化を通じて、情報の整理・判断・実行を支援し、一人ひとりが創造的で意味のある活動に時間を使える社会を目指します。
+            </p>
+          </div>
+          <img id="vision-image" class="vision-image" src="images/moment-2.jpg" alt="活動中の実写真">
+        </div>
+      </div>
+    </section>
+
+    <section id="future-dream" class="section dream-section" aria-labelledby="dream-heading">
+      <div class="container reveal dream-layout">
+        <div class="dream-intro"><p id="dream-kicker" class="section-kicker">Future Dream</p><h2 id="dream-heading">誰かの可能性を広げる未来へ。</h2><p id="dream-lead">ドラえもんのように、人に寄り添い、必要なときに力になれる存在が実現する未来。その実現に、僕も関わりたい。</p></div>
+        <div class="dream-story"><p id="dream-story">小学4年生の「将来の夢」を書く機会に、僕はその夢をまっすぐ書きました。先生には少し冗談のように受け取られましたが、親はその夢を笑わず、守ってくれました。振り返ると、あの経験が、今も新しいことにワクワクして挑戦する自分につながっている気がします。</p><p id="dream-now">この未来を一人でつくるとは思っていません。研究や開発を重ね、その実現に関わるプロジェクトで必要とされる人になること。それが今の目標です。</p></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-soft">
+      <div class="container reveal">
+        <div class="section-heading compact">
+          <p id="contact-kicker" class="section-kicker">Contact</p>
+          <h2 id="heading-contact">Links / Contact</h2>
+          <p id="contact-intro" class="contact-intro">AIとコミュニティ実装、実用的な技術活用に関する対話・連携のご相談を歓迎します。</p>
+        </div>
+        <div class="link-grid" id="contact-links"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>(c) <span id="year"></span> Taiki Misawa</p>
+      <p id="updated-at"></p>
+    </div>
+  </footer>
+
+  <div id="activity-modal" class="activity-modal" hidden>
+    <div id="activity-modal-backdrop" class="activity-modal-backdrop"></div>
+    <article class="activity-modal-panel" role="dialog" aria-modal="true" aria-labelledby="activity-modal-title">
+      <button id="activity-modal-close" type="button" class="activity-modal-close" aria-label="Close detail">×</button>
+      <p id="activity-modal-period" class="activity-modal-period"></p>
+      <h3 id="activity-modal-title" class="activity-modal-title"></h3>
+      <p id="activity-modal-detail" class="activity-modal-detail"></p>
+      <section class="activity-modal-section">
+        <h4 id="activity-modal-records-heading"></h4>
+        <ul id="activity-modal-records" class="activity-modal-records"></ul>
+      </section>
+      <section class="activity-modal-section">
+        <h4 id="activity-modal-gallery-heading"></h4>
+        <div id="activity-modal-gallery" class="activity-modal-gallery"></div>
+      </section>
+      <section id="activity-modal-link-section" class="activity-modal-section" hidden>
+        <h4 id="activity-modal-link-heading"></h4>
+        <a id="activity-modal-link" class="activity-modal-link" href="#" target="_blank" rel="noreferrer"></a>
+      </section>
+    </article>
+  </div>
+
+  <script src="site.config.js?v=20260927"></script>
+  <script src="data/daily-posts.js?v=20260909"></script>
+  <script src="data/media-selections.js?v=20260909"></script>
+  <script src="script.js?v=20260927"></script>
+</body>
+</html>

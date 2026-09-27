@@ -19,7 +19,8 @@ window.PORTFOLIO_CONFIG = {
         daily: "Daily Log",
         projects: "Selected Work",
         vision: "Contact",
-        about: "About"
+        about: "About",
+        dream: "将来の夢"
       },
       menu: {
         open: "メニューを開く",
@@ -32,6 +33,15 @@ window.PORTFOLIO_CONFIG = {
         timelineButton: "代表プロジェクトを見る",
         dailyButton: "最新の活動を見る",
         caption: "オーストラリア交換留学・学生リーダー / 2023"
+      },
+      highlights: {
+        availability: "筑波から、研究と開発を続けています",
+        runway: "日々は、動いている。",
+        work: "代表的な取り組み",
+        research: "研究と現場での活動",
+        collaboration: "言葉を越えた協働",
+        daily: "日々の活動記録",
+        projectsLead: "研究、プロトタイプ、国際協働。役割と記録を確認できる代表的な活動です。"
       },
       sections: {
         aboutKicker: "About",
@@ -56,6 +66,14 @@ window.PORTFOLIO_CONFIG = {
         contactTitle: "一緒に考え、つくるための連絡先",
         contactIntro: "AI、英語を使った国際的な協働、コミュニティ実装、実用的な技術活用に関する対話・連携を歓迎します。"
       },
+      dream: {
+        kicker: "Future Dream",
+        title: "誰かの可能性を広げる未来へ。",
+        lead: "ドラえもんのように、人に寄り添い、必要なときに力になれる存在が実現する未来。その実現に、僕も関わりたい。",
+        story: "小学4年生の「将来の夢」を書く機会に、僕はその夢をまっすぐ書きました。先生には少し冗談のように受け取られましたが、親はその夢を笑わず、守ってくれました。振り返ると、あの経験が、今も新しいことにワクワクして挑戦する自分につながっている気がします。",
+        now: "この未来を一人でつくるとは思っていません。研究や開発を重ね、その実現に関わるプロジェクトで必要とされる人になること。それが今の目標です。"
+      },
+      view: { current: "現在版", classic: "従来版", label: "表示を切り替える" },
       modal: {
         recordsTitle: "記録メモ",
         galleryTitle: "関連写真",
@@ -83,8 +101,9 @@ window.PORTFOLIO_CONFIG = {
         timeline: "Timeline",
         daily: "Daily Log",
         projects: "Projects",
-        vision: "Vision",
-        about: "About"
+        vision: "Contact",
+        about: "About",
+        dream: "Future Dream"
       },
       menu: {
         open: "Open menu",
@@ -97,6 +116,15 @@ window.PORTFOLIO_CONFIG = {
         timelineButton: "View Timeline",
         dailyButton: "View Daily Log",
         caption: "Student presentation in Australia (2023)"
+      },
+      highlights: {
+        availability: "Researching and building in Tsukuba, Japan",
+        runway: "The work keeps moving.",
+        work: "Selected case studies",
+        research: "Research and field work",
+        collaboration: "Cross-cultural collaboration",
+        daily: "Living activity record",
+        projectsLead: "Research, prototypes, and international collaboration, with roles and records you can explore."
       },
       sections: {
         aboutKicker: "About / Identity",
@@ -121,6 +149,14 @@ window.PORTFOLIO_CONFIG = {
         contactTitle: "Links / Contact",
         contactIntro: "I am open to conversations about AI, global collaboration through English, community-oriented technology, and practical implementation."
       },
+      dream: {
+        kicker: "Future Dream",
+        title: "Toward a future that expands what people can do.",
+        lead: "I hope to help make possible a future with companions like Doraemon: beings that stay close to people and help when they need it.",
+        story: "In fourth grade, I wrote that dream down for a school assignment about our futures. A teacher took it as a bit of a joke, but my family stood up for me and treated my dream seriously. Looking back, I think that experience helped me keep my curiosity and willingness to try new things.",
+        now: "I do not expect to build that future alone. My goal now is to grow through research and building, so that I can contribute to a project working toward it and be someone that team needs."
+      },
+      view: { current: "Current", classic: "Classic", label: "Switch site view" },
       modal: {
         recordsTitle: "Records",
         galleryTitle: "Photos",

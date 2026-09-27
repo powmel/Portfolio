@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260927">
 </head>
 <body data-page="home" class="portfolio-home">
   <header class="site-header">
@@ -22,8 +22,10 @@
           <a id="nav-timeline" href="#timeline-log">Journey</a>
           <a id="nav-daily" href="daily.html">Daily Log</a>
           <a id="nav-about" href="#about">About</a>
+          <a id="nav-dream" href="#future-dream">将来の夢</a>
           <a id="nav-vision" href="#contact">Contact</a>
         </nav>
+        <nav class="view-switch" aria-label="表示を切り替える"><a class="view-link is-active" href="index.html" aria-current="page">現在版</a><a class="view-link" href="classic.html">従来版</a></nav>
         <nav class="lang-switch" aria-label="Language switch"><button type="button" class="lang-btn is-active" data-lang="ja">JP</button><button type="button" class="lang-btn" data-lang="en">EN</button></nav>
       </div>
     </div>
@@ -46,7 +48,7 @@
               <a id="hero-btn-timeline" class="button" href="#projects">代表プロジェクトを見る</a>
               <a id="hero-btn-daily" class="button button-secondary" href="daily.html">最新の活動を見る</a>
             </div>
-            <p class="hero-availability"><span></span> Researching &amp; building in Tsukuba, Japan</p>
+            <p class="hero-availability"><span></span><span id="hero-availability-text">筑波から、研究と開発を続けています</span></p>
           </div>
           <figure class="hero-photo-wrap evidence-photo">
             <img id="profile-image" class="hero-photo" src="images/profile-main.jpg" alt="オーストラリアでの学生交流に参加するTaiki Misawa">
@@ -57,7 +59,7 @@
     </section>
 
     <section class="moments-runway" aria-label="Recent moments">
-      <div class="runway-label"><span>RECENT MOMENTS</span><strong>日々は、動いている。</strong></div>
+      <div class="runway-label"><span>RECENT MOMENTS</span><strong id="runway-title">日々は、動いている。</strong></div>
       <div class="runway-viewport">
         <div id="hero-stream-track-a" class="hero-stream-track"></div>
         <div id="hero-stream-track-b" class="hero-stream-track hero-stream-track-reverse"></div>
@@ -66,10 +68,10 @@
 
     <section class="proof-strip" aria-label="活動の概要">
       <div class="container proof-grid">
-        <div><strong>3</strong><span>Selected case studies</span></div>
-        <div><strong>2023—26</strong><span>Research &amp; field work</span></div>
-        <div><strong>JP / EN</strong><span>Cross-cultural collaboration</span></div>
-        <div><strong>Daily</strong><span>Living activity record</span></div>
+        <div><strong>3</strong><span id="proof-work">代表的な取り組み</span></div>
+        <div><strong>2023—26</strong><span id="proof-research">研究と現場での活動</span></div>
+        <div><strong>JP / EN</strong><span id="proof-collaboration">言葉を越えた協働</span></div>
+        <div><strong>Daily</strong><span id="proof-daily">日々の活動記録</span></div>
       </div>
     </section>
 
@@ -77,7 +79,7 @@
       <div class="container reveal">
         <div class="section-heading work-heading">
           <div><p id="projects-kicker" class="section-kicker">Selected Work</p><h2 id="heading-projects">成果と証拠で見る、3つの取り組み</h2></div>
-          <p class="section-lead">研究、プロトタイプ、国際協働。役割と記録を確認できる代表的な活動です。</p>
+          <p id="projects-lead" class="section-lead">研究、プロトタイプ、国際協働。役割と記録を確認できる代表的な活動です。</p>
         </div>
         <div id="project-grid" class="project-grid selected-project-grid"></div>
         <a id="projects-link" class="text-link" href="#timeline-log">これまでの歩みを見る →</a>
@@ -122,6 +124,13 @@
       </div>
     </section>
 
+    <section id="future-dream" class="section dream-section" aria-labelledby="dream-heading">
+      <div class="container reveal dream-layout">
+        <div class="dream-intro"><p id="dream-kicker" class="section-kicker">Future Dream</p><h2 id="dream-heading">誰かの可能性を広げる未来へ。</h2><p id="dream-lead">ドラえもんのように、人に寄り添い、必要なときに力になれる存在が実現する未来。その実現に、僕も関わりたい。</p></div>
+        <div class="dream-story"><p id="dream-story">小学4年生の「将来の夢」を書く機会に、僕はその夢をまっすぐ書きました。先生には少し冗談のように受け取られましたが、親はその夢を笑わず、守ってくれました。振り返ると、あの経験が、今も新しいことにワクワクして挑戦する自分につながっている気がします。</p><p id="dream-now">この未来を一人でつくるとは思っていません。研究や開発を重ね、その実現に関わるプロジェクトで必要とされる人になること。それが今の目標です。</p></div>
+      </div>
+    </section>
+
     <section id="contact" class="section contact-section">
       <div class="container reveal">
         <div class="section-heading compact"><p id="contact-kicker" class="section-kicker">Contact</p><h2 id="heading-contact">一緒に考え、つくるための連絡先</h2><p id="contact-intro" class="contact-intro">AI、国際的な協働、コミュニティ実装、実用的な技術活用についての対話を歓迎します。</p></div>
@@ -134,9 +143,9 @@
 
   <div id="activity-modal" class="activity-modal" hidden><div id="activity-modal-backdrop" class="activity-modal-backdrop"></div><article class="activity-modal-panel" role="dialog" aria-modal="true" aria-labelledby="activity-modal-title"><button id="activity-modal-close" type="button" class="activity-modal-close" aria-label="Close detail">×</button><p id="activity-modal-period" class="activity-modal-period"></p><h3 id="activity-modal-title" class="activity-modal-title"></h3><p id="activity-modal-detail" class="activity-modal-detail"></p><section class="activity-modal-section"><h4 id="activity-modal-records-heading"></h4><ul id="activity-modal-records" class="activity-modal-records"></ul></section><section class="activity-modal-section"><h4 id="activity-modal-gallery-heading"></h4><div id="activity-modal-gallery" class="activity-modal-gallery"></div></section><section id="activity-modal-link-section" class="activity-modal-section" hidden><h4 id="activity-modal-link-heading"></h4><a id="activity-modal-link" class="activity-modal-link" href="#" target="_blank" rel="noreferrer"></a></section></article></div>
 
-  <script src="site.config.js"></script>
+  <script src="site.config.js?v=20260927"></script>
   <script src="data/daily-posts.js?v=20260909"></script>
   <script src="data/media-selections.js?v=20260909"></script>
-  <script src="script.js?v=20260909"></script>
+  <script src="script.js?v=20260927"></script>
 </body>
 </html>

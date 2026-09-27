@@ -678,6 +678,9 @@
     const sections = activeCopy.sections || {};
     const hero = activeCopy.hero || {};
     const nav = activeCopy.nav || {};
+    const dream = activeCopy.dream || {};
+    const view = activeCopy.view || {};
+    const highlights = activeCopy.highlights || {};
 
     document.documentElement.lang = activeLang;
     const pageKind = document.body.dataset.page;
@@ -695,14 +698,22 @@
     setText($("nav-timeline"), nav.timeline);
     setText($("nav-daily"), nav.daily);
     setText($("nav-projects"), nav.projects);
-    setText($("nav-vision"), nav.vision);
+    setText($("nav-vision"), document.body.classList.contains("classic-home") ? "Vision" : nav.vision);
     setText($("nav-about"), nav.about);
+    setText($("nav-dream"), nav.dream);
     setText($("hero-affiliation"), hero.affiliation);
     setText($("hero-identity"), hero.identity);
     setText($("hero-lead"), hero.lead);
     setText($("hero-btn-timeline"), hero.timelineButton);
     setText($("hero-btn-daily"), hero.dailyButton);
     setText($("hero-caption"), hero.caption);
+    setText($("hero-availability-text"), highlights.availability);
+    setText($("runway-title"), highlights.runway);
+    setText($("proof-work"), highlights.work);
+    setText($("proof-research"), highlights.research);
+    setText($("proof-collaboration"), highlights.collaboration);
+    setText($("proof-daily"), highlights.daily);
+    setText($("projects-lead"), highlights.projectsLead);
 
     setText($("about-kicker"), sections.aboutKicker);
     setText($("heading-about"), sections.aboutTitle);
@@ -722,6 +733,16 @@
     setText($("vision-kicker"), sections.visionKicker);
     setText($("heading-vision"), sections.visionTitle);
     setText($("vision-text"), (config.vision && (config.vision[activeLang] || config.vision.ja)) || "");
+    setText($("dream-kicker"), dream.kicker);
+    setText($("dream-heading"), dream.title);
+    setText($("dream-lead"), dream.lead);
+    setText($("dream-story"), dream.story);
+    setText($("dream-now"), dream.now);
+    const viewSwitch = document.querySelector(".view-switch");
+    if (viewSwitch) viewSwitch.setAttribute("aria-label", view.label || "Switch site view");
+    document.querySelectorAll(".view-link").forEach((link) => {
+      setText(link, link.getAttribute("href").startsWith("classic") ? view.classic : view.current);
+    });
     setText($("contact-kicker"), sections.contactKicker);
     setText($("heading-contact"), sections.contactTitle);
     setText($("contact-intro"), sections.contactIntro);
@@ -787,6 +808,12 @@
 
   langButtons.forEach((button) => {
     button.addEventListener("click", () => applyCopy(button.dataset.lang || "ja"));
+  });
+
+  document.querySelectorAll(".view-link").forEach((link) => {
+    link.addEventListener("click", () => {
+      if (window.location.hash) link.hash = window.location.hash;
+    });
   });
 
   if (activityModalBackdrop) activityModalBackdrop.addEventListener("click", closeActivityModal);

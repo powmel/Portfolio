@@ -1073,7 +1073,7 @@ body.daily-post-embed .article-card {
   font-weight: 700;
 }
 
-.portfolio-home .hero-availability span {
+.portfolio-home .hero-availability > span:first-child {
   width: 8px;
   height: 8px;
   border-radius: 999px;
@@ -2396,3 +2396,80 @@ body[data-page="daily-post"] .article-card .text-link {
 
 body[data-page="daily-post"] .article-card h1,
 .daily-modal-content .article-card h1 { text-wrap: balance; }
+
+/* Two views of the same portfolio */
+.view-switch {
+  display: inline-flex;
+  flex: none;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid rgba(255,255,255,.28);
+  border-radius: 999px;
+}
+.site-header .view-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 10px;
+  border-radius: 999px;
+  color: #f5f0e4;
+  font-size: .72rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.site-header .view-link.is-active { background: #ff5315; color: #111; }
+.site-header .view-link:hover:not(.is-active) { background: rgba(255,255,255,.12); }
+
+.dream-section { scroll-margin-top: 88px; }
+.dream-layout {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  gap: clamp(28px, 6vw, 90px);
+  align-items: start;
+}
+.dream-intro h2 {
+  margin-top: 12px;
+  font: 900 clamp(2rem, 4vw, 3.7rem)/1.25 "Noto Sans JP", sans-serif;
+  letter-spacing: -.045em;
+  text-transform: none;
+}
+.dream-intro > p:last-child { margin-top: 28px; font-weight: 700; font-size: 1.12rem; line-height: 1.9; }
+.dream-story { display: grid; gap: 24px; padding-top: 22px; }
+.dream-story p { max-width: 62ch; line-height: 2.05; }
+.portfolio-home .dream-section { border-top: 1px solid #34312c; background: #111; color: #f5f0e4; }
+.portfolio-home .dream-section .section-kicker { color: #ff6b31; }
+.portfolio-home .dream-intro > p:last-child { color: #fff; }
+.portfolio-home .dream-story p { color: #c9c4ba; }
+
+.classic-home { font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f7f9fc; background-image: none; }
+.classic-home h1, .classic-home h2, .classic-home .brand, .classic-home .section-kicker, .classic-home .eyebrow { font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-weight: 800; }
+.classic-home .site-header { border-bottom-color: #dfe6f0; background: rgba(247,249,252,.95); color: #142032; }
+.classic-home .site-header .brand, .classic-home .site-header .main-nav a { color: #1f2f4a; }
+.classic-home .site-header .brand { font-size: 1rem; letter-spacing: 0; text-transform: none; }
+.classic-home .site-header .lang-switch, .classic-home .view-switch { border-color: #dfe6f0; background: #fff; }
+.classic-home .site-header .lang-btn, .classic-home .site-header .view-link { color: #5c6b80; }
+.classic-home .site-header .lang-btn.is-active, .classic-home .site-header .view-link.is-active { background: #edf4ff; color: #173f86; }
+.classic-home .hero-card { height: auto; min-height: 430px; }
+.classic-home .hero-photo-wrap { min-height: 430px; }
+.classic-home .hero-stream { display: none; }
+.classic-home .dream-section { background: #edf4ff; }
+.classic-home .dream-intro h2 { color: #173f86; }
+.classic-home .dream-story p { color: #2f405b; }
+
+@media (max-width: 1100px) {
+  .header-panel { gap: .6rem; }
+  .main-nav { gap: .8rem; }
+}
+@media (max-width: 900px) {
+  .site-header .view-switch { align-self: flex-start; }
+  .classic-home .site-header .header-panel { border-color: #dfe6f0; background: #fff; }
+  .classic-home .site-header .menu-toggle { border-color: #dfe6f0; background: #fff; }
+  .classic-home .site-header .menu-toggle span { background: #18304f; }
+  .dream-layout { grid-template-columns: 1fr; }
+  .dream-story { padding-top: 0; }
+}
+@media (max-width: 700px) {
+  .classic-home .hero-photo-wrap { min-height: 310px; }
+  .dream-intro > p:last-child { margin-top: 20px; }
+}
