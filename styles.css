@@ -2535,5 +2535,5 @@ body[data-page="daily-post"] .article-card h1,
 }
 
 .portfolio-home .timeline-panel .section-heading h2,
-.portfolio-home .daily-panel .section-heading h2 { font-size: clamp(1.5rem, 2.3vw, 2rem); line-height: 1.5; letter-spacing: -.025em; text-wrap: balance; }
+.portfolio-home .daily-panel .section-heading h2 { max-width: none; font-size: clamp(1.5rem, 2.3vw, 2rem); line-height: 1.5; letter-spacing: -.025em; text-wrap: balance; }
 #recent-activities { scroll-margin-top: 96px; }
