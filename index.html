@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261005">
+  <link rel="stylesheet" href="styles.css?v=20261005albums">
 </head>
 <body data-page="home" class="portfolio-home">
   <header class="site-header">
@@ -121,7 +121,7 @@
     </section>
 
     <section id="timeline-log" class="section">
-      <div class="container reveal">
+      <div class="container">
         <div class="timeline-log-grid">
           <section class="timeline-panel" aria-labelledby="heading-timeline">
             <div class="section-heading compact"><p id="timeline-kicker" class="section-kicker">Journey</p><h2 id="heading-timeline">主要な歩み</h2></div>
@@ -129,7 +129,8 @@
             <a id="timeline-link" class="text-link" href="#about">考え方を読む →</a>
           </section>
           <aside class="daily-panel" aria-labelledby="heading-daily">
-            <div class="section-heading compact"><p id="daily-kicker" class="section-kicker">Latest Activity</p><h2 id="heading-daily">Latest Daily Log</h2><p id="daily-subtext" class="section-note">現在進行形の活動記録</p></div>
+            <div class="section-heading compact"><p id="daily-kicker" class="section-kicker">Latest Activity</p><h2 id="heading-daily">最近のアクティビティ</h2><p id="daily-subtext" class="section-note">現在進行形の活動記録</p></div>
+            <div id="recent-activities" class="recent-activities" aria-label="最近の写真日記"></div>
             <div id="latest-daily-list" class="daily-card-list"></div>
             <a id="daily-link" class="text-link" href="daily.html">Daily Log 一覧へ →</a>
           </aside>
@@ -143,26 +144,12 @@
           <p id="about-kicker" class="section-kicker">About</p><h2 id="heading-about">研究する。つくる。仲間をつなぐ。</h2>
           <p id="about-lead" class="section-lead">研究に取り組みながら、進化を続けるAIを追いかけ、身の回りや社会の仕組みを自動化する方法を探っています。さまざまな専門が集まる筑波大学で、人と人が出会い、新しいものを生み出すきっかけをつくることも、自分の活動のひとつになりました。</p>
           <div id="identity-grid" class="identity-grid"></div>
+          <p id="practice-description" class="practice-summary">研究やAIに熱中する日々の中でも、趣味として弓道をしっかり続けたい。三味線も、できるところまでやっていきたいと思っています。</p>
           <p id="about-attitude" class="about-attitude">まだ学ぶことも、技術的にできないこともたくさんあります。周りの力を借り、相談し、一緒に試しながら進みたい。失敗を恐れず挑戦することと、人を頼ることを大切にしています。</p>
         </div>
         <div id="vision" class="vision-copy evidence-note">
           <p id="vision-kicker" class="section-kicker">Vision</p><h2 id="heading-vision">人が、本来向き合う活動に集中できる環境をつくる。</h2>
           <p id="vision-text">自動化と知能化を通じて、情報の整理・判断・実行を支援し、一人ひとりが創造的で意味のある活動に時間を使える社会を目指します。</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="beyond-work" class="section practice-section" aria-labelledby="practice-title">
-      <div class="container reveal practice-layout">
-        <figure class="practice-photo">
-          <img id="practice-photo" src="images/activities/harugasumi-kyudo/IMG_0482_still.jpg" width="1600" height="900" loading="lazy" alt="筑波大学の弓道サークル春霞の合宿で、道場から的に向けて弓を引く様子">
-          <figcaption id="practice-caption">筑波大学 弓道サークル「春霞」 / 合宿の様子</figcaption>
-        </figure>
-        <div class="practice-copy">
-          <p id="practice-kicker" class="section-kicker">Beyond the Screen</p>
-          <h2 id="practice-title">弓道と三味線も、<br>続けていく。</h2>
-          <p id="practice-description">研究やAIに熱中する日々の中でも、趣味として弓道をしっかり続けたい。三味線も、できるところまでやっていきたいと思っています。</p>
-          <p id="practice-outlook">新しい挑戦と、続けたい楽しみ。その両方を持ちながら、友人を増やし、一緒に活動するサークルづくりにも取り組んでいきます。</p>
         </div>
       </div>
     </section>
@@ -186,9 +173,17 @@
 
   <div id="activity-modal" class="activity-modal" hidden><div id="activity-modal-backdrop" class="activity-modal-backdrop"></div><article class="activity-modal-panel" role="dialog" aria-modal="true" aria-labelledby="activity-modal-title"><button id="activity-modal-close" type="button" class="activity-modal-close" aria-label="Close detail">×</button><p id="activity-modal-period" class="activity-modal-period"></p><h3 id="activity-modal-title" class="activity-modal-title"></h3><p id="activity-modal-detail" class="activity-modal-detail"></p><section class="activity-modal-section"><h4 id="activity-modal-records-heading"></h4><ul id="activity-modal-records" class="activity-modal-records"></ul></section><section class="activity-modal-section"><h4 id="activity-modal-gallery-heading"></h4><div id="activity-modal-gallery" class="activity-modal-gallery"></div></section><section id="activity-modal-link-section" class="activity-modal-section" hidden><h4 id="activity-modal-link-heading"></h4><a id="activity-modal-link" class="activity-modal-link" href="#" target="_blank" rel="noreferrer"></a></section></article></div>
 
-  <script src="site.config.js?v=20261005"></script>
-  <script src="data/daily-posts.js?v=20261005"></script>
+  <div class="daily-modal" id="daily-modal" hidden>
+    <div class="daily-modal-backdrop" id="daily-modal-backdrop"></div>
+    <section class="daily-modal-panel" id="daily-modal-panel" role="dialog" aria-modal="true" aria-label="Daily Log detail">
+      <button class="daily-modal-close" id="daily-modal-close" type="button" aria-label="閉じる">X</button>
+      <div class="daily-modal-content" id="daily-modal-content"></div>
+    </section>
+  </div>
+
+  <script src="site.config.js?v=20261005albums"></script>
+  <script src="data/daily-posts.js?v=20261005albums"></script>
   <script src="data/media-selections.js?v=20260909"></script>
-  <script src="script.js?v=20261005"></script>
+  <script src="script.js?v=20261005albums"></script>
 </body>
 </html>

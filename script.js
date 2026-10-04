@@ -150,6 +150,13 @@
       const description = document.createElement("p");
       description.textContent = item.description || "";
       body.append(title, description);
+      if (item.url) {
+        const link = document.createElement("a");
+        link.href = item.url;
+        link.className = "text-link";
+        link.textContent = activeLang === "ja" ? "開催の記録を見る →" : "View the event →";
+        body.appendChild(link);
+      }
 
       const verifiedTimelineImage = /Australia Exchange|Regional Activities/.test(item.title || "");
       if (item.image && verifiedTimelineImage) {
@@ -328,6 +335,8 @@
       article.appendChild(paragraph);
     });
 
+    (post.content.albums || []).forEach(album => article.appendChild(buildDailyAlbum(album)));
+
     post.content.sections.forEach((section) => {
       const heading = document.createElement("h2");
       heading.textContent = section.heading || "";
@@ -351,6 +360,69 @@
     });
 
     return article;
+  }
+
+  function buildDailyAlbum(album) {
+    const section = document.createElement("section");
+    section.className = "daily-photo-album";
+    section.dataset.album = album.id;
+    const heading = document.createElement("h2");
+    heading.textContent = album.title;
+    const description = document.createElement("p");
+    description.textContent = `${album.period} — ${album.description}`;
+    const photo = (media) => {
+      const img = document.createElement("img");
+      img.src = page === "daily-post" ? `../${safePath(media.src)}` : safePath(media.src);
+      img.alt = media.alt;
+      img.loading = "lazy";
+      return img;
+    };
+    const cover = photo(album.cover);
+    cover.className = "daily-album-cover";
+    const details = document.createElement("details");
+    const summary = document.createElement("summary");
+    summary.textContent = `詳細・写真を見る（${album.photos.length}枚）`;
+    const gallery = document.createElement("div");
+    gallery.className = "daily-album-gallery";
+    album.photos.forEach(media => gallery.appendChild(photo(media)));
+    details.append(summary, gallery);
+    section.append(heading, description, cover, details);
+    return section;
+  }
+
+  function renderRecentActivities() {
+    const target = $("recent-activities");
+    if (!target) return;
+    target.innerHTML = "";
+    target.setAttribute("aria-label", activeLang === "ja" ? "最近の写真日記" : "Recent photo diaries");
+    sortedDailyPosts().flatMap(post => (post.content?.albums || []).map(album => ({post, album}))).slice(0, 2).forEach(({post, album}) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "recent-activity-card";
+      button.setAttribute("aria-haspopup", "dialog");
+      const img = document.createElement("img");
+      img.src = safePath(album.cover.src);
+      img.alt = "";
+      img.loading = "lazy";
+      const text = document.createElement("span");
+      const period = document.createElement("small");
+      period.textContent = activeLang === "ja" ? `${album.period} / 写真日記` : `${album.period_en} / Photo diary`;
+      const title = document.createElement("strong");
+      title.textContent = activeLang === "ja" ? album.title : album.title_en;
+      const action = document.createElement("span");
+      action.textContent = activeLang === "ja" ? `詳細・写真を見る（${album.photos.length}枚） →` : `Details & photos (${album.photos.length}) →`;
+      text.append(period, title, action);
+      button.append(img, text);
+      button.addEventListener("click", () => {
+        openDailyPostModal(post, button);
+        const section = Array.from(dailyModalContent.querySelectorAll("[data-album]")).find(el => el.dataset.album === album.id);
+        if (section) {
+          section.querySelector("details").open = true;
+          window.requestAnimationFrame(() => section.scrollIntoView({block: "start"}));
+        }
+      });
+      target.appendChild(button);
+    });
   }
 
   function createDailyMediaFigure(post) {
@@ -396,6 +468,8 @@
     dailyModal.hidden = false;
     dailyModalContent.innerHTML = `<p class="daily-modal-loading">${activeLang === "ja" ? "記事を開いています..." : "Opening article..."}</p>`;
     document.body.classList.add("modal-open");
+    if (dailyModalClose) dailyModalClose.focus();
+    if (dailyModalPanel) dailyModalPanel.scrollTop = 0;
     window.requestAnimationFrame(() => dailyModal.classList.add("is-open"));
 
     if (hasStructuredDailyContent(post)) {
@@ -777,6 +851,7 @@
     renderFocusAreas();
     renderTimeline();
     renderLatestDaily();
+    renderRecentActivities();
     renderDailyArchive();
     renderProjects();
     renderContactLinks();
@@ -839,6 +914,13 @@
   if (dailyModalBackdrop) dailyModalBackdrop.addEventListener("click", closeDailyPostModal);
   if (dailyModalClose) dailyModalClose.addEventListener("click", closeDailyPostModal);
   document.addEventListener("keydown", (event) => {
+    if (event.key === "Tab" && dailyModal && !dailyModal.hidden) {
+      const items = Array.from(dailyModal.querySelectorAll('button, a[href], summary')).filter(el => el.getClientRects().length);
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (first && event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (last && !event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    }
     if (event.key === "Escape") {
       closeActivityModal();
       closeDailyPostModal();

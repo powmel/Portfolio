@@ -134,7 +134,7 @@ iPhoneのJPEG・HEIC/HEIF・ProRAW（DNG）はbase64化せずR2へストリー�
 - `classic.html` restores the earlier quiet layout. The header switch links both views; they share content and the saved JP/EN language choice.
 - The "Future Dream" copy for both views lives in `site.config.js > lpCopy > ja/en > dream`.
 - The current homepage's hackathon section is `#hackathon`; its bilingual copy lives in `lpCopy > ja/en > community`. The report and future-concept URLs are in `index.html`.
-- The hobby section is `#beyond-work`, with copy in `lpCopy > ja/en > practice`. `lpCopy > ja/en > attitude` carries the note about learning, seeking help, and taking on challenges.
+- Enduring hobbies are described in About via `lpCopy > ja/en > practice`. Recent camp and rural-stay photo diaries appear in `#recent-activities`, sourced from `data/daily-posts.js > content.albums`. `lpCopy > ja/en > attitude` carries the note about learning, seeking help, and taking on challenges.
 - The two photos supplied for the 2026-10-05 update are metadata-free JPEG derivatives under `images/activities/tsukuba-ai-hackathon-2026/` and `images/activities/harugasumi-kyudo/`. The original HEIF/HEIC files remain outside this public repository.
 - LP copy, identity cards, timeline, focus areas, project highlights, vision, and contact labels are in `site.config.js`
 - Activities / Experience master data is in `site.config.js > activities`
@@ -210,3 +210,11 @@ git add .
 git commit -m "Update portfolio content and activity media"
 git push origin main
 ```
+
+## Photo diaries and milestones
+
+- Camp and rural-stay photo albums belong to the September monthly diary (`content.albums`), with a cover and a collapsible details gallery. The homepage shows links under recent activity.
+- Album fields: `id`, `title`, `title_en`, `period`, `period_en`, `description`, `cover: {src, alt}`, and `photos: [{src, alt}]`. Month labels describe the record period, not individual capture dates.
+- Use `npm run daily:build` and `npm run daily:check` after album changes. The generated article and local modal render the same structured data without fetching.
+- The first hackathon organized belongs to `timeline > ja/en` as a milestone alongside education. Its link leads to the existing event section.
+- The 14 newly supplied photos have metadata-free derivatives in `images/daily/2026-09/`. Originals and the copy-verification manifest stay in the local Pictures activity archive, outside this public repository.

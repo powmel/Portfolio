@@ -54,8 +54,8 @@ window.PORTFOLIO_CONFIG = {
         timelineTitle: "主要な歩み",
         timelineLink: "考え方を読む →",
         dailyKicker: "Latest Activity",
-        dailyTitle: "Latest Daily Log",
-        dailySubtext: "研究・開発・コミュニティの近況と思考",
+        dailyTitle: "最近のアクティビティ",
+        dailySubtext: "日記と写真で振り返る、最近の出来事",
         dailyLink: "Daily Log 一覧へ →",
         projectsKicker: "Selected Work",
         projectsTitle: "成果と証拠で見る、3つの取り組み",
@@ -159,7 +159,7 @@ window.PORTFOLIO_CONFIG = {
         timelineTitle: "Timeline",
         timelineLink: "See more timeline →",
         dailyKicker: "Latest Daily Log",
-        dailyTitle: "Latest Daily Log",
+        dailyTitle: "Recent Activity",
         dailySubtext: "Notes from research, development, and community activities.",
         dailyLink: "View Daily Log →",
         projectsKicker: "Projects / Activities",
@@ -335,6 +335,12 @@ window.PORTFOLIO_CONFIG = {
         title: "English × AI as Core Lanes",
         description: "国際的な仲間との交流を通じて、英語とAIを大学院生活の中心スキルとして鍛える方針を明確化。",
         image: "images/profile-main.jpg"
+      },
+      {
+        "year": "2026.09",
+        "title": "初めてのハッカソン開催",
+        "description": "筑波AIハッカソン2026を初めて企画・運営。先生や仲間の協力を得て、開催をやり遂げた。",
+        "url": "index.html#hackathon"
       }
     ],
     en: [
@@ -391,6 +397,12 @@ window.PORTFOLIO_CONFIG = {
         title: "English × AI as Core Lanes",
         description: "Clarified a new direction: treating English communication and AI as core skills for graduate school and global collaboration.",
         image: "images/profile-main.jpg"
+      },
+      {
+        "year": "2026.09",
+        "title": "Organized My First Hackathon",
+        "description": "Planned and organized Tsukuba AI Hackathon 2026, completing my first event with support from faculty and friends.",
+        "url": "index.html#hackathon"
       }
     ]
   },
