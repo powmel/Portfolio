@@ -9,11 +9,11 @@ window.PORTFOLIO_CONFIG = {
     "images/moment-6.jpg"
   ],
   defaultLanguage: "ja",
-  updatedAt: "September 2026",
+  updatedAt: "October 2026",
   lpCopy: {
     ja: {
       pageTitle: "Taiki Misawa | Portfolio",
-      metaDescription: "Taiki Misawaのポートフォリオ。AI・研究・開発・英語コミュニケーション・地域活動を日々つなげながら動いています。",
+      metaDescription: "筑波大学大学院の三澤大輝。AI・自動化の研究と開発、筑波AIハッカソン2026の企画・運営、多様な専門が出会う仲間づくりの記録。",
       nav: {
         timeline: "Journey",
         daily: "Daily Log",
@@ -28,14 +28,14 @@ window.PORTFOLIO_CONFIG = {
       },
       hero: {
         affiliation: "筑波大学大学院",
-        identity: "AIを、現場で使える仕組みにする。",
-        lead: "視覚情報・センサー・AIを研究しながら、エージェント開発、地域活動、国際協働を通じて、人の判断と行動を支える仕組みをつくっています。",
+        identity: "AIを、仲間と現実にしていく。",
+        lead: "視覚情報・センサーを扱う研究と、AI・自動化の開発に取り組む大学院生です。筑波AIハッカソン2026を企画・運営し、多様な専門が出会い、一緒につくる場を育てています。",
         timelineButton: "代表プロジェクトを見る",
         dailyButton: "最新の活動を見る",
         caption: "オーストラリア交換留学・学生リーダー / 2023"
       },
       highlights: {
-        availability: "筑波から、研究と開発を続けています",
+        availability: "筑波AIハッカソン2026 企画・運営",
         runway: "日々は、動いている。",
         work: "代表的な取り組み",
         research: "研究と現場での活動",
@@ -45,9 +45,9 @@ window.PORTFOLIO_CONFIG = {
       },
       sections: {
         aboutKicker: "About",
-        aboutTitle: "研究と実装の間を歩く",
+        aboutTitle: "研究する。つくる。仲間をつなぐ。",
         aboutLead:
-          "情報科学を学びながら、AI・自動化・プロダクト開発・コミュニティ形成、英語での異文化コミュニケーション、そして技術と社会の関係に関心を持っています。研究だけでなく、技術を地域や日常の仕組みにどう実装できるかを重視しています。",
+          "研究に取り組みながら、進化を続けるAIを追いかけ、身の回りや社会の仕組みを自動化する方法を探っています。さまざまな専門が集まる筑波大学で、人と人が出会い、新しいものを生み出すきっかけをつくることも、自分の活動のひとつになりました。",
         focusKicker: "Current Lanes",
         focusTitle: "いま伸ばしている領域",
         timelineKicker: "Journey",
@@ -64,14 +64,36 @@ window.PORTFOLIO_CONFIG = {
         visionTitle: "人が、本来向き合う活動に集中できる環境をつくる。",
         contactKicker: "Contact",
         contactTitle: "一緒に考え、つくるための連絡先",
-        contactIntro: "AI、英語を使った国際的な協働、コミュニティ実装、実用的な技術活用に関する対話・連携を歓迎します。"
+        contactIntro: "AIや研究の話をする人、一緒に何かをつくる人、ハッカソンやサークルを育てる人。専門にかかわらず、相談や協働のきっかけを歓迎します。"
       },
+      community: {
+        "kicker": "Community / Organizing",
+        "role": "企画・運営",
+        "title": "筑波AIハッカソン2026",
+        "lead": "専門を持ち寄り、つくる仲間に出会う。",
+        "description": "お題は「筑波大学を、ちょっと便利にしてください。」。4チームがAIを使い、8日間でそれぞれの作品を形にしました。私は企画・運営を担当し、先生や企業、学生の協力とともに開催を終えました。",
+        "next": "色とりどりの専門が集まる筑波で、知識や関心が新しいものづくりにつながる場を増やしたい。開催の経験を、次の仲間づくりとコミュニティへつなげていきます。",
+        "reportLink": "2026 開催レポート ↗",
+        "conceptLink": "これからのハッカソン構想 ↗",
+        "conceptNote": "構想サイトには、これから実現したい開催の形をまとめています。",
+        "caption": "筑波AIハッカソン2026 / 表彰後の集合写真",
+        "photoAlt": "筑波AIハッカソン2026の表彰後、賞状を手に集まった参加者と運営関係者"
+      },
+      practice: {
+        "kicker": "Beyond the Screen",
+        "title": "弓道と三味線も、続けていく。",
+        "description": "研究やAIに熱中する日々の中でも、趣味として弓道をしっかり続けたい。三味線も、できるところまでやっていきたいと思っています。",
+        "outlook": "新しい挑戦と、続けたい楽しみ。その両方を持ちながら、友人を増やし、一緒に活動するサークルづくりにも取り組んでいきます。",
+        "caption": "筑波大学 弓道サークル「春霞」 / 合宿の様子",
+        "photoAlt": "筑波大学の弓道サークル春霞の合宿で、道場から的に向けて弓を引く様子"
+      },
+      attitude: "まだ学ぶことも、技術的にできないこともたくさんあります。周りの力を借り、相談し、一緒に試しながら進みたい。失敗を恐れず挑戦することと、人を頼ることを大切にしています。",
       dream: {
         kicker: "Future Dream",
         title: "誰かの可能性を広げる未来へ。",
         lead: "ドラえもんのように、人に寄り添い、必要なときに力になれる存在が実現する未来。その実現に、僕も関わりたい。",
         story: "小学4年生の「将来の夢」を書く機会に、僕はその夢をまっすぐ書きました。先生には少し冗談のように受け取られましたが、親はその夢を笑わず、守ってくれました。振り返ると、あの経験が、今も新しいことにワクワクして挑戦する自分につながっている気がします。",
-        now: "この未来を一人でつくるとは思っていません。研究や開発を重ね、その実現に関わるプロジェクトで必要とされる人になること。それが今の目標です。"
+        now: "ドラえもんをつくるという夢には、いろいろな専門を持つ仲間が必要です。研究と開発を重ねながら、ハッカソンやコミュニティを通じて、一緒に未来を考え、つくる人と出会っていきたいと思っています。"
       },
       view: { current: "現在版", classic: "従来版", label: "表示を切り替える" },
       modal: {
@@ -96,7 +118,7 @@ window.PORTFOLIO_CONFIG = {
     },
     en: {
       pageTitle: "Taiki Misawa | Portfolio",
-      metaDescription: "Taiki Misawa portfolio - research, development, AI, English communication, and regional activities in motion.",
+      metaDescription: "Taiki Misawa, a graduate student at the University of Tsukuba: AI research and automation, organizing Tsukuba AI Hackathon 2026, and building connections across fields.",
       nav: {
         timeline: "Timeline",
         daily: "Daily Log",
@@ -111,14 +133,14 @@ window.PORTFOLIO_CONFIG = {
       },
       hero: {
         affiliation: "Graduate School, University of Tsukuba",
-        identity: "Student builder / researcher connecting AI, English, and research",
-        lead: "At the University of Tsukuba, I explore AI systems using visual information and sensors while building the English communication skills needed to collaborate globally.",
+        identity: "Making AI real, together.",
+        lead: "I am a graduate student researching visual information and sensors, and building with AI and automation. I organized Tsukuba AI Hackathon 2026 and am creating places where people from different fields can meet and make things together.",
         timelineButton: "View Timeline",
         dailyButton: "View Daily Log",
         caption: "Student presentation in Australia (2023)"
       },
       highlights: {
-        availability: "Researching and building in Tsukuba, Japan",
+        availability: "Tsukuba AI Hackathon 2026 · Planning & organizing",
         runway: "The work keeps moving.",
         work: "Selected case studies",
         research: "Research and field work",
@@ -128,9 +150,9 @@ window.PORTFOLIO_CONFIG = {
       },
       sections: {
         aboutKicker: "About / Identity",
-        aboutTitle: "About / Identity",
+        aboutTitle: "Research. Build. Bring people together.",
         aboutLead:
-          "While studying information science, I am interested in AI, automation, product development, community building, cross-cultural communication in English, and the relationship between technology and society. Beyond research, I care about how technology can be implemented in local communities and everyday systems.",
+          "Alongside my research, I keep exploring developments in AI and ways to automate everyday and wider social systems. At the University of Tsukuba, bringing people with different expertise together to create something new has become another part of my work.",
         focusKicker: "Focus Areas",
         focusTitle: "Focus Areas",
         timelineKicker: "Timeline",
@@ -147,14 +169,36 @@ window.PORTFOLIO_CONFIG = {
         visionTitle: "Vision",
         contactKicker: "Contact",
         contactTitle: "Links / Contact",
-        contactIntro: "I am open to conversations about AI, global collaboration through English, community-oriented technology, and practical implementation."
+        contactIntro: "Whether you want to talk about AI and research, build something together, or help grow a hackathon or student circle, I welcome conversations across fields."
       },
+      community: {
+        "kicker": "Community / Organizing",
+        "role": "Planning & organizing",
+        "title": "Tsukuba AI Hackathon 2026",
+        "lead": "Bring your expertise. Meet people to build with.",
+        "description": "The challenge: make the University of Tsukuba a little more convenient. Four teams used AI to build four projects in eight days. I planned and organized the event with support from faculty, companies, and fellow students.",
+        "next": "Tsukuba brings together many fields of expertise. I want to create more opportunities for that knowledge and curiosity to become something new, and turn this event into lasting connections and community.",
+        "reportLink": "2026 event report ↗",
+        "conceptLink": "The next hackathon concept ↗",
+        "conceptNote": "The concept site shares ideas for future events; it is not a confirmed schedule.",
+        "caption": "Tsukuba AI Hackathon 2026 / Group photo after the awards",
+        "photoAlt": "Participants and organizers with certificates after the Tsukuba AI Hackathon 2026 awards"
+      },
+      practice: {
+        "kicker": "Beyond the Screen",
+        "title": "Keeping up kyudo and shamisen.",
+        "description": "Even when research and AI keep me busy, I want to continue kyudo as a hobby. I also want to see how far I can go with the shamisen.",
+        "outlook": "I want to make room for both new challenges and the things I enjoy continuing, while making friends and working toward a student circle where we can do things together.",
+        "caption": "Training camp with Harugasumi, a University of Tsukuba kyudo circle",
+        "photoAlt": "An archer drawing a bow at a training camp with the University of Tsukuba kyudo circle Harugasumi"
+      },
+      attitude: "There is still much for me to learn, and plenty I cannot yet build on my own. I want to ask for help, seek advice, and try things together: taking on challenges without letting the fear of failure stop me.",
       dream: {
         kicker: "Future Dream",
         title: "Toward a future that expands what people can do.",
         lead: "I hope to help make possible a future with companions like Doraemon: beings that stay close to people and help when they need it.",
         story: "In fourth grade, I wrote that dream down for a school assignment about our futures. A teacher took it as a bit of a joke, but my family stood up for me and treated my dream seriously. Looking back, I think that experience helped me keep my curiosity and willingness to try new things.",
-        now: "I do not expect to build that future alone. My goal now is to grow through research and building, so that I can contribute to a project working toward it and be someone that team needs."
+        now: "The dream of building Doraemon calls for people with many kinds of expertise. Alongside research and development, I want hackathons and community activities to help me meet people who will imagine and build that future together."
       },
       view: { current: "Current", classic: "Classic", label: "Switch site view" },
       modal: {
@@ -195,6 +239,10 @@ window.PORTFOLIO_CONFIG = {
       {
         title: "Connector",
         text: "言語や文化を越えて人をつなぎ、協働の場を生み出す。"
+      },
+      {
+        "title": "Hackathon Organizer",
+        "text": "筑波AIハッカソン2026を企画・運営。専門を持ち寄って、一緒につくる場を育てる。"
       }
     ],
     en: [
@@ -213,6 +261,10 @@ window.PORTFOLIO_CONFIG = {
       {
         title: "Connector",
         text: "Connecting people across languages and cultures, and creating spaces for collaboration."
+      },
+      {
+        "title": "Hackathon Organizer",
+        "text": "Organized Tsukuba AI Hackathon 2026, creating a place for people to bring their expertise and build together."
       }
     ]
   },

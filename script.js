@@ -681,6 +681,24 @@
     const dream = activeCopy.dream || {};
     const view = activeCopy.view || {};
     const highlights = activeCopy.highlights || {};
+    const community = activeCopy.community || {};
+    const practice = activeCopy.practice || {};
+
+    const communityFields = {
+      kicker: "hackathon-kicker", role: "hackathon-role", title: "hackathon-title",
+      lead: "hackathon-lead", description: "hackathon-description", next: "hackathon-next",
+      reportLink: "hackathon-report-link", conceptLink: "hackathon-concept-link",
+      conceptNote: "hackathon-concept-note", caption: "hackathon-caption"
+    };
+    const practiceFields = {
+      kicker: "practice-kicker", title: "practice-title", description: "practice-description",
+      outlook: "practice-outlook", caption: "practice-caption"
+    };
+    Object.entries(communityFields).forEach(([key, id]) => setText($(id), community[key]));
+    Object.entries(practiceFields).forEach(([key, id]) => setText($(id), practice[key]));
+    if ($("hackathon-photo") && community.photoAlt) $("hackathon-photo").alt = community.photoAlt;
+    if ($("practice-photo") && practice.photoAlt) $("practice-photo").alt = practice.photoAlt;
+    setText($("about-attitude"), activeCopy.attitude);
 
     document.documentElement.lang = activeLang;
     const pageKind = document.body.dataset.page;

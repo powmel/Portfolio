@@ -133,6 +133,9 @@ iPhoneのJPEG・HEIC/HEIF・ProRAW（DNG）はbase64化せずR2へストリー�
 - Main landing page sections are in `index.html`
 - `classic.html` restores the earlier quiet layout. The header switch links both views; they share content and the saved JP/EN language choice.
 - The "Future Dream" copy for both views lives in `site.config.js > lpCopy > ja/en > dream`.
+- The current homepage's hackathon section is `#hackathon`; its bilingual copy lives in `lpCopy > ja/en > community`. The report and future-concept URLs are in `index.html`.
+- The hobby section is `#beyond-work`, with copy in `lpCopy > ja/en > practice`. `lpCopy > ja/en > attitude` carries the note about learning, seeking help, and taking on challenges.
+- The two photos supplied for the 2026-10-05 update are metadata-free JPEG derivatives under `images/activities/tsukuba-ai-hackathon-2026/` and `images/activities/harugasumi-kyudo/`. The original HEIF/HEIC files remain outside this public repository.
 - LP copy, identity cards, timeline, focus areas, project highlights, vision, and contact labels are in `site.config.js`
 - Activities / Experience master data is in `site.config.js > activities`
   - Recommended fields per item: `slug`, `period`, `status`, `title_ja`, `title_en`, `detail_ja`, `detail_en`, `records_ja`, `records_en`, `coverImage`, `gallery`, `url`
