@@ -28,51 +28,51 @@ window.PORTFOLIO_CONFIG = {
       },
       hero: {
         affiliation: "筑波大学大学院",
-        identity: "AIを、仲間と現実にしていく。",
-        lead: "視覚情報・センサーを扱う研究と、AI・自動化の開発に取り組む大学院生です。筑波AIハッカソン2026を企画・運営し、多様な専門が出会い、一緒につくる場を育てています。",
-        timelineButton: "代表プロジェクトを見る",
-        dailyButton: "最新の活動を見る",
+        identity: "研究と、ものづくりと、日々の記録。",
+        lead: "研究やAIを使ったものづくり、ハッカソンの開催に取り組んでいます。最近の出来事と、これまでの活動をまとめています。",
+        timelineButton: "最近の活動を見る",
+        dailyButton: "自己紹介",
         caption: "オーストラリア交換留学・学生リーダー / 2023"
       },
       highlights: {
         availability: "筑波AIハッカソン2026 企画・運営",
-        runway: "日々は、動いている。",
+        runway: "写真で残す日々",
         work: "代表的な取り組み",
         research: "研究と現場での活動",
         collaboration: "言葉を越えた協働",
         daily: "日々の活動記録",
-        projectsLead: "研究、プロトタイプ、国際協働。役割と記録を確認できる代表的な活動です。"
+        projectsLead: "地域での活動、留学の経験、これから試したいアイデア。"
       },
       sections: {
         aboutKicker: "About",
-        aboutTitle: "研究する。つくる。仲間をつなぐ。",
+        aboutTitle: "三澤大輝について",
         aboutLead:
-          "研究に取り組みながら、進化を続けるAIを追いかけ、身の回りや社会の仕組みを自動化する方法を探っています。さまざまな専門が集まる筑波大学で、人と人が出会い、新しいものを生み出すきっかけをつくることも、自分の活動のひとつになりました。",
+          "筑波大学大学院で研究をしています。AIを使って身近な作業を楽にすることや、違う専門を持つ人と一緒に何かをつくることに関心があります。2026年9月には、仲間と筑波AIハッカソンを初めて開催しました。",
         focusKicker: "Current Lanes",
         focusTitle: "いま伸ばしている領域",
         timelineKicker: "Journey",
-        timelineTitle: "主要な歩み",
+        timelineTitle: "これまで",
         timelineLink: "考え方を読む →",
         dailyKicker: "Latest Activity",
-        dailyTitle: "最近のアクティビティ",
+        dailyTitle: "最近の活動",
         dailySubtext: "日記と写真で振り返る、最近の出来事",
         dailyLink: "Daily Log 一覧へ →",
         projectsKicker: "Selected Work",
-        projectsTitle: "成果と証拠で見る、3つの取り組み",
+        projectsTitle: "活動と、考えていること",
         projectsLink: "これまでの歩みを見る →",
         visionKicker: "Vision",
         visionTitle: "人が、本来向き合う活動に集中できる環境をつくる。",
         contactKicker: "Contact",
-        contactTitle: "一緒に考え、つくるための連絡先",
-        contactIntro: "AIや研究の話をする人、一緒に何かをつくる人、ハッカソンやサークルを育てる人。専門にかかわらず、相談や協働のきっかけを歓迎します。"
+        contactTitle: "連絡先",
+        contactIntro: "研究、AI、イベントなど、興味の近い方と話せたらうれしいです。"
       },
       community: {
         "kicker": "Community / Organizing",
         "role": "企画・運営",
         "title": "筑波AIハッカソン2026",
-        "lead": "専門を持ち寄り、つくる仲間に出会う。",
+        "lead": "初めて、自分たちでハッカソンを開催しました。",
         "description": "お題は「筑波大学を、ちょっと便利にしてください。」。4チームがAIを使い、8日間でそれぞれの作品を形にしました。私は企画・運営を担当し、先生や企業、学生の協力とともに開催を終えました。",
-        "next": "色とりどりの専門が集まる筑波で、知識や関心が新しいものづくりにつながる場を増やしたい。開催の経験を、次の仲間づくりとコミュニティへつなげていきます。",
+        "next": "次は、どんな形で開催するか。今回の経験をもとに、参加する人も運営する人も楽しめる場を考えています。",
         "reportLink": "2026 開催レポート ↗",
         "conceptLink": "これからのハッカソン構想 ↗",
         "conceptNote": "構想サイトには、これから実現したい開催の形をまとめています。",
@@ -90,7 +90,7 @@ window.PORTFOLIO_CONFIG = {
       attitude: "まだ学ぶことも、技術的にできないこともたくさんあります。周りの力を借り、相談し、一緒に試しながら進みたい。失敗を恐れず挑戦することと、人を頼ることを大切にしています。",
       dream: {
         kicker: "Future Dream",
-        title: "誰かの可能性を広げる未来へ。",
+        title: "いつか、ドラえもんをつくりたい。",
         lead: "ドラえもんのように、人に寄り添い、必要なときに力になれる存在が実現する未来。その実現に、僕も関わりたい。",
         story: "小学4年生の「将来の夢」を書く機会に、僕はその夢をまっすぐ書きました。先生には少し冗談のように受け取られましたが、親はその夢を笑わず、守ってくれました。振り返ると、あの経験が、今も新しいことにワクワクして挑戦する自分につながっている気がします。",
         now: "ドラえもんをつくるという夢には、いろいろな専門を持つ仲間が必要です。研究と開発を重ねながら、ハッカソンやコミュニティを通じて、一緒に未来を考え、つくる人と出会っていきたいと思っています。"
@@ -134,9 +134,9 @@ window.PORTFOLIO_CONFIG = {
       hero: {
         affiliation: "Graduate School, University of Tsukuba",
         identity: "Making AI real, together.",
-        lead: "I am a graduate student researching visual information and sensors, and building with AI and automation. I organized Tsukuba AI Hackathon 2026 and am creating places where people from different fields can meet and make things together.",
-        timelineButton: "View Timeline",
-        dailyButton: "View Daily Log",
+        lead: "I work on research, build with AI, and organize hackathons. This is a collection of recent notes and things I have worked on.",
+        timelineButton: "Recent activity",
+        dailyButton: "About me",
         caption: "Student presentation in Australia (2023)"
       },
       highlights: {
@@ -146,25 +146,25 @@ window.PORTFOLIO_CONFIG = {
         research: "Research and field work",
         collaboration: "Cross-cultural collaboration",
         daily: "Living activity record",
-        projectsLead: "Research, prototypes, and international collaboration, with roles and records you can explore."
+        projectsLead: "Rural activities, time abroad, and an idea I may return to."
       },
       sections: {
         aboutKicker: "About / Identity",
-        aboutTitle: "Research. Build. Bring people together.",
+        aboutTitle: "About Taiki",
         aboutLead:
           "Alongside my research, I keep exploring developments in AI and ways to automate everyday and wider social systems. At the University of Tsukuba, bringing people with different expertise together to create something new has become another part of my work.",
         focusKicker: "Focus Areas",
         focusTitle: "Focus Areas",
         timelineKicker: "Timeline",
         timelineTitle: "Timeline",
-        timelineLink: "See more timeline →",
+        timelineLink: "Read about me →",
         dailyKicker: "Latest Daily Log",
         dailyTitle: "Recent Activity",
         dailySubtext: "Notes from research, development, and community activities.",
         dailyLink: "View Daily Log →",
         projectsKicker: "Projects / Activities",
-        projectsTitle: "Projects / Activities",
-        projectsLink: "View all projects →",
+        projectsTitle: "Activities and ideas",
+        projectsLink: "See my background →",
         visionKicker: "Vision",
         visionTitle: "Vision",
         contactKicker: "Contact",
@@ -195,7 +195,7 @@ window.PORTFOLIO_CONFIG = {
       attitude: "There is still much for me to learn, and plenty I cannot yet build on my own. I want to ask for help, seek advice, and try things together: taking on challenges without letting the fear of failure stop me.",
       dream: {
         kicker: "Future Dream",
-        title: "Toward a future that expands what people can do.",
+        title: "Someday, I want to build Doraemon.",
         lead: "I hope to help make possible a future with companions like Doraemon: beings that stay close to people and help when they need it.",
         story: "In fourth grade, I wrote that dream down for a school assignment about our futures. A teacher took it as a bit of a joke, but my family stood up for me and treated my dream seriously. Looking back, I think that experience helped me keep my curiosity and willingness to try new things.",
         now: "The dream of building Doraemon calls for people with many kinds of expertise. Alongside research and development, I want hackathons and community activities to help me meet people who will imagine and build that future together."
@@ -281,127 +281,49 @@ window.PORTFOLIO_CONFIG = {
     "Product Development"
   ],
   timeline: {
-    ja: [
+    "ja": [
       {
-        year: "2023",
-        title: "Australia Exchange / Student Leader",
-        description: "オーストラリアでの学生交流・発表・リーダー経験。",
-        image: "images/activities/australia-student-leader/cover.jpg"
+        "year": "2023",
+        "title": "オーストラリアへ留学",
+        "description": "学生交流に参加し、学生リーダーとして活動。"
       },
       {
-        year: "2024",
-        title: "Hackathon / App Dev / Web Projects",
-        description: "ハッカソン、アプリ開発、Web制作への挑戦。",
-        image: "images/activities/hackathon-participation/cover.jpg"
+        "year": "2026.03",
+        "title": "東京都市大学を卒業",
+        "description": "情報工学部 情報科学科 国際コース。卒業研究ではGANを用いたゲームレベル生成に取り組みました。"
       },
       {
-        year: "2025",
-        title: "GAN-based Game Level Generation",
-        description: "学部卒業研究として、GANを用いたゲームレベル生成に取り組む。",
-        image: "images/activities/graduation-research-gan/cover.jpg"
-      },
-      {
-        year: "2025",
-        title: "Regional Activities",
-        description: "南伊豆などでの地域活動・農業・フィールドワーク。",
-        image: "images/activities/rural-activities-minamiizu/cover.jpg"
-      },
-      {
-        year: "2026",
-        title: "Graduate School / University of Tsukuba",
-        description: "筑波大学大学院で、視覚情報・センサー・AIを用いた人間中心の支援システムを研究。",
-        image: "images/profile-main.jpg"
-      },
-      {
-        year: "2026.04",
-        title: "Taiki OS Foundation",
-        description: "日々の記録、AIとの作業、意思決定を整理する個人用AI Context Hubを立ち上げた。",
-        image: "images/moment-1.jpg"
-      },
-      {
-        year: "2026.05",
-        title: "AI Workspace and Campus Momentum",
-        description: "iPhoneからAIエージェントを動かす実験、研究軸の整理、学内AIハッカソン構想を進めた。",
-        image: "images/profile-main.jpg"
-      },
-      {
-        year: "2026",
-        title: "Daily AI-assisted Portfolio Log",
-        description: "AIと一緒に、日々の活動・研究・開発・思考を記録するポートフォリオ運用を開始。",
-        image: "images/moment-1.jpg"
-      },
-      {
-        year: "2026.06",
-        title: "English × AI as Core Lanes",
-        description: "国際的な仲間との交流を通じて、英語とAIを大学院生活の中心スキルとして鍛える方針を明確化。",
-        image: "images/profile-main.jpg"
+        "year": "2026.04",
+        "title": "筑波大学大学院へ入学",
+        "description": "視覚情報やセンサー、AIに関する研究に取り組んでいます。"
       },
       {
         "year": "2026.09",
         "title": "初めてのハッカソン開催",
-        "description": "筑波AIハッカソン2026を初めて企画・運営。先生や仲間の協力を得て、開催をやり遂げた。",
+        "description": "筑波AIハッカソン2026を企画・運営。先生や仲間の協力を得て開催しました。",
         "url": "index.html#hackathon"
       }
     ],
-    en: [
+    "en": [
       {
-        year: "2023",
-        title: "Australia Exchange / Student Leader",
-        description: "Student exchange, presentation, and leadership experience in Australia.",
-        image: "images/activities/australia-student-leader/cover.jpg"
+        "year": "2023",
+        "title": "Studied in Australia",
+        "description": "Joined an exchange program and served as a student leader."
       },
       {
-        year: "2024",
-        title: "Hackathon / App Dev / Web Projects",
-        description: "Took on hackathons, app development, and web projects.",
-        image: "images/activities/hackathon-participation/cover.jpg"
+        "year": "2026.03",
+        "title": "Graduated from Tokyo City University",
+        "description": "International course, Department of Computer Science, Faculty of Information Technology. Undergraduate research on GAN-based game level generation."
       },
       {
-        year: "2025",
-        title: "GAN-based Game Level Generation",
-        description: "Worked on GAN-based game level generation as undergraduate research.",
-        image: "images/activities/graduation-research-gan/cover.jpg"
-      },
-      {
-        year: "2025",
-        title: "Regional Activities",
-        description: "Joined regional activities, agriculture, and fieldwork around Minami-Izu.",
-        image: "images/activities/rural-activities-minamiizu/cover.jpg"
-      },
-      {
-        year: "2026",
-        title: "Graduate School / University of Tsukuba",
-        description: "Researching human-centered support systems using visual information, sensors, and AI.",
-        image: "images/profile-main.jpg"
-      },
-      {
-        year: "2026.04",
-        title: "Taiki OS Foundation",
-        description: "Started a personal AI context hub for organizing daily records, AI-assisted work, and decisions.",
-        image: "images/moment-1.jpg"
-      },
-      {
-        year: "2026.05",
-        title: "AI Workspace and Campus Momentum",
-        description: "Advanced a local AI agent workspace, research direction, and campus AI hackathon/community ideas.",
-        image: "images/profile-main.jpg"
-      },
-      {
-        year: "2026",
-        title: "Daily AI-assisted Portfolio Log",
-        description: "Started a portfolio operation that records daily activities, research, development, and thoughts with AI.",
-        image: "images/moment-1.jpg"
-      },
-      {
-        year: "2026.06",
-        title: "English × AI as Core Lanes",
-        description: "Clarified a new direction: treating English communication and AI as core skills for graduate school and global collaboration.",
-        image: "images/profile-main.jpg"
+        "year": "2026.04",
+        "title": "Entered graduate school at the University of Tsukuba",
+        "description": "Research involving visual information, sensors, and AI."
       },
       {
         "year": "2026.09",
-        "title": "Organized My First Hackathon",
-        "description": "Planned and organized Tsukuba AI Hackathon 2026, completing my first event with support from faculty and friends.",
+        "title": "Organized my first hackathon",
+        "description": "Planned and organized Tsukuba AI Hackathon 2026 with support from faculty and friends.",
         "url": "index.html#hackathon"
       }
     ]
@@ -433,9 +355,9 @@ window.PORTFOLIO_CONFIG = {
       tags: ["Web", "Product", "Frontend"]
     },
     {
-      title: "Agent Prototypes",
+      title: "Agent Matching Idea",
       slug: "agent-matching-prototype",
-      tags: ["AI Agents", "Automation", "Prototype"]
+      tags: ["AI Agents", "Automation", "Idea"]
     },
     {
       title: "GDG on Campus",
@@ -526,31 +448,24 @@ window.PORTFOLIO_CONFIG = {
       gallery: ["/images/activities/gdg-on-campus-tsukuba/gallery-1.jpg"]
     },
     {
-      slug: "agent-matching-prototype",
-      period: "2025 - Present",
-      status: "ongoing",
-      title_ja: "エージェント型マッチング／自動化サイト試作",
-      title_en: "Agent-based Matching and Automation Prototype",
-      detail_ja:
-        "AIエージェントや自動化の考え方を取り入れた、マッチングや業務支援の仕組みを個人開発として試作している。地域やコミュニティへの応用も視野に入れている。",
-      detail_en:
-        "I have been prototyping agent-based systems for matching and workflow automation, exploring how AI-driven coordination can support communities and practical use cases.",
-      records_ja: [
-        "エージェント型の発想を用いた試作を実施",
-        "マッチングや自動化の仕組みを検討",
-        "地域やコミュニティへの応用も構想中"
+      "slug": "agent-matching-prototype",
+      "period": "構想メモ",
+      "status": "concept",
+      "title_ja": "AIによるマッチング・自動化の構想",
+      "title_en": "An idea for AI-assisted matching and automation",
+      "detail_ja": "人や地域の困りごとを、AIでつなげたり、作業を自動化したりする仕組みを考えていました。今は開発に取り組んでいません。アイデアとして残しています。",
+      "detail_en": "An idea for using AI to connect people and local needs, and automate tasks. I am not currently developing it; it remains an idea.",
+      "records_ja": [
+        "マッチングや自動化へのAI活用を検討",
+        "開発・実用性の検証は未着手"
       ],
-      records_en: [
-        "Built prototypes based on agent-oriented ideas",
-        "Explored matching and automation workflows",
-        "Considered applications for local communities and social systems"
+      "records_en": [
+        "Considered AI for matching and automation",
+        "Development and practical validation have not started"
       ],
-      url: "https://github.com/Powmel",
-      coverImage: "/images/activities/agent-matching-prototype/cover.jpg",
-      gallery: [
-        "/images/activities/agent-matching-prototype/gallery-1.jpg",
-        "/images/activities/agent-matching-prototype/gallery-2.jpg"
-      ]
+      "url": "",
+      "coverImage": "",
+      "gallery": []
     },
     {
       slug: "rural-activities-minamiizu",
@@ -897,21 +812,17 @@ window.PORTFOLIO_CONFIG = {
           ]
         },
         {
-          id: "agent-prototypes",
-          period: "YYYY.MM",
-          status: "done",
-          statusLabel: "完了",
-          title: "エージェント型マッチング／自動化アイデアの試作",
-          detail: "小規模プロトタイピングを通じて実用性を検証。",
-          coverImage: "images/activities/agent-prototypes/cover.jpg",
-          gallery: [
-            "images/activities/agent-prototypes/gallery-1.jpg",
-            "images/activities/agent-prototypes/gallery-2.jpg"
-          ],
-          records: [
-            "課題設定からプロトタイプ設計までを反復",
-            "エージェント活用の実用性と制約を整理",
-            "次フェーズの検証仮説を準備"
+          "id": "agent-prototypes",
+          "period": "構想メモ",
+          "status": "concept",
+          "statusLabel": "構想・未着手",
+          "title": "AIによるマッチング・自動化の構想",
+          "detail": "人や地域の困りごとを、AIでつなげたり、作業を自動化したりする仕組みを考えていました。今は開発に取り組んでいません。アイデアとして残しています。",
+          "coverImage": "",
+          "gallery": [],
+          "records": [
+            "マッチングや自動化へのAI活用を検討",
+            "開発・実用性の検証は未着手"
           ]
         }
       ],
@@ -1119,21 +1030,17 @@ window.PORTFOLIO_CONFIG = {
           ]
         },
         {
-          id: "agent-prototypes",
-          period: "YYYY.MM",
-          status: "done",
-          statusLabel: "COMPLETED",
-          title: "Prototyped agent-based matching and automation ideas",
-          detail: "Tested practical concepts through lightweight prototypes.",
-          coverImage: "images/activities/agent-prototypes/cover.jpg",
-          gallery: [
-            "images/activities/agent-prototypes/gallery-1.jpg",
-            "images/activities/agent-prototypes/gallery-2.jpg"
-          ],
-          records: [
-            "Repeated cycles from problem framing to prototype design",
-            "Organized practical value and constraints of agent-based systems",
-            "Prepared hypotheses for the next validation stage"
+          "id": "agent-prototypes",
+          "period": "Idea note",
+          "status": "concept",
+          "statusLabel": "IDEA / NOT STARTED",
+          "title": "An idea for AI-assisted matching and automation",
+          "detail": "An idea for using AI to connect people and local needs, and automate tasks. I am not currently developing it; it remains an idea.",
+          "coverImage": "",
+          "gallery": [],
+          "records": [
+            "Considered AI for matching and automation",
+            "Development and practical validation have not started"
           ]
         }
       ],

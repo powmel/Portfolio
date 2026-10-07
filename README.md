@@ -130,7 +130,7 @@ iPhoneのJPEG・HEIC/HEIF・ProRAW（DNG）はbase64化せずR2へストリー�
 
 ## Edit points
 
-- Main landing page sections are in `index.html`
+- Main landing page sections are in `index.html`; `home.css` scopes the recent-activity-first layout to the current homepage.
 - `classic.html` restores the earlier quiet layout. The header switch links both views; they share content and the saved JP/EN language choice.
 - The "Future Dream" copy for both views lives in `site.config.js > lpCopy > ja/en > dream`.
 - The current homepage's hackathon section is `#hackathon`; its bilingual copy lives in `lpCopy > ja/en > community`. The report and future-concept URLs are in `index.html`.
@@ -167,7 +167,7 @@ images/
 
 - `cover.png` is used in the small thumbnail shown inside the activity card.
 - `gallery` image paths are shown in the activity detail modal after click.
-- `status` supports `ongoing` and `completed`.
+- `status` supports `ongoing`, `completed`, and `concept` (an idea without implementation claims).
 
 ## Update social/contact links
 
@@ -178,7 +178,7 @@ Edit these fields in `site.config.js`:
 - `links.linkedin`
 - `links.email`
 
-If a value is `"#"`, the UI shows it as a placeholder.
+If a value is `"#"`, the UI omits the unset contact link.
 
 ## Language switching
 

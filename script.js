@@ -23,6 +23,7 @@
   let activeCopy = copySet[activeLang] || copySet.ja || {};
   const dailyMonthState = new Map();
   let lastDailyModalTrigger = null;
+  let lastActivityModalTrigger = null;
   let dailyModalCloseTimer = 0;
 
   function $(id) {
@@ -47,12 +48,12 @@
   }
 
   function normalizeStatus(status) {
-    return status === "ongoing" ? "ongoing" : "completed";
+    return ["ongoing", "concept"].includes(status) ? status : "completed";
   }
 
   function localizePeriod(period, lang) {
     if (typeof period !== "string") return "";
-    return lang === "ja" ? period.replace("Present", "現在") : period.replace("現在", "Present");
+    return lang === "ja" ? period.replace("Present", "現在") : period.replace("現在", "Present").replace("構想メモ", "Idea note");
   }
 
   function getActivityBySlug(slug) {
@@ -66,14 +67,9 @@
       id: activity.slug,
       period: localizePeriod(activity.period, activeLang),
       status,
-      statusLabel:
-        activeLang === "ja"
-          ? status === "ongoing"
-            ? "進行中"
-            : "完了"
-          : status === "ongoing"
-            ? "ONGOING"
-            : "COMPLETED",
+      statusLabel: (activeLang === "ja"
+        ? { ongoing: "進行中", completed: "活動記録", concept: "構想・未着手" }
+        : { ongoing: "IN PROGRESS", completed: "PAST ACTIVITY", concept: "IDEA / NOT STARTED" })[status],
       title: activeLang === "ja" ? activity.title_ja : activity.title_en,
       detail: activeLang === "ja" ? activity.detail_ja : activity.detail_en,
       records: activeLang === "ja" ? activity.records_ja : activity.records_en,
@@ -616,7 +612,8 @@
   function openActivityModal(item) {
     if (!activityModal || !item) return;
     const labels = activeCopy.modal || {};
-    setText($("activity-modal-period"), item.period || "");
+    lastActivityModalTrigger = document.activeElement;
+    setText($("activity-modal-period"), [item.period, item.statusLabel].filter(Boolean).join(" / "));
     setText($("activity-modal-title"), item.title || "");
     setText($("activity-modal-detail"), item.detail || "");
     setText($("activity-modal-records-heading"), labels.recordsTitle || "Records");
@@ -635,6 +632,7 @@
     const gallery = $("activity-modal-gallery");
     if (gallery) {
       gallery.innerHTML = "";
+      gallery.closest(".activity-modal-section").hidden = !(item.gallery || []).length;
       (item.gallery || []).forEach((src) => {
         const img = document.createElement("img");
         img.src = src;
@@ -659,12 +657,16 @@
 
     activityModal.hidden = false;
     document.body.classList.add("modal-open");
+    activityModal.querySelector(".activity-modal-panel").scrollTop = 0;
+    if (activityModalClose) activityModalClose.focus();
   }
 
   function closeActivityModal() {
-    if (!activityModal) return;
+    if (!activityModal || activityModal.hidden) return;
     activityModal.hidden = true;
-    document.body.classList.remove("modal-open");
+    if (!dailyModal || dailyModal.hidden) document.body.classList.remove("modal-open");
+    if (lastActivityModalTrigger && lastActivityModalTrigger.isConnected) lastActivityModalTrigger.focus();
+    lastActivityModalTrigger = null;
   }
 
   function renderProjects() {
@@ -687,7 +689,7 @@
       body.className = "project-card-body";
       const evidence = document.createElement("p");
       evidence.className = "project-evidence";
-      evidence.textContent = `${activity ? activity.period : ""} / ${activity && activity.status === "ongoing" ? (activeLang === "ja" ? "進行中" : "ONGOING") : (activeLang === "ja" ? "記録あり" : "DOCUMENTED")}`;
+      evidence.textContent = activity ? `${activity.period} / ${activity.statusLabel}` : "";
       const title = document.createElement("h3");
       title.textContent = (activity && activity.title) || highlight.title || "";
       const detail = document.createElement("p");
@@ -701,12 +703,14 @@
         const button = document.createElement("button");
         button.className = "project-open";
         button.type = "button";
-        button.textContent = activeLang === "ja" ? "役割・記録・写真を見る" : "View role, records & photos";
+        button.textContent = activity.status === "concept" ? (activeLang === "ja" ? "構想メモを見る" : "Read the idea") : (activeLang === "ja" ? "詳細を見る" : "View details");
         button.addEventListener("click", () => openActivityModal(activity));
         body.appendChild(button);
       }
 
-      card.append(img, body);
+      if (activity && activity.status !== "concept") card.appendChild(img);
+      else card.classList.add("project-card-concept");
+      card.appendChild(body);
       grid.appendChild(card);
     });
   }
@@ -726,6 +730,7 @@
     target.innerHTML = "";
     items.forEach((item) => {
       const value = links[item.key] || "#";
+      if (value === "#") return;
       const link = document.createElement("a");
       link.className = "contact-link";
       link.href = value || "#";
@@ -774,6 +779,9 @@
     if ($("practice-photo") && practice.photoAlt) $("practice-photo").alt = practice.photoAlt;
     setText($("about-attitude"), activeCopy.attitude);
 
+    [activityModalClose, dailyModalClose].forEach(button => {
+      if (button) button.setAttribute("aria-label", activeLang === "ja" ? "閉じる" : "Close");
+    });
     document.documentElement.lang = activeLang;
     const pageKind = document.body.dataset.page;
     if (pageKind === "daily-list") {
@@ -787,17 +795,18 @@
     const meta = $("meta-description");
     if (meta && pageKind !== "daily-list" && activeCopy.metaDescription) meta.setAttribute("content", activeCopy.metaDescription);
 
-    setText($("nav-timeline"), nav.timeline);
+    setText($("nav-latest"), activeLang === "ja" ? "最近の活動" : "Recent");
+    setText($("nav-timeline"), document.body.classList.contains("portfolio-home") ? (activeLang === "ja" ? "これまで" : "Background") : nav.timeline);
     setText($("nav-daily"), nav.daily);
-    setText($("nav-projects"), nav.projects);
-    setText($("nav-vision"), document.body.classList.contains("classic-home") ? "Vision" : nav.vision);
-    setText($("nav-about"), nav.about);
+    setText($("nav-projects"), document.body.classList.contains("portfolio-home") ? (activeLang === "ja" ? "活動紹介" : "Work") : nav.projects);
+    setText($("nav-vision"), document.body.classList.contains("classic-home") ? "Vision" : document.body.classList.contains("portfolio-home") && activeLang === "ja" ? "連絡先" : nav.vision);
+    setText($("nav-about"), document.body.classList.contains("portfolio-home") && activeLang === "ja" ? "自己紹介" : nav.about);
     setText($("nav-dream"), nav.dream);
     setText($("hero-affiliation"), hero.affiliation);
     setText($("hero-identity"), hero.identity);
     setText($("hero-lead"), hero.lead);
-    setText($("hero-btn-timeline"), hero.timelineButton);
-    setText($("hero-btn-daily"), hero.dailyButton);
+    setText($("hero-btn-timeline"), document.body.classList.contains("classic-home") ? (activeLang === "ja" ? "これまでの活動" : "View timeline") : hero.timelineButton);
+    setText($("hero-btn-daily"), document.body.classList.contains("classic-home") ? (activeLang === "ja" ? "日記を読む" : "Read the diary") : hero.dailyButton);
     setText($("hero-caption"), hero.caption);
     setText($("hero-availability-text"), highlights.availability);
     setText($("runway-title"), highlights.runway);
@@ -914,8 +923,9 @@
   if (dailyModalBackdrop) dailyModalBackdrop.addEventListener("click", closeDailyPostModal);
   if (dailyModalClose) dailyModalClose.addEventListener("click", closeDailyPostModal);
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Tab" && dailyModal && !dailyModal.hidden) {
-      const items = Array.from(dailyModal.querySelectorAll('button, a[href], summary')).filter(el => el.getClientRects().length);
+    const openModal = dailyModal && !dailyModal.hidden ? dailyModal : activityModal && !activityModal.hidden ? activityModal : null;
+    if (event.key === "Tab" && openModal) {
+      const items = Array.from(openModal.querySelectorAll('button, a[href], summary')).filter(el => el.getClientRects().length);
       const first = items[0];
       const last = items[items.length - 1];
       if (first && event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
