@@ -34,6 +34,13 @@
       <a href="#review-title">台帳</a>
     </nav>
 
+    <section class="workflow-summary" aria-label="更新の状況" aria-live="polite">
+      <p id="workflow-sync">同期状況を確認中</p>
+      <p id="workflow-counts"></p>
+      <p id="workflow-next">まず写真を1枚選び、今日のメモをひと言残しましょう。</p>
+      <a class="text-button" href="#capture">今日のメモを書く →</a>
+    </section>
+
     <section id="review-deck" class="swipe-panel" aria-labelledby="swipe-title">
       <div class="swipe-heading">
         <div>
@@ -109,7 +116,7 @@
         </div>
         <aside class="capture-next-step" aria-label="保存後の流れ">
           <span class="capture-next-step-icon" aria-hidden="true">→</span>
-          <p><strong>保存後の流れ</strong> まず自動流入とスワイプ操作だけを確認します。AI処理は動作確認後に有効化します。</p>
+          <p><strong>保存後の流れ</strong> メモは非公開で保存されます。その後、いつものAIとの会話で「保存したメモと承認した写真で日記を作って」と伝えてください。日記の自動作成・自動公開はまだ接続されていません。</p>
         </aside>
       </form>
     </section>

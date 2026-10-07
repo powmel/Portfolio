@@ -9,6 +9,8 @@ const path = require("node:path");
 const { loadDailyPosts, mimeFor, readJson, scan, writeJson } = require("./lib/media-catalog");
 const { applyMediaDecision, buildReviewQueue, normalizeStore } = require("./lib/media-decisions");
 
+const { mediaStatus } = require("./lib/media-status");
+
 const root = path.resolve(__dirname, "..");
 const localDir = path.join(root, ".local-media");
 function argValue(name) {
@@ -32,6 +34,7 @@ function state() {
   const drafts = readJson(path.join(localDir, "daily-drafts.json"), { items: {} });
   const { queue: reviewQueue, counts: queueCounts } = buildReviewQueue(proposals, catalog, decisions);
   return {
+    workflow: mediaStatus(root),
     posts: loadDailyPosts(root),
     catalog,
     proposals,

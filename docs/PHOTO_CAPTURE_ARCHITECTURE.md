@@ -139,3 +139,39 @@ is for the evening AI conversation to load that draft and its photo candidates,
 organize them into a diary candidate, and then request human review. That evening
 handoff is the next integration boundary; it is not yet an automatic background
 job, and saving a draft does not publish a Daily Log entry.
+
+## 2026-10-07: current operating state and a one-minute restart
+
+Apple Photos collection is running hourly on the Mac. The last verified run on
+2026-10-07 at 13:38 JST succeeded with Photos permission already granted.
+Collection is not publication: no background job currently writes a diary,
+exports cloud drafts to the Mac, or commits/pushes the site. The cloud login
+flow remains unverified in this audit (anonymous HTTP returned 403).
+
+### 1分で記録を再開する
+
+1. Macで `npm run media:open` を実行して「写真台帳」を開く。
+2. 写真を1枚選ぶ。右は公開候補、左は非公開、上はあとで。判断は取り消せる。
+3. 「今日のメモを書く」からひと言残す。
+4. いつものAIとの会話で「写真台帳に保存したメモと、承認した写真で日記を作って」と伝える。
+
+写真の承認とメモの保存だけでは、サイトは更新されません。AIが記録を読み、
+公開用の記事と写真を確認してから反映します。クラウド版はMacへ自動転送されないため、
+この手順ではMac版を使ってください。
+
+`npm run media:status` shows the last successful intake, counts, and the next
+stage without printing photo identifiers, source paths, private notes, or
+analysis. `-- --json` returns the same sanitized summary for diagnostic tools.
+The admin header now shows the same state. Approved counts do not prove public
+deployment; the CLI explicitly marks publication as unverified.
+
+Public photo export now uses macOS ImageIO to apply orientation and encode
+pixels as a fresh JPEG. GPS, camera metadata, private comments, and other source
+metadata are not copied. Export fails on unsupported non-macOS hosts instead
+of copying an original JPEG. `npm run media:test:derivative` verifies this with
+a synthetic, oriented GPS-tagged fixture and never touches actual approvals.
+
+Remaining intake limitation: the PhotoKit adapter fetches at most the latest
+120 items and advances by capture time. Large bursts, delayed iCloud imports,
+and failed older items need a separate checkpoint/retry design. This change
+does not claim complete historical backfill or repair that cursor design.

@@ -385,11 +385,31 @@ function renderLedger() {
   }).join("");
 }
 
+function renderWorkflow() {
+  const workflow = state.data.workflow;
+  const counts = workflow?.counts;
+  const cloud = state.data.capabilities?.cloud === true;
+  $("#workflow-sync").textContent = cloud
+    ? "クラウドの下書き保管庫（Macの写真台帳とは別）"
+    : workflow?.lastSyncAt
+      ? `写真の最終同期：${new Date(workflow.lastSyncAt).toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" })} JST${workflow.syncStatus === "authorized" ? "" : "（直近の取り込み要確認）"}`
+      : "写真の自動同期：まだ確認できていません";
+  $("#workflow-counts").textContent = counts
+    ? `未確認 ${counts.pending}枚 · 承認済み ${counts.approved}枚 · 日記未作成 ${counts.awaitingDiary}枚`
+    : "承認しても、ここからすぐには公開されません。";
+  $("#workflow-next").textContent = cloud
+    ? "ここで保存したメモと写真のMacへの自動転送は未接続です。日記に使うときは、AIとの会話でこの下書きの利用を依頼してください。"
+    : counts?.pending
+      ? "まず写真を1枚選び、今日のメモをひと言。保存後は、いつものAIとの会話から日記を依頼できます。"
+      : "今日のメモを残して、AIとの会話で日記作成を依頼してください。本文の作成と公開は、まだ自動化されていません。";
+}
+
 function render() {
   const isCloud = state.data.capabilities?.cloud === true;
   document.querySelectorAll("[data-local-only]").forEach((node) => { node.hidden = isCloud; });
   $("#admin-mode").textContent = isCloud ? "PRIVATE CLOUD" : "LOCAL ADMIN";
-  $("#admin-description").textContent = "Apple Photosの新着が自動で入ります。公開する・しないを端末内でスワイプします。";
+  $("#admin-description").textContent = isCloud ? "メモと写真を非公開で保存します。" : "Apple Photosから届いた写真を選び、今日のメモを残します。";
+  renderWorkflow();
   renderSummary();
   renderSwipeDeck();
   renderLedger();

@@ -19,6 +19,9 @@
     "media:open": "open -n '.local-media/bin/Taiki Photo Review.app'",
     "cloud:install": "npm --prefix cloud-capture install",
     "cloud:check": "npm --prefix cloud-capture run check",
-    "cloud:dev": "npm --prefix cloud-capture run dev"
+    "cloud:dev": "npm --prefix cloud-capture run dev",
+    "media:status": "node scripts/media-status.js",
+    "media:test:status": "node scripts/media-status-test.js",
+    "media:test:derivative": "node scripts/public-photo-test.js"
   }
 }

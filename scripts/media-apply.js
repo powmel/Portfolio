@@ -14,6 +14,17 @@ const decisionStore = readJson(path.join(localDir, "decisions.json"), { items: {
 const mediaDecisions = decisionStore.media || {};
 const catalogById = new Map(catalog.map((item) => [item.id, item]));
 const selections = {};
+const approved = Object.values(mediaDecisions).filter(item => item?.action === "publish" && item.mediaId);
+let renderer;
+if (approved.length) {
+  if (process.platform !== "darwin") throw new Error("Public photo export requires the macOS ImageIO renderer; originals are never copied as a fallback.");
+  const source = path.join(root, "scripts", "render-public-photo.swift");
+  renderer = path.join(localDir, "bin", "render-public-photo");
+  if (!fs.existsSync(renderer) || fs.statSync(renderer).mtimeMs < fs.statSync(source).mtimeMs) {
+    ensureDir(path.dirname(renderer));
+    execFileSync("xcrun", ["swiftc", source, "-o", renderer], { stdio: "pipe" });
+  }
+}
 const previousPaths = new Set();
 const selectionFile = path.join(root, "data", "media-selections.js");
 if (fs.existsSync(selectionFile)) {
@@ -33,12 +44,13 @@ for (const decision of Object.values(mediaDecisions)) {
   const relative = path.posix.join("images", "daily", date, `${media.id}.jpg`);
   const destination = path.join(root, ...relative.split("/"));
   ensureDir(path.dirname(destination));
-  if (process.platform === "darwin") {
-    execFileSync("sips", ["-s", "format", "jpeg", "-s", "formatOptions", "82", "-Z", "1800", media.sourcePath, "--out", destination], { stdio: "pipe" });
-  } else if ([".jpg", ".jpeg"].includes(media.extension)) {
-    fs.copyFileSync(media.sourcePath, destination);
-  } else {
-    throw new Error(`${media.sourcePath}: public derivative conversion requires macOS sips`);
+  // Use a temporary derivative so conversion errors cannot corrupt the prior file.
+  const temporary = `${destination}.tmp.jpg`;
+  try {
+    execFileSync(renderer, [media.sourcePath, temporary], { stdio: "pipe" });
+    fs.renameSync(temporary, destination);
+  } finally {
+    if (fs.existsSync(temporary)) fs.unlinkSync(temporary);
   }
   selections[date] ||= [];
   selections[date].push({
