@@ -150,7 +150,7 @@
         const link = document.createElement("a");
         link.href = item.url;
         link.className = "text-link";
-        link.textContent = activeLang === "ja" ? "開催の記録を見る →" : "View the event →";
+        link.textContent = activeLang === "ja" ? "筑波AIハッカソン2026 →" : "Tsukuba AI Hackathon 2026 →";
         body.appendChild(link);
       }
 
@@ -786,6 +786,8 @@
     const pageKind = document.body.dataset.page;
     if (pageKind === "daily-list") {
       document.title = "Daily Log | Taiki Misawa";
+    } else if (["about", "activities", "future"].includes(pageKind)) {
+      document.title = `${{about: "About", activities: "Activities", future: "Future"}[pageKind]} | Taiki Misawa`;
     } else if (pageKind === "daily-post") {
       const articleTitle = document.querySelector(".article-card h1");
       if (articleTitle) document.title = `${articleTitle.textContent} | Taiki Misawa`;
@@ -793,7 +795,10 @@
       document.title = activeCopy.pageTitle || "Taiki Misawa | Portfolio";
     }
     const meta = $("meta-description");
-    if (meta && pageKind !== "daily-list" && activeCopy.metaDescription) meta.setAttribute("content", activeCopy.metaDescription);
+    if (meta && pageKind !== "daily-list" && activeCopy.metaDescription) {
+      const descriptions = { about: sections.aboutLead, activities: community.description, future: dream.lead };
+      meta.setAttribute("content", descriptions[pageKind] || activeCopy.metaDescription);
+    }
 
     setText($("nav-latest"), activeLang === "ja" ? "最近の活動" : "Recent");
     setText($("nav-timeline"), document.body.classList.contains("portfolio-home") ? (activeLang === "ja" ? "これまで" : "Background") : nav.timeline);
@@ -850,6 +855,8 @@
     setText($("daily-page-title"), activeLang === "ja" ? "Daily Log" : "Daily Log");
     setText($("daily-page-lead"), activeLang === "ja" ? "研究、開発、人との活動。その途中で考えたことを、少しずつ書き残しています。" : "Notes from research, building, and working with people. A record of what I am learning along the way.");
 
+    document.querySelectorAll("[data-ja][data-en]").forEach(el => { el.textContent = el.dataset[activeLang]; });
+
     if (updatedAt) {
       updatedAt.textContent = `${activeCopy.footerUpdated || "Updated"}: ${config.updatedAt || "April 2026"}`;
     }
@@ -895,6 +902,12 @@
   if ($("profile-image")) $("profile-image").src = safePath(config.profileImage || "images/profile-main.jpg");
   if (year) year.textContent = String(new Date().getFullYear());
 
+  if (document.body.classList.contains("home-page")) {
+    const movedSections = { "#about": "about.html", "#timeline-log": "about.html#timeline-log", "#vision": "future.html#vision", "#future-dream": "future.html", "#projects": "activities.html#projects", "#hackathon": "activities.html#hackathon", "#focus": "activities.html#focus" };
+    const followMovedSection = () => { if (movedSections[location.hash]) location.replace(movedSections[location.hash]); };
+    followMovedSection();
+    window.addEventListener("hashchange", followMovedSection);
+  }
   buildHeroStream();
 
   if (menuToggle) {

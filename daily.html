@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20261008pages">
 </head>
 <body data-page="daily-list">
   <header class="site-header">
@@ -21,11 +21,11 @@
       </button>
       <div id="primary-nav" class="header-panel">
         <nav class="main-nav" aria-label="Primary">
-          <a id="nav-timeline" href="index.html#timeline-log">Timeline</a>
-          <a id="nav-daily" href="daily.html">Daily Log</a>
-          <a id="nav-projects" href="index.html#projects">Projects</a>
-          <a id="nav-vision" href="index.html#vision">Vision</a>
-          <a id="nav-about" href="index.html#about">About</a>
+          <a href="index.html" data-ja="ホーム" data-en="Home">ホーム</a>
+          <a aria-current="page" href="daily.html" data-ja="日記" data-en="Daily Log">日記</a>
+          <a href="activities.html" data-ja="活動紹介" data-en="Activities">活動紹介</a>
+          <a href="about.html" data-ja="自己紹介" data-en="About">自己紹介</a>
+          <a href="future.html">Future</a>
         </nav>
         <nav class="lang-switch" aria-label="Language switch">
           <button type="button" class="lang-btn is-active" data-lang="ja">JP</button>
@@ -67,6 +67,6 @@
   <script src="site.config.js"></script>
   <script src="data/daily-posts.js?v=20261005albums"></script>
   <script src="data/media-selections.js"></script>
-  <script src="script.js?v=20261005albums"></script>
+  <script src="script.js?v=20261008pages"></script>
 </body>
 </html>

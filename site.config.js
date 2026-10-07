@@ -59,7 +59,7 @@ window.PORTFOLIO_CONFIG = {
         dailyLink: "Daily Log 一覧へ →",
         projectsKicker: "Selected Work",
         projectsTitle: "活動と、考えていること",
-        projectsLink: "これまでの歩みを見る →",
+        projectsLink: "経歴を見る →",
         visionKicker: "Vision",
         visionTitle: "人が、本来向き合う活動に集中できる環境をつくる。",
         contactKicker: "Contact",
@@ -164,7 +164,7 @@ window.PORTFOLIO_CONFIG = {
         dailyLink: "View Daily Log →",
         projectsKicker: "Projects / Activities",
         projectsTitle: "Activities and ideas",
-        projectsLink: "See my background →",
+        projectsLink: "View background →",
         visionKicker: "Vision",
         visionTitle: "Vision",
         contactKicker: "Contact",
@@ -301,7 +301,7 @@ window.PORTFOLIO_CONFIG = {
         "year": "2026.09",
         "title": "初めてのハッカソン開催",
         "description": "筑波AIハッカソン2026を企画・運営。先生や仲間の協力を得て開催しました。",
-        "url": "index.html#hackathon"
+        "url": "activities.html#hackathon"
       }
     ],
     "en": [
@@ -324,7 +324,7 @@ window.PORTFOLIO_CONFIG = {
         "year": "2026.09",
         "title": "Organized my first hackathon",
         "description": "Planned and organized Tsukuba AI Hackathon 2026 with support from faculty and friends.",
-        "url": "index.html#hackathon"
+        "url": "activities.html#hackathon"
       }
     ]
   },

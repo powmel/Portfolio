@@ -2537,3 +2537,59 @@ body[data-page="daily-post"] .article-card h1,
 .portfolio-home .timeline-panel .section-heading h2,
 .portfolio-home .daily-panel .section-heading h2 { max-width: none; font-size: clamp(1.5rem, 2.3vw, 2rem); line-height: 1.5; letter-spacing: -.025em; text-wrap: balance; }
 #recent-activities { scroll-margin-top: 96px; }
+
+/* Page split: preserve the orange/black identity and fix reading contrast locally. */
+.multipage-site .main-nav a[aria-current="page"] { color: #ff7a45; text-decoration: underline; text-underline-offset: 7px; }
+.multipage-site .page-intro { background: #111; color: #fff; border-bottom: 6px solid #ff5315; }
+.multipage-site .page-intro h1 { margin: 10px 0; font: 400 clamp(5rem, 12vw, 10rem)/.95 "Bebas Neue", sans-serif; text-transform: uppercase; }
+.multipage-site .page-intro .section-kicker { color: #ff7a45; }
+.multipage-site .page-intro p:last-child { color: #fff; font-weight: 700; }
+.multipage-site .section-heading h2 { font-family: "Noto Sans JP", sans-serif; font-weight: 900; line-height: 1.35; font-size: clamp(1.8rem, 3.8vw, 3.2rem); }
+.multipage-site .daily-panel .section-heading h2 { font-weight: 900; color: #111; }
+.multipage-site .section-note { color: #38342e; font-weight: 500; }
+.multipage-site .recent-section { background: #f8f3e8; }
+.multipage-site .recent-section .daily-panel { padding: clamp(22px, 4vw, 44px); }
+.multipage-site .recent-activities { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.multipage-site .daily-card-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.multipage-site .daily-card { display: flex; flex-direction: column; }
+.multipage-site .daily-card .daily-media { width: 100%; }
+.multipage-site .daily-card .daily-media img { width: 100%; height: 180px; object-fit: cover; }
+.multipage-site .daily-card h3 { color: #111; }
+.multipage-site .site-directory { background: #111; color: #fff; }
+.multipage-site .site-directory .section-kicker { color: #ff7a45; }
+.directory-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.directory-card { position: relative; display: flex; flex-direction: column; min-width: 0; padding: 30px 24px; border: 1px solid #70695f; color: #fff; text-decoration: none; transition: border-color .2s, transform .2s; }
+.directory-card:hover { border-color: #ff7a45; transform: translateY(-4px); }
+.directory-card > span { color: #ff7a45; font: 400 1.25rem "Bebas Neue", sans-serif; letter-spacing: .04em; }
+.directory-card h2 { margin: 24px 0 16px; color: #fff; font: 900 1.45rem/1.6 "Noto Sans JP", sans-serif; }
+.directory-card p { color: #e3ded5; line-height: 1.8; }
+.directory-card b { align-self: flex-end; margin-top: auto; padding-top: 24px; color: #ff7a45; font-size: 2rem; }
+.multipage-site .about-vision-section { background: #f8f3e8; color: #111; }
+.multipage-site .about-vision-grid { grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr); gap: 48px; align-items: start; background: transparent; }
+.multipage-site .about-copy h2 { color: #111; font: 900 clamp(1.8rem, 3vw, 2.6rem)/1.5 "Noto Sans JP", sans-serif; }
+.multipage-site .about-vision-section .section-kicker { color: #bb3100; }
+.multipage-site .about-copy .section-lead,
+.multipage-site .about-copy .practice-summary,
+.multipage-site .about-copy .about-attitude { color: #28241f; font-size: 1rem; font-weight: 500; line-height: 2; }
+.multipage-site .about-vision-section .identity-card { background: #fff; color: #111; border: 1px solid #b6ac9d; box-shadow: none; text-align: left; min-height: 0; }
+.multipage-site .about-vision-section .identity-card h3 { color: #111; font-weight: 900; }
+.multipage-site .about-vision-section .identity-card p { color: #38342e; font-weight: 500; }
+.multipage-site .about-vision-section .identity-icon { color: #111; background: #ff783f; border: 0; border-radius: 0; }
+.about-portrait { margin: 0; }
+.about-portrait img { display: block; width: 100%; height: auto; box-shadow: 10px 10px 0 #ff5315; }
+.about-portrait figcaption { margin-top: 24px; color: #38342e; font-size: .9rem; font-weight: 500; }
+.multipage-site .biography-history { background: #eeeae0; }
+.multipage-site .timeline-list { max-height: none; overflow: visible; }
+.multipage-site .project-open { color: #fff; }
+.multipage-site .community-links .button-secondary { border: 2px solid #111; background: transparent; color: #111; backdrop-filter: none; }
+.multipage-site .future-vision { background: #f8f3e8; color: #111; }
+.multipage-site .future-vision .evidence-note { background: transparent; border: 0; padding: 0; max-width: 800px; }
+.multipage-site .future-vision .vision-copy p:last-child { color: #38342e; }
+.multipage-site .future-vision h2 { color: #111; }
+@media (max-width: 900px) {
+  .multipage-site .about-vision-grid { grid-template-columns: 1fr; }
+  .about-portrait { max-width: 420px; }
+  .multipage-site .daily-card-list, .directory-grid { grid-template-columns: 1fr; }
+  .multipage-site .recent-activities { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .directory-card { transition: none; } }

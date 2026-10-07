@@ -218,3 +218,15 @@ git push origin main
 - Use `npm run daily:build` and `npm run daily:check` after album changes. The generated article and local modal render the same structured data without fetching.
 - The first hackathon organized belongs to `timeline > ja/en` as a milestone alongside education. Its link leads to the existing event section.
 - The 14 newly supplied photos have metadata-free derivatives in `images/daily/2026-09/`. Originals and the copy-verification manifest stay in the local Pictures activity archive, outside this public repository.
+
+## Page map
+
+- `index.html`: hero, moving photographs, recent activity, and page entry points.
+- `daily.html`: Daily Log archive and photo diaries.
+- `activities.html`: hackathon organizing, report/concept links, and other activities.
+- `about.html`: profile, interests, and education/activity timeline.
+- `future.html`: personal aspirations and vision.
+
+Existing `index.html#about`, `#timeline-log`, `#projects`, `#hackathon`,
+`#focus`, `#vision`, and `#future-dream` links forward to their new page
+through `script.js`. The classic view keeps its own in-page navigation.

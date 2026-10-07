@@ -19,3 +19,11 @@
 - Taiki has given standing approval to publish routine Daily Log entries after private Taiki OS capture and a Level 0 privacy edit. A separate per-day approval is not required.
 - If Taiki says `非公開`, `記録だけ`, `公開しない`, or equivalent, do not add or push that day's public article.
 - Non-Daily portfolio changes still require explicit approval.
+
+## Visual identity and page structure
+
+- Preserve the orange marquee, moving photo runway, bold hero photography, and orange/black visual identity unless Taiki explicitly requests changing them.
+- Do not turn readability or information-architecture feedback into a wholesale visual redesign.
+- Home is an entry point for recent activity. Use `activities.html` for work, `about.html` for biography/background, `future.html` for aspirations, and `daily.html` for the diary archive.
+- Keep affiliations, organizer badges, and exchange-leadership captions out of the homepage hero. They belong in the relevant activity or biography.
+- Keep static HTML fallback copy consistent with `site.config.js`. Verify navigation across pages and scoped contrast at narrow widths.
